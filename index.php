@@ -54,7 +54,7 @@ if (isset($_GET['delete_booking_id'])) {
 }
 
 // Fetch all records from the database
-$records = $conn->query("SELECT * FROM invoice_data WHERE booking_status NOT IN ('Declined') ORDER BY registration_date");
+$records = $conn->query("SELECT * FROM invoice_data WHERE booking_status NOT IN ('Declined') ORDER BY registration_date DESC");
 
 // Close the database connection
 
