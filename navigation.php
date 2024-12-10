@@ -1,4 +1,3 @@
-<link rel="icon" type="image/x-icon" href="https://holidayseva.com/wp-content/uploads/2024/06/cropped-holidayseva.com_favicon-1.png">
 <!----======== CSS ======== -->
 <link rel="stylesheet" href="style.css">
     
