@@ -55,7 +55,7 @@ if (isset($_GET['delete_booking_id'])) {
 }
 
 // Fetch all records from the database
-$records = $conn->query("SELECT * FROM invoice_data WHERE booking_status is ('Confirmed')");
+$records = $conn->query("SELECT * FROM invoice_data");
 
 // Close the database connection
 
