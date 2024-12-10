@@ -124,21 +124,7 @@ $conn->close();
 </head>
 <body>
     
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left:2%;">
-    <a class="navbar-brand" href="#">
-        <img src="https://holidayseva.com/wp-content/uploads/2024/06/cropped-holidayseva.com_favicon-1.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" href="#">Powered By - <strong>Holidayseva.com</strong></a>
-            <a class="nav-item nav-link disabled" href="#">Version : <strong>1.php_dompdf.ß1</strong></a>
-            
-        </div>
-    </div>
-</nav>
+<?php include('navigation_panels.php') ?>
 
 <div class="container">
     <div class="row">
