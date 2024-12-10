@@ -431,10 +431,6 @@ body.dark .home .text{
 
     </nav>
 
-    <section class="home">
-        <div class="text">Dashboard Sidebar</div>
-    </section>
-
     <script>
         const body = document.querySelector('body'),
       sidebar = body.querySelector('nav'),
