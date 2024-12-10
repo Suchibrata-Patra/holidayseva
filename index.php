@@ -140,9 +140,6 @@ $conn->close();
 <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
   Link with href
 </a>
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-  Button with data-bs-target
-</button>
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
@@ -165,6 +162,8 @@ $conn->close();
     </div>
   </div>
 </div>
+
+
 <div class="container">
     <div class="row">
         <!-- Left Column - Form Section -->
