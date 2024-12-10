@@ -122,7 +122,7 @@ $conn->close();
 </head>
 <body>
     
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left:2%;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left:2%;" class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
     <a class="navbar-brand" href="#">
         <img src="https://holidayseva.com/wp-content/uploads/2024/06/cropped-holidayseva.com_favicon-1.png" width="30" height="30" class="d-inline-block align-top" alt="">
     </a>
@@ -132,9 +132,6 @@ $conn->close();
 
 </nav>
 
-<!-- <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-  Link with href
-</a> -->
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
