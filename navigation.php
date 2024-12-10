@@ -1,9 +1,9 @@
+<link rel="icon" type="image/x-icon" href="https://holidayseva.com/wp-content/uploads/2024/06/cropped-holidayseva.com_favicon-1.png">
 <!----======== CSS ======== -->
 <link rel="stylesheet" href="style.css">
     
 <!----===== Boxicons CSS ===== -->
 <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-<link rel="icon" type="image/x-icon" href="https://holidayseva.com/wp-content/uploads/2024/06/cropped-holidayseva.com_favicon-1.png">
 
 <!-- <nav class="sidebar close">  -->
 <nav class="sidebar">
