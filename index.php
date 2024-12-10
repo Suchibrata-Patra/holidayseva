@@ -262,9 +262,12 @@ $conn->close();
                                 echo "<td>" . $row['cars_provided'] . "</td>";
                                 // echo "<td>" . $row['no_of_cars'] . "</td>";
                                 echo "<td>" . ($row['food_included'] ? 'Yes' : 'No') . "</td>";
-                                echo "<td>" . ($row['booking_status'] 
-                                ? '<span class="material-icons" style="color: green;">check_circle</span>' 
-                                : '<span class="material-icons" style="color: red;">cancel</span>') . "</td>";
+                                echo "<td>" . 
+                                ($row['booking_status'] === 'Confirmed' 
+                                    ? '<span class="material-icons" style="color: green;">check_circle</span>' 
+                                    : '<span class="material-icons" style="color: red;">cancel</span>') . 
+                                "</td>";
+                            
                                                             echo "<td>
         <div class='dropdown'>
             <button class='btn btn-link btn-sm' type='button' id='dropdownMenuButton' data-bs-toggle='dropdown' aria-expanded='false' style='font-size:1.5rem;text-decoration:none;'>
