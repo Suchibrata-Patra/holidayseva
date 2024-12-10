@@ -131,7 +131,7 @@ $conn->close();
                     <th style="padding: 12px; text-align: left;font-weight:300;">No of Adults</th>
                     <th style="padding: 12px; text-align: left;font-weight:300;">Food Included</th>
                     <th style="padding: 12px; text-align: left;font-weight:300;">Status</th>
-                    <th style="padding: 12px; text-align: left;font-weight:300;">Edit</th>
+                    <th style="padding: 12px; text-align: left;font-weight:300;">Token Amount</th>
                     <th style="padding: 12px; text-align: left;font-weight:300;">Action</th>
                 </tr>
             </thead>
