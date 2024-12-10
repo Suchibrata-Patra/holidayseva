@@ -11,6 +11,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $customer_name = $_POST['customer_name'];
     $mobile_no = $_POST['mobile_no'];
@@ -18,26 +19,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tour_package = $_POST['tour_package'];
     $pricing = $_POST['pricing'];
     $special_requirements = $_POST['special_requirements'];
+    $date_of_journey = $_POST['date_of_journey'];
     $no_of_adults = $_POST['no_of_adults'];
     $cars_provided = $_POST['cars_provided'];
     $no_of_cars = $_POST['no_of_cars'];
     $food_included = isset($_POST['food_included']) ? 1 : 0; // True or False
 
-    // Handle the date_of_journey to ensure correct format
-    $date_of_journey_input = $_POST['date_of_journey'];
-    $date_of_journey = null;
-    try {
-        $date = new DateTime($date_of_journey_input); // Validate the date input
-        $date_of_journey = $date->format('Y-m-d');    // Convert to YYYY-MM-DD
-    } catch (Exception $e) {
-        echo "<div class='alert alert-danger'>Invalid date format. Please enter a valid date.</div>";
-        exit; // Stop execution on invalid date
-    }
-
-    // Insert data into the database
+    // Insert data into database
     $stmt = $conn->prepare("INSERT INTO invoice_data (customer_name, mobile_no, pickup_address, tour_package, pricing, special_requirements, date_of_journey, no_of_adults, cars_provided, no_of_cars, food_included) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssdsisisi", $customer_name, $mobile_no, $pickup_address, $tour_package, $pricing, $special_requirements, $date_of_journey, $no_of_adults, $cars_provided, $no_of_cars, $food_included);
-
     if ($stmt->execute()) {
         // After successful insert, redirect to prevent resubmission
         header("Location: " . $_SERVER['PHP_SELF']);
@@ -47,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     $stmt->close();
 }
+
 // Handle Confirm Booking
 if (isset($_GET['confirm_booking_id'])) {
     $invoice_id = $_GET['confirm_booking_id'];
@@ -191,7 +182,6 @@ $conn->close();
                     <div class="col-md-6">
                         <label for="date_of_journey" class="form-label">Date of Journey:</label>
                         <input type="date" name="date_of_journey" class="form-control" required>
-                        
                     </div>
                     <div class="col-md-6">
                         <label for="no_of_adults" class="form-label">Number of Adults:</label>
@@ -267,7 +257,7 @@ $conn->close();
                                 echo "<td>" . $row['tour_package'] . "</td>";
                                 echo "<td>" . $row['pricing'] . "</td>";
                                 echo "<td>" . $row['special_requirements'] . "</td>";
-                                echo "<td>" . $row['date_of_journey'] . "</td>";
+                                echo "<td>" . $row['registration_date'] . "</td>";
                                 echo "<td>" . $row['no_of_adults'] . "</td>";
                                 echo "<td>" . $row['cars_provided'] . "</td>";
                                 // echo "<td>" . $row['no_of_cars'] . "</td>";
