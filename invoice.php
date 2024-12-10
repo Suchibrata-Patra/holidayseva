@@ -124,7 +124,7 @@ $conn->close();
 </head>
 <body>
     
-<?php include('navigation_panels.php') ?>
+
 
 <div class="container">
     <div class="row">

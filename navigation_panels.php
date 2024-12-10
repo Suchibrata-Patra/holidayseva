@@ -329,7 +329,7 @@ body.dark .mode .sun-moon i.moon{
 }
 
     </style>
-
+    
     <nav class="sidebar close">
         <header>
             <div class="image-text">
@@ -425,7 +425,7 @@ body.dark .mode .sun-moon i.moon{
 
     </nav>
 
-    <!-- <script>
+    <script>
         const body = document.querySelector('body'),
       sidebar = body.querySelector('nav'),
       toggle = body.querySelector(".toggle"),
@@ -452,4 +452,4 @@ modeSwitch.addEventListener("click" , () =>{
         
     }
 });
-    </script> -->
+    </script>
