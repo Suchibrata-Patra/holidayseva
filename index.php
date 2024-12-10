@@ -57,7 +57,6 @@ if (isset($_GET['delete_booking_id'])) {
 $records = $conn->query("SELECT * FROM invoice_data WHERE booking_status NOT IN ('Declined')");
 
 // Close the database connection
-$conn->close();
 
 // Function to generate the invoice as PDF
 function generate_invoice($invoice) {
@@ -100,7 +99,7 @@ if (isset($_GET['download_invoice_id'])) {
     $invoice_id = $_GET['download_invoice_id'];
 
     // Fetch the invoice data based on the ID
-    $conn = new mysqli('localhost', 'root', 'root', 'Invoice');
+    // $conn = new mysqli('localhost', 'root', 'root', 'Invoice');
     $result = $conn->query("SELECT * FROM invoice_data WHERE id = $invoice_id");
     $invoice = $result->fetch_assoc();
     $conn->close();
@@ -108,6 +107,7 @@ if (isset($_GET['download_invoice_id'])) {
     // Generate and download the invoice PDF
     generate_invoice($invoice);
 }
+$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
