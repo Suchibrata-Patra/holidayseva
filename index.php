@@ -1,11 +1,12 @@
 <?php
 require 'vendor/autoload.php';  // Load DOMPDF library
+require 'database.php';
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
 // Database connection
-$conn = new mysqli('localhost', 'root', 'root', 'Invoice');
+// $conn = new mysqli('localhost', 'root', 'root', 'Invoice');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -85,7 +86,7 @@ if (isset($_GET['delete_booking_id'])) {
 $records = $conn->query("SELECT * FROM invoice_data WHERE booking_status NOT IN ('Declined')");
 
 // Close the database connection
-$conn->close();
+// $conn->close();
 
 // Function to generate the invoice as PDF
 function generate_invoice($invoice) {
@@ -128,10 +129,10 @@ if (isset($_GET['download_invoice_id'])) {
     $invoice_id = $_GET['download_invoice_id'];
 
     // Fetch the invoice data based on the ID
-    $conn = new mysqli('localhost', 'root', 'root', 'Invoice');
+    // $conn = new mysqli('localhost', 'root', 'root', 'Invoice');
     $result = $conn->query("SELECT * FROM invoice_data WHERE id = $invoice_id");
     $invoice = $result->fetch_assoc();
-    $conn->close();
+    // $conn->close();
 
     // Generate and download the invoice PDF
     generate_invoice($invoice);

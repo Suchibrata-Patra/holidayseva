@@ -1,6 +1,7 @@
 <?php
 require 'vendor/autoload.php';  // Load DOMPDF library
 require 'database.php';
+
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
