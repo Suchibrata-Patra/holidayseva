@@ -131,6 +131,7 @@ $conn->close();
                     <th style="padding: 12px; text-align: left;font-weight:300;">No of Adults</th>
                     <th style="padding: 12px; text-align: left;font-weight:300;">Food Included</th>
                     <th style="padding: 12px; text-align: left;font-weight:300;">Status</th>
+                    <th style="padding: 12px; text-align: left;font-weight:300;">Edit</th>
                     <th style="padding: 12px; text-align: left;font-weight:300;">Action</th>
                 </tr>
             </thead>
@@ -151,6 +152,7 @@ $conn->close();
                         echo "<td style='padding: 12px;font-weight: 300;'>" . ($row['booking_status'] 
                         ? '<span style="color: #0648a5; font-weight: bold;">&#x2714;</span>' 
                         : '<span style="color: red; font-weight: bold;">&#x2716;</span>') . "</td>";
+                        echo "<td style='padding: 12px;font-weight: 300;'>" ."<button style='color:black;background-color:white;border:0.5px solid grey;padding:3px 9px;border-radius:50px;'>Edit</button>" . "</td>";
                         echo "<td style='padding: 12px;'>
                             <div style='position: relative;'>
                                 <button style='background: none; border: none; cursor: pointer; font-size: 20px; color: #555;' 
