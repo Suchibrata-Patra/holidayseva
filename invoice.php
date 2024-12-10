@@ -147,7 +147,7 @@ $conn->close();
                         echo "<td style='padding: 12px;font-weight: 300;'>" . $row['pricing'] . "</td>";
                         echo "<td style='padding: 12px;font-weight: 300;'>" . $row['special_requirements'] . "</td>";
                         echo "<td style='padding: 12px;font-weight: 300;'>" . $row['date_of_journey'] . "</td>";
-                        echo "<td style='padding: 12px;font-weight: 300;'>" . $row['no_of_adults'] ($row['no_of_child']). "</td>";
+                        echo "<td style='padding: 12px;font-weight: 300;'>" . $row['no_of_adults']. "</td>";
                         echo "<td style='padding: 12px;font-weight: 300;'>" . ($row['food_included'] ? 'Yes' : 'No') . "</td>";
                         echo "<td style='padding: 12px;font-weight: 300;'>" . ($row['booking_status'] 
                         ? '<span style="color: #0648a5; font-weight: bold;">&#x2714;</span>' 
