@@ -304,9 +304,6 @@ body.dark .mode .sun-moon i.moon{
     transition: var(--tran-04);
 }
 
-body.dark .switch::before{
-    left: 20px;
-}
 
 .home{
     position: absolute;
@@ -330,12 +327,9 @@ body.dark .switch::before{
     height: 100vh;
     width: calc(100% - 78px);
 }
-body.dark .home .text{
-    color: var(--text-color);
-}
+
     </style>
-</head>
-<body>
+
     <nav class="sidebar close">
         <header>
             <div class="image-text">
@@ -431,7 +425,7 @@ body.dark .home .text{
 
     </nav>
 
-    <script>
+    <!-- <script>
         const body = document.querySelector('body'),
       sidebar = body.querySelector('nav'),
       toggle = body.querySelector(".toggle"),
@@ -458,7 +452,4 @@ modeSwitch.addEventListener("click" , () =>{
         
     }
 });
-    </script>
-
-</body>
-</html>
+    </script> -->
