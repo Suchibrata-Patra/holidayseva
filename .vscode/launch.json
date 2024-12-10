@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Applications/MAMP/htdocs/Invoice",
-      "program": "/Applications/MAMP/htdocs/Invoice/build/Debug/outDebug"
+      "cwd": "/Applications/MAMP/htdocs/holidayseva",
+      "program": "/Applications/MAMP/htdocs/holidayseva/build/Debug/outDebug"
     }
   ]
 }
