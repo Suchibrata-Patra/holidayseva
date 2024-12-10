@@ -128,7 +128,7 @@ $conn->close();
                     <th style="padding: 12px; text-align: left;font-weight:300;">Pricing</th>
                     <th style="padding: 12px; text-align: left;font-weight:300;">Extra.</th>
                     <th style="padding: 12px; text-align: left;font-weight:300;">Date</th>
-                    <th style="padding: 12px; text-align: left;font-weight:300;">Adults[Child]</th>
+                    <th style="padding: 12px; text-align: left;font-weight:300;">Adults</th>
                     <th style="padding: 12px; text-align: left;font-weight:300;">Food</th>
                     <th style="padding: 12px; text-align: left;font-weight:300;">Status</th>
                     <th style="padding: 12px; text-align: left;font-weight:300;">Token</th>
