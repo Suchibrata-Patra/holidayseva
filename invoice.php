@@ -122,16 +122,16 @@ $conn->close();
             <thead>
                 <tr style="background-color:#0648a5; color: white;">
                     <th style="padding: 12px; text-align: left;font-weight:300;">Name</th>
-                    <th style="padding: 12px; text-align: left;font-weight:300;">Mobile No</th>
-                    <th style="padding: 12px; text-align: left;font-weight:300;">Pickup Address</th>
-                    <th style="padding: 12px; text-align: left;font-weight:300;">Tour Package</th>
+                    <th style="padding: 12px; text-align: left;font-weight:300;">Mobile</th>
+                    <th style="padding: 12px; text-align: left;font-weight:300;">Pickup</th>
+                    <th style="padding: 12px; text-align: left;font-weight:300;">Package</th>
                     <th style="padding: 12px; text-align: left;font-weight:300;">Pricing</th>
                     <th style="padding: 12px; text-align: left;font-weight:300;">Extra req.</th>
-                    <th style="padding: 12px; text-align: left;font-weight:300;">Date of Journey</th>
+                    <th style="padding: 12px; text-align: left;font-weight:300;">Date</th>
                     <th style="padding: 12px; text-align: left;font-weight:300;">No of Adults</th>
-                    <th style="padding: 12px; text-align: left;font-weight:300;">Food Included</th>
+                    <th style="padding: 12px; text-align: left;font-weight:300;">Food</th>
                     <th style="padding: 12px; text-align: left;font-weight:300;">Status</th>
-                    <th style="padding: 12px; text-align: left;font-weight:300;">Token Amount</th>
+                    <th style="padding: 12px; text-align: left;font-weight:300;">Token</th>
                     <th style="padding: 12px; text-align: left;font-weight:300;">Action</th>
                 </tr>
             </thead>
