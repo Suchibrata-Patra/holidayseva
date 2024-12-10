@@ -222,7 +222,7 @@ $conn->close();
         </button>
     </a>
     <a href="invoice.php" style="text-decoration: none; margin-left: 10px;">
-        <button style="background-color: white; color: black; border: 2px solid black; border-radius: 5px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer;  transition: all 0.3s ease;">
+        <button style="background-color: white; color: black;  border-radius: 5px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer;  transition: all 0.3s ease;">
             Invoice Mode
         </button>
     </a>
