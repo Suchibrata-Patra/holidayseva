@@ -15,7 +15,7 @@
 
             <div class="text logo-text">
                 <span class="name">Holidayseva</span>
-                <span class="profession">V 1.1.0</span>
+                <span class="profession" style="color:black">V 1.1.0</span>
             </div>
         </div>
 
