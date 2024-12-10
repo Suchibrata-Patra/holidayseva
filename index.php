@@ -257,7 +257,7 @@ $conn->close();
                                 echo "<td>" . $row['tour_package'] . "</td>";
                                 echo "<td>" . $row['pricing'] . "</td>";
                                 echo "<td>" . $row['special_requirements'] . "</td>";
-                                echo "<td>" . $row['registration_date'] . "</td>";
+                                echo "<td>" . $row['date_of_journey'] . "</td>";
                                 echo "<td>" . $row['no_of_adults'] . "</td>";
                                 echo "<td>" . $row['cars_provided'] . "</td>";
                                 // echo "<td>" . $row['no_of_cars'] . "</td>";
