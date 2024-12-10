@@ -1,11 +1,11 @@
 <?php
 require 'vendor/autoload.php';  // Load DOMPDF library
-require 'database.php';
+
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
 // Database connection
-// $conn = new mysqli('localhost', 'root', 'root', 'Invoice');
+$conn = new mysqli('localhost', 'root', 'root', 'Invoice');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $customer_name = $_POST['customer_name'];
     $mobile_no = $_POST['mobile_no'];
     $pickup_address = $_POST['pickup_address'];
+    $drop_address = $_POST['drop_address'];
     $tour_package = $_POST['tour_package'];
     $pricing = $_POST['pricing'];
     $special_requirements = $_POST['special_requirements'];
@@ -23,11 +24,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $no_of_adults = $_POST['no_of_adults'];
     $cars_provided = $_POST['cars_provided'];
     $no_of_cars = $_POST['no_of_cars'];
+    $meal_plan = $_POST['meal_plan'];
     $food_included = isset($_POST['food_included']) ? 1 : 0; // True or False
 
     // Insert data into database
-    $stmt = $conn->prepare("INSERT INTO invoice_data (customer_name, mobile_no, pickup_address, tour_package, pricing, special_requirements, date_of_journey, no_of_adults, cars_provided, no_of_cars, food_included) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssdsisisi", $customer_name, $mobile_no, $pickup_address, $tour_package, $pricing, $special_requirements, $date_of_journey, $no_of_adults, $cars_provided, $no_of_cars, $food_included);
+    $stmt = $conn->prepare("
+    INSERT INTO invoice_data (
+        customer_name, mobile_no, pickup_address,drop_address,
+        tour_package, pricing, special_requirements, 
+        date_of_journey, no_of_adults, cars_provided, 
+        no_of_cars, meal_plan,food_included
+    ) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)
+");
+
+// Bind the parameters to the query
+$stmt->bind_param(
+    "sssssissisiss", 
+    $customer_name, 
+    $mobile_no, 
+    $pickup_address, 
+    $drop_address, 
+    $tour_package, 
+    $pricing, 
+    $special_requirements, 
+    $date_of_journey, 
+    $no_of_adults, 
+    $cars_provided, 
+    $no_of_cars, 
+    $meal_plan,
+    $food_included
+);
+    // $stmt->bind_param("ssssdsisisi", $customer_name, $mobile_no, $pickup_address, $tour_package, $pricing, $special_requirements, $date_of_journey, $no_of_adults, $cars_provided, $no_of_cars, $food_included);
     if ($stmt->execute()) {
         // After successful insert, redirect to prevent resubmission
         header("Location: " . $_SERVER['PHP_SELF']);
@@ -54,9 +82,10 @@ if (isset($_GET['delete_booking_id'])) {
 }
 
 // Fetch all records from the database
-$records = $conn->query("SELECT * FROM invoice_data WHERE booking_status NOT IN ('Declined') ORDER BY registration_date DESC");
+$records = $conn->query("SELECT * FROM invoice_data WHERE booking_status NOT IN ('Declined')");
 
 // Close the database connection
+$conn->close();
 
 // Function to generate the invoice as PDF
 function generate_invoice($invoice) {
@@ -99,7 +128,7 @@ if (isset($_GET['download_invoice_id'])) {
     $invoice_id = $_GET['download_invoice_id'];
 
     // Fetch the invoice data based on the ID
-    // $conn = new mysqli('localhost', 'root', 'root', 'Invoice');
+    $conn = new mysqli('localhost', 'root', 'root', 'Invoice');
     $result = $conn->query("SELECT * FROM invoice_data WHERE id = $invoice_id");
     $invoice = $result->fetch_assoc();
     $conn->close();
@@ -107,130 +136,37 @@ if (isset($_GET['download_invoice_id'])) {
     // Generate and download the invoice PDF
     generate_invoice($invoice);
 }
-$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice Management</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=download" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=check" />    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <title>Dashboard Sidebar Menu</title> 
 </head>
 <body>
-    
-<?php include('navigation_panels.php') ?>
+    <?php include('navigation.php') ?>
+    <section class="home">
+  <br>
+  <!-- <center>
+  <form action="/search" method="get" style="display: flex; align-items: center; width: 70%;margin-top:5px;margin-bottom:5px;">
+    <input type="text" name="query" id="search-box" placeholder="Search..." required 
+        style="flex: 1; padding: 6px 10px; border: 1px solid #000000; border-radius: 4px 0 0 4px; font-size: 14px; outline: none;">
+    <button type="submit" 
+        style="padding: 6px 12px; border: none; background-color: #007BFF; color: white; border-radius: 0 4px 4px 0; cursor: pointer; font-size: 14px; margin-left:-17px">
+        Search
+    </button>
+</form>
+  </center> -->
 
-
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div class="dropdown mt-3">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <!-- Left Column - Form Section -->
+       <div class="container" style="margin-left:10%;">
         <?php include('form.php') ?>
-        <!-- Right Column - Existing Invoices Section -->
-        <div class="col-md-9">
-            <h2 class="text-center mt-5">Existing Invoices</h2>
-            <center>
-    <a href="index.php" style="text-decoration: none;">
-        <button style="background-color: black; color: white; border: none; border-radius: 5px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer;  transition: all 0.3s ease;">
-            Itinery Mode
-        </button>
-    </a>
-    <a href="invoice.php" style="text-decoration: none; margin-left: 10px;">
-        <button style="background-color: white; color: black;  border-radius: 5px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer;  transition: all 0.3s ease;">
-            Invoice Mode
-        </button>
-    </a>
-</center>
+       </div>
+    </section>
 
-            <table class="table table-striped mt-3">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Mobile No</th>
-                        <th>Pickup Address</th>
-                        <th>Tour Package</th>
-                        <th>Pricing</th>
-                        <th>Special Requirements</th>
-                        <th>Date of Journey</th>
-                        <th>No of Adults</th>
-                        <!-- <th>Cars Provided</th> -->
-                        <!-- <th>No of Cars</th> -->
-                        <th>Food Included</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        if ($records->num_rows > 0) {
-                            while ($row = $records->fetch_assoc()) {
-                                echo "<tr>";
-                                echo "<td>" . $row['customer_name'] . "</td>";
-                                echo "<td>" . $row['mobile_no'] . "</td>";
-                                echo "<td>" . $row['pickup_address'] . "</td>";
-                                echo "<td>" . $row['tour_package'] . "</td>";
-                                echo "<td>" . $row['pricing'] . "</td>";
-                                echo "<td>" . $row['special_requirements'] . "</td>";
-                                echo "<td>" . $row['date_of_journey'] . "</td>";
-                                echo "<td>" . $row['no_of_adults'] . "</td>";
-                                echo "<td>" . $row['cars_provided'] . "</td>";
-                                // echo "<td>" . $row['no_of_cars'] . "</td>";
-                                echo "<td>" . ($row['food_included'] ? 'Yes' : 'No') . "</td>";
-                                echo "<td>" . 
-                                ($row['booking_status'] === 'Confirmed' 
-                                    ? '<span class="material-icons" style="color: green;">check_circle</span>' 
-                                    : '<span class="material-icons" style="color: red;">cancel</span>') . 
-                                "</td>";
-                            
-                                                            echo "<td>
-        <div class='dropdown'>
-            <button class='btn btn-link btn-sm' type='button' id='dropdownMenuButton' data-bs-toggle='dropdown' aria-expanded='false' style='font-size:1.5rem;text-decoration:none;'>
-                &#x2022;&#x2022;&#x2022;
-            </button>
-            <ul class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-                <li><a class='dropdown-item' href='index.php?confirm_booking_id=" . $row['id'] . "'>Confirm</a></li>
-                <li><a class='dropdown-item' href='index.php?delete_booking_id=" . $row['id'] . "'>Delete</a></li>
-                <li><a class='dropdown-item' href='index.php?download_invoice_id=" . $row['id'] . "'><span class='material-symbols-outlined'>download</span>Download Invoice</a></li>
-            </ul>
-        </div>
-    </td>";
+    <script src="script.js"></script>
 
-                                echo "</tr>";
-                            }
-                        }
-                    ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
