@@ -223,7 +223,7 @@ $conn->close();
                         Itinery Mode
                     </button>
                 </a>
-    <a href="invocie.php" style="text-decoration: none;">
+    <a href="invoice.php" style="text-decoration: none;">
         <button style="background-color: black; color: white; border: none; border-radius: 5px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer;  transition: all 0.3s ease;">
             Invoice Mode
         </button>
