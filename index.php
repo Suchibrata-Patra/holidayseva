@@ -122,7 +122,7 @@ $conn->close();
 </head>
 <body>
     
-
+<?php include('navigation_panel.php') ?>
 
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
