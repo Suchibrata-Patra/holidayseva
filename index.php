@@ -1,11 +1,15 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require 'vendor/autoload.php';  // Load DOMPDF library
 require 'database.php';
+
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
 // Database connection
-// $conn = new mysqli('localhost', 'root', 'root', 'Invoice');
+$conn = new mysqli('localhost','u955994755_suchibrata' ,'SuchibrataPatra2003','u955994755_timora');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -29,9 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $conn->prepare("INSERT INTO invoice_data (customer_name, mobile_no, pickup_address, tour_package, pricing, special_requirements, date_of_journey, no_of_adults, cars_provided, no_of_cars, food_included) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssdsisisi", $customer_name, $mobile_no, $pickup_address, $tour_package, $pricing, $special_requirements, $date_of_journey, $no_of_adults, $cars_provided, $no_of_cars, $food_included);
     if ($stmt->execute()) {
-        // After successful insert, redirect to prevent resubmission
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit;  // Ensure no further code is executed after the redirect
+        echo "<div class='alert alert-success'>Data saved successfully!</div>";
     } else {
         echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";
     }
@@ -54,14 +56,14 @@ if (isset($_GET['delete_booking_id'])) {
 }
 
 // Fetch all records from the database
-$records = $conn->query("SELECT * FROM invoice_data WHERE booking_status NOT IN ('Declined')");
+$records = $conn->query("SELECT * FROM invoice_data WHERE booking_status NOT IN ('Declined') ORDER BY registration_date DESC");
 
 // Close the database connection
 $conn->close();
 
 // Function to generate the invoice as PDF
 function generate_invoice($invoice) {
-    $html = file_get_contents('invoice.html');
+    $html = file_get_contents('template.html');
     $html = str_replace('{{customer_name}}', $invoice['customer_name'], $html);
     $html = str_replace('{{mobile_no}}', $invoice['mobile_no'], $html);
     $html = str_replace('{{pickup_address}}', $invoice['pickup_address'], $html);
@@ -100,7 +102,7 @@ if (isset($_GET['download_invoice_id'])) {
     $invoice_id = $_GET['download_invoice_id'];
 
     // Fetch the invoice data based on the ID
-    $conn = new mysqli('localhost', 'root', 'root', 'Invoice');
+    $conn = new mysqli('localhost','u955994755_suchibrata' ,'SuchibrataPatra2003','u955994755_timora');
     $result = $conn->query("SELECT * FROM invoice_data WHERE id = $invoice_id");
     $invoice = $result->fetch_assoc();
     $conn->close();
@@ -109,6 +111,7 @@ if (isset($_GET['download_invoice_id'])) {
     generate_invoice($invoice);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -215,17 +218,17 @@ if (isset($_GET['download_invoice_id'])) {
         <!-- Right Column - Existing Invoices Section -->
         <div class="col-md-9">
             <h2 class="text-center mt-5">Existing Invoices</h2>
-            <center>
-                <button style="background-color: black; color: white; border: none; border-radius: 30px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15); transition: all 0.3s ease;">
-                    Itinery Mode
-                </button>
-            <button style="background-color: white; color: black; border: 2px solid black; border-radius: 30px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15); transition: all 0.3s ease; margin-left: 10px;">
+<center>
+      <center>
+    <button style="background-color: black; color: white; border: none; border-radius: 30px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15); transition: all 0.3s ease;" onclick="window.location.href='index.php'">
+        Itinerary Mode
+    </button>
+    <button style="background-color: white; color: black; border: 2px solid black; border-radius: 30px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15); transition: all 0.3s ease; margin-left: 10px;" onclick="window.location.href='invoice.php'">
         Invoice Mode
     </button>
-
-   
 </center>
 
+</center>
 
             <table class="table table-striped mt-3">
                 <thead>
@@ -272,7 +275,7 @@ if (isset($_GET['download_invoice_id'])) {
             <ul class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
                 <li><a class='dropdown-item' href='index.php?confirm_booking_id=" . $row['id'] . "'>Confirm</a></li>
                 <li><a class='dropdown-item' href='index.php?delete_booking_id=" . $row['id'] . "'>Delete</a></li>
-                <li><a class='dropdown-item' href='index.php?download_invoice_id=" . $row['id'] . "'><span class='material-symbols-outlined'>download</span>Download Invoice</a></li>
+                <li><a class='dropdown-item' href='index.php?download_invoice_id=" . $row['id'] . "'><span class='material-symbols-outlined'>download</span>Download Itinerary</a></li>
             </ul>
         </div>
     </td>";
