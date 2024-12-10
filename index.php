@@ -215,14 +215,19 @@ $conn->close();
         <!-- Right Column - Existing Invoices Section -->
         <div class="col-md-9">
             <h2 class="text-center mt-5">Existing Invoices</h2>
-      <center>
-    <button style="background-color: black; color: white; border: none; border-radius: 5px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer;  transition: all 0.3s ease;" onclick="window.location.href='index.php'">
-        Itinerary Mode
-    </button>
-    <button style="background-color: white; color: black; border: 2px solid black; border-radius: 5px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer;  transition: all 0.3s ease; margin-left: 10px;" onclick="window.location.href='invoice.php'">
-        Invoice Mode
-    </button>
+            <center>
+    <a href="index.php" style="text-decoration: none;">
+        <button style="background-color: black; color: white; border: none; border-radius: 5px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer;  transition: all 0.3s ease;">
+            Itinery Mode
+        </button>
+    </a>
+    <a href="invoice.php" style="text-decoration: none; margin-left: 10px;">
+        <button style="background-color: white; color: black; border: 2px solid black; border-radius: 5px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer;  transition: all 0.3s ease;">
+            Invoice Mode
+        </button>
+    </a>
 </center>
+
             <table class="table table-striped mt-3">
                 <thead>
                     <tr>
