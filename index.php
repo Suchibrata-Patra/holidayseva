@@ -216,10 +216,10 @@ $conn->close();
         <div class="col-md-9">
             <h2 class="text-center mt-5">Existing Invoices</h2>
       <center>
-    <button style="background-color: black; color: white; border: none; border-radius: 30px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15); transition: all 0.3s ease;" onclick="window.location.href='index.php'">
+    <button style="background-color: black; color: white; border: none; border-radius: 5px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer;  transition: all 0.3s ease;" onclick="window.location.href='index.php'">
         Itinerary Mode
     </button>
-    <button style="background-color: white; color: black; border: 2px solid black; border-radius: 30px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15); transition: all 0.3s ease; margin-left: 10px;" onclick="window.location.href='invoice.php'">
+    <button style="background-color: white; color: black; border: 2px solid black; border-radius: 5px; padding: 12px 30px; font-size: 16px; font-weight: bold; cursor: pointer;  transition: all 0.3s ease; margin-left: 10px;" onclick="window.location.href='invoice.php'">
         Invoice Mode
     </button>
 </center>
