@@ -141,6 +141,7 @@ $conn->close();
 <div class="container">
     <div class="row">
         <!-- Left Column - Form Section -->
+        <?php include('form.php') ?>
         <!-- Right Column - Existing Invoices Section -->
         <div class="col-md-9">
             <h2 class="text-center mt-5">Existing Invoices</h2>
