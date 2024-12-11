@@ -32,6 +32,7 @@ if (isset($_POST['update_invoice_id'])) {
     $customer_name = $_POST['customer_name'];
     $mobile_no = $_POST['mobile_no'];
     $pickup_address = $_POST['pickup_address'];
+    $drop_address = $_POST['drop_address'];
     $tour_package = $_POST['tour_package'];
     $pricing = $_POST['pricing'];
     $special_requirements = $_POST['special_requirements'];
@@ -39,7 +40,7 @@ if (isset($_POST['update_invoice_id'])) {
     $no_of_adults = $_POST['no_of_adults'];
     $food_included = isset($_POST['food_included']) ? 1 : 0;
 
-    $sql = "UPDATE invoice_data SET customer_name = '$customer_name', mobile_no = '$mobile_no', pickup_address = '$pickup_address', 
+    $sql = "UPDATE invoice_data SET customer_name = '$customer_name', mobile_no = '$mobile_no', pickup_address = '$pickup_address',drop_address = '$drop_address', 
             tour_package = '$tour_package', pricing = '$pricing', special_requirements = '$special_requirements', 
             date_of_journey = '$date_of_journey', no_of_adults = '$no_of_adults', food_included = $food_included WHERE id = $id";
 
@@ -50,9 +51,74 @@ if (isset($_POST['update_invoice_id'])) {
 
 // Fetch all confirmed records
 $records = $conn->query("SELECT * FROM invoice_data WHERE booking_status = 'Confirmed'");
+function generate_invoice($invoice) {
+    $html = file_get_contents('invoice.html');
+    $html = str_replace('{{customer_name}}', $invoice['customer_name'], $html);
+    $html = str_replace('{{mobile_no}}', $invoice['mobile_no'], $html);
+    $html = str_replace('{{pickup_address}}', $invoice['pickup_address'], $html);
+    $html = str_replace('{{drop_address}}', $invoice['drop_address'], $html);
+    $html = str_replace('{{tour_package}}', $invoice['tour_package'], $html);
+    $html = str_replace('{{pricing}}', $invoice['pricing'], $html);
+    $html = str_replace('{{token_paid}}', $invoice['token_paid'], $html);
 
+    $price = isset($invoice['pricing']) ? (float)$invoice['pricing'] : 0;
+    $token_paid = isset($invoice['token_paid']) ? (float)$invoice['token_paid'] : 0;
+    $pending_amount = $price - $token_paid;
+
+    $html = str_replace('{{pending_amount}}', $pending_amount, $html);
+    $html = str_replace('{{special_requirements}}', $invoice['special_requirements'], $html);
+    $html = str_replace('{{date_of_journey}}', $invoice['date_of_journey'], $html);
+    $html = str_replace('{{no_of_adults}}', $invoice['no_of_adults'], $html);
+    $html = str_replace('{{cars_provided}}', $invoice['cars_provided'], $html);
+    $html = str_replace('{{no_of_cars}}', $invoice['no_of_cars'], $html);
+    $html = str_replace('{{meal_plan}}', $invoice['meal_plan'], $html);
+
+
+    // Get the registration_date value
+    $registration_date = $invoice['registration_date'];
+    $cleaned_registration_date = preg_replace('/[^A-Za-z0-9]/', '', $registration_date);
+    $reversed_registration_date = strrev($cleaned_registration_date);
+    $html = str_replace('{{signature_id}}', $reversed_registration_date, $html);
+
+
+    $html = str_replace('{{food_included}}', $invoice['food_included'] ? 'Yes' : 'No', $html);
+
+    $options = new Options();
+    $options->set('fontDir', './fonts');  // Set your font directory path here
+    $options->set('isHtml5ParserEnabled', true);
+    $options->set('isPhpEnabled', true);
+    $options->set('isRemoteEnabled', true); // Enable remote file access
+    $dompdf = new Dompdf($options);
+    
+
+    // Load HTML content
+    $dompdf->loadHtml($html);
+
+    // Set paper size
+    $dompdf->setPaper('A4', 'portrait');
+
+    // Render PDF (first pass)
+    $dompdf->render();
+
+    // Output the generated PDF (force download)
+    $dompdf->stream('invoice.pdf', array('Attachment' => 0));
+}
+
+// Check if the download button was clicked
+if (isset($_GET['download_invoice_id'])) {
+    $invoice_id = $_GET['download_invoice_id'];
+
+    // Fetch the invoice data based on the ID
+    // $conn = new mysqli('localhost', 'root', 'root', 'Invoice');
+    $result = $conn->query("SELECT * FROM invoice_data WHERE id = $invoice_id");
+    $invoice = $result->fetch_assoc();
+    $conn->close();
+
+    // Generate and download the invoice PDF
+    generate_invoice($invoice);
+}
+$conn->close();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -117,7 +183,7 @@ $records = $conn->query("SELECT * FROM invoice_data WHERE booking_status = 'Conf
 
                                     <li style='padding: 10px 20px;'><a class='dropdown-item' href='inquiry.php?delete_booking_id=" . $row['id'] . "' style='text-decoration: none; color: #333;'>Delete</a></li>
 
-                                    <li style='padding: 10px 20px;'><a class='dropdown-item' href='inquiry.php?download_invoice_id=" . $row['id'] . "' style='text-decoration: none; color: #333;'> Download Itinery</a></li>
+                                    <li style='padding: 10px 20px;'><a class='dropdown-item' href='invoice.php?download_invoice_id=" . $row['id'] . "' style='text-decoration: none; color: #333;'> Download Itinery</a></li>
 
                                 </ul>
                             </div>

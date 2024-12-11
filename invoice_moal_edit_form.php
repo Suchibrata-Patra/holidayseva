@@ -57,6 +57,7 @@
     margin-top: 10px;
   }
 </style>
+
 <div id="editModal" style="
 display: none; 
 position: fixed; 
@@ -73,64 +74,62 @@ font-size: 14px;
 color: rgb(211, 211, 211);">
 
 
-  <div method="POST" action="" style="display: flex; flex-direction: column; gap: 10px;">
-    <button onclick="closeEditModal()" style="position: fixed;right: 20px;top:20px;font-size: 1.5rem;background:rgb(234, 234, 234);border-radius: 50px;padding: 5px 13px;border:none;font-weight: 200;"> X </button>
-    <method="POST" action="" class="form-container">
+<div method="POST" action="" style="display: flex; flex-direction: column; gap: 10px;">
+    <!-- <button onclick="closeEditModal()" style="position: fixed;right: 20px;top:20px;font-size: 1.5rem;background:rgb(234, 234, 234);border-radius: 50px;padding: 5px 13px;border:none;font-weight: 200;"> X </button> -->
+    <form method="POST" action="" class="form-container">
       <input type="hidden" id="update_invoice_id" name="update_invoice_id">
       <h3 class="form-title">Edit Booking</h3>
       
       <div style="display: flex; align-items: center;background:rgb(240, 240, 240);padding-left: 10px;">
-  <label class="form-label" style="margin-right: 0px;">ID</label>
-  <input type="text" id="user_id" name="user_id" class="form-input" disabled style="border-radius: 0px;border:none;">
-</div>
-
+        <label class="form-label" style="margin-right: 0px;">ID</label>
+        <input type="text" id="user_id" name="user_id" class="form-input" disabled style="border-radius: 0px;border:none;">
+      </div>
 
       <div class="form-group"> 
         <label class="form-label">Customer Name:
-          <input type="text" id="customer_name" name="customer_name" class="form-input">
+          <input type="text" id="customer_name" name="customer_name" class="form-input" value="">
         </label>
         <label class="form-label">Mobile No:
-          <input type="text" id="mobile_no" name="mobile_no" class="form-input">
+          <input type="text" id="mobile_no" name="mobile_no" class="form-input" value="">
         </label>
       </div>
 
       <div class="form-group">
-      <label class="form-label">Pickup Address:
-        <input type="text" id="pickup_address" name="pickup_address" class="form-input">
-      </label>
-      <label class="form-label">Drop Address:
-        <input type="text" id="drop_address" name="drop_address" class="form-input">
-      </label>
-    </div>
+        <label class="form-label">Pickup Address:
+          <input type="text" id="pickup_address" name="pickup_address" class="form-input" value="">
+        </label>
+        <label class="form-label">Drop Address:
+          <input type="text" id="drop_address" name="drop_address" class="form-input" value="">
+        </label>
+      </div>
 
       <div class="form-group">
-       
         <label class="form-label">Pricing:
-          <input type="text" id="pricing" name="pricing" class="form-input">
+          <input type="text" id="pricing" name="pricing" class="form-input" value="">
         </label>
         <label class="form-label" style="background-color: rgb(221, 237, 255);color: black;padding:5px;">Token Amount:
-          <input type="text" id="token_paid" name="token_paid" class="form-input">
+          <input type="text" id="token_paid" name="token_paid" class="form-input" value="">
         </label>
       </div>
 
       <label class="form-label">Tour Package:
-        <input type="text" id="tour_package" name="tour_package" class="form-input">
+        <input type="text" id="tour_package" name="tour_package" class="form-input" value="">
       </label>
       <div class="form-group">
         <label class="form-label">Date of Journey:
-          <input type="date" id="date_of_journey" name="date_of_journey" class="form-input">
+          <input type="date" id="date_of_journey" name="date_of_journey" class="form-input" value="">
         </label>
         <label class="form-label">No of Adults:
-          <input type="number" id="no_of_adults" name="no_of_adults" class="form-input">
+          <input type="number" id="no_of_adults" name="no_of_adults" class="form-input" value="">
         </label>
       </div>
 
       <div class="form-group">
         <label class="form-label">Cars Provided:
-          <input type="text" id="cars_provided" name="cars_provided" class="form-input" disabled>
+          <input type="text" id="cars_provided" name="cars_provided" class="form-input" disabled value="">
         </label>
         <label class="form-label">Number of Cars:
-          <input type="number" id="no_of_cars" name="no_of_cars" class="form-input">
+          <input type="number" id="no_of_cars" name="no_of_cars" class="form-input" value="">
         </label>
       </div>
 
@@ -144,18 +143,18 @@ color: rgb(211, 211, 211);">
           <input type="checkbox" id="food_included" name="food_included" class="toggle-checkbox">
           <span class="toggle-slider"></span>
         </label>
-      <label class="form-label">Meal Type:
-        <input type="tet" id="meal_type" name="meal_type" class="form-input">
-      </label>
+        <label class="form-label">Meal Type:
+          <input type="text" id="meal_type" name="meal_type" class="form-input" value="">
+        </label>
       </div>
 
       <div class="button-group">
         <button type="submit" class="form-button">Save</button>
         <button type="button" onclick="closeEditModal()" class="form-button">Cancel</button>
       </div>
-    </div>
-
+    </form>
   </div>
+
   <style>
     /* Container for the toggle */
     .toggle-label {
