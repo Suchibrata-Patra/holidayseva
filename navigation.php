@@ -80,10 +80,10 @@
                     </a>
                 </li>
 
-                <li class="nav-link" data-page="wallets.php">
-                    <a href="#">
+                <li class="nav-link" data-page="https://www.gangasagar-tourism.com/timora/inquiry.php">
+                    <a href="https://www.gangasagar-tourism.com/timora/inquiry.php">
                         <i class='bx bx-heart icon'></i>
-                        <span class="text nav-text">Wallets</span>
+                        <span class="text nav-text">backup</span>
                     </a>
                 </li>
             </ul>
