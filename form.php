@@ -249,34 +249,76 @@
   
   <script>
     function toggleAddress(toggleId, fieldId, inputId) {
-      const toggleSwitch = document.getElementById(toggleId);
-      const field = document.getElementById(fieldId);
-      const input = document.getElementById(inputId);
-      const pickupAddress = document.getElementById("pickup_address").value;
-    
-      if (toggleSwitch.checked) {
-        field.style.display = "none";
-        input.value = pickupAddress;
-      } else {
-        field.style.display = "block";
-        input.value = "";
-      }
-    }
+  const toggleSwitch = document.getElementById(toggleId);
+  const field = document.getElementById(fieldId);
+  const input = document.getElementById(inputId);
+  const pickupAddress = document.getElementById("pickup_address").value;
+  const defaultAddress = document.getElementById("drop_address").value; // New field for default value
+
+  if (toggleSwitch.checked) {
+    field.style.display = "none";
+    input.value = pickupAddress; // Use pickup address when toggle is on
+  } else {
+    field.style.display = "block";
+    input.value = defaultAddress; // Use default value when toggle is off
+  }
+}
+
+
+
+
+function toggleMealPlan() {
+  const toggleSwitch = document.getElementById("food_included");
+  const mealPlanField = document.getElementById("meal_plan_field");
+  const mealPlanInput = document.getElementById("meal_plan");
+
+  if (toggleSwitch.checked) {
+    mealPlanField.style.display = "block"; // Show the dropdown
+    mealPlanInput.disabled = false; // Enable dropdown selection
+  } else {
+    mealPlanField.style.display = "none"; // Hide the dropdown
+    mealPlanInput.value = ""; // Set the dropdown value to null
+    mealPlanInput.disabled = true; // Disable dropdown selection
+  }
+}
+
+
+// function toggleMealPlan() {
+//   const toggleSwitch = document.getElementById("food_included");
+//   const mealPlanField = document.getElementById("meal_plan");
+//   const mealPlanInput = document.getElementById("meal_plan");
+//   const defaultMealPlan = document.getElementById("meal_plan").value; // New field for default meal plan
+
+//   if (toggleSwitch.checked) {
+//     mealPlanField.style.display = "block";
+//     mealPlanInput.disabled = false;
+//     mealPlanInput.value = ""; // Keep empty or set as required
+//   } else {
+//     mealPlanField.style.display = "none";
+//     mealPlanInput.value = defaultMealPlan; // Use default value when toggle is off
+//     mealPlanInput.disabled = true;
+//   }
+// }
+
+
+
+
+
+
+    // function toggleMealPlan() {
+    //   const toggleSwitch = document.getElementById("food_included");
+    //   const mealPlanField = document.getElementById("meal_plan_field");
+    //   const mealPlanInput = document.getElementById("meal_plan");
   
-    function toggleMealPlan() {
-      const toggleSwitch = document.getElementById("food_included");
-      const mealPlanField = document.getElementById("meal_plan_field");
-      const mealPlanInput = document.getElementById("meal_plan");
-  
-      if (toggleSwitch.checked) {
-        mealPlanField.style.display = "block";
-        mealPlanInput.disabled = false;
-      } else {
-        mealPlanField.style.display = "none";
-        mealPlanInput.value = "";
-        mealPlanInput.disabled = true;
-      }
-    }
+    //   if (toggleSwitch.checked) {
+    //     mealPlanField.style.display = "block";
+    //     mealPlanInput.disabled = false;
+    //   } else {
+    //     mealPlanField.style.display = "none";
+    //     mealPlanInput.value = "";
+    //     mealPlanInput.disabled = true;
+    //   }
+    // }
   
     window.onload = function () {
       const dropToggle = document.getElementById("drop_address_toggle");
