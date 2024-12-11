@@ -1,3 +1,4 @@
+<?php require 'loader.php' ?>
 <?php
 require 'vendor/autoload.php';  // Load DOMPDF library
 require 'database.php';
