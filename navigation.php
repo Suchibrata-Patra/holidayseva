@@ -80,8 +80,8 @@
                     </a>
                 </li>
 
-                <li class="nav-link" data-page="https://www.gangasagar-tourism.com/timora/inquiry.php">
-                    <a href="https://www.gangasagar-tourism.com/timora/inquiry.php">
+                <li class="nav-link" data-page="https://www.gangasagar-tourism.com/timora-backup/">
+                    <a href="https://www.gangasagar-tourism.com/timora-backup/">
                         <i class='bx bx-cloud-upload icon'></i>
                         <span class="text nav-text">backup</span>
                     </a>
