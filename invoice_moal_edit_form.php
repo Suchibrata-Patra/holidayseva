@@ -78,7 +78,7 @@ color: rgb(211, 211, 211);">
     <!-- <button onclick="closeEditModal()" style="position: fixed;right: 20px;top:20px;font-size: 1.5rem;background:rgb(234, 234, 234);border-radius: 50px;padding: 5px 13px;border:none;font-weight: 200;"> X </button> -->
     <form method="POST" action="" class="form-container">
       <input type="hidden" id="update_invoice_id" name="update_invoice_id">
-      <h3 class="form-title">Edit Booking</h3>
+      <h3 class="form-title">Edit Booking<button type="button" onclick="closeEditModal()" class="form-button">Cancel</button></h3>
       
       <div style="display: flex; align-items: center;background:rgb(240, 240, 240);padding-left: 10px;">
         <label class="form-label" style="margin-right: 0px;">ID</label>
