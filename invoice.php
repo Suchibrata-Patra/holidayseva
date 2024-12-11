@@ -101,7 +101,15 @@ function generate_invoice($invoice) {
     $dompdf->render();
 
     // Output the generated PDF (force download)
-    $dompdf->stream('invoice.pdf', array('Attachment' => 0));
+    // $dompdf->stream('invoice.pdf', array('Attachment' => 0));
+
+    $fullName = $invoice['customer_name'];
+    $firstName = strtok($fullName, ' ');
+    $firstName = preg_replace('/[^a-zA-Z0-9]/', '', $firstName);
+    $filename = 'Lettheadventurebegin' . $firstName . '.pdf';
+    $dompdf->stream($filename, array('Attachment' => 0));
+
+
 }
 
 // Check if the download button was clicked
