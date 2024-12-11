@@ -52,7 +52,7 @@
             <span>Show Password</span>
           </div>
           <center>
-          <button type="submit" name="Submit" type="submit" value="Login" class="Button3" style="margin-top:20px;padding: 9px 44.5%;border-radius:0px;font-weight: 300;">Signin</button>
+          <button type="submit" name="Submit" type="submit" value="Login" class="Button3" style="margin-top:20px;padding: 9px 44.5%;border-radius:0px;font-weight: 300;background-color: #379df0 !important;">Signin</button>
           </center>
 
         </div>
