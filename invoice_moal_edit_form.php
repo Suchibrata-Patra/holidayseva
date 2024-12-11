@@ -87,10 +87,10 @@ color: rgb(211, 211, 211);">
 
       <div class="form-group"> 
         <label class="form-label">Customer Name:
-          <input type="text" id="customer_name" name="customer_name" class="form-input" value="" disabled>
+          <input type="text" id="customer_name" name="customer_name" class="form-input" value="" >
         </label>
         <label class="form-label">Mobile No:
-          <input type="text" id="mobile_no" name="mobile_no" class="form-input" value="" disabled>
+          <input type="text" id="mobile_no" name="mobile_no" class="form-input" value="" >
         </label>
       </div>
 
