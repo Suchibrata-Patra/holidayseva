@@ -106,7 +106,7 @@ function generate_invoice($invoice) {
     $fullName = $invoice['customer_name'];
     $firstName = strtok($fullName, ' ');
     $firstName = preg_replace('/[^a-zA-Z0-9]/', '', $firstName);
-    $filename = 'Lettheadventurebegin' . $firstName . '.pdf';
+    $filename = 'Let the Adventure begin' . $firstName . '.pdf';
     $dompdf->stream($filename, array('Attachment' => 0));
 
 
