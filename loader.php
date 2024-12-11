@@ -37,7 +37,7 @@
     #progress-bar {
       width: 0%;
       height: 100%;
-      background: #006ee4;
+      background: #379df0;
       border-radius: 5px;
       transition: width 0.1s linear;
     }
