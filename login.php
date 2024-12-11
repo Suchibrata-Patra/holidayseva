@@ -32,7 +32,7 @@
       <td colspan="2" align="center" valign="top"><?php echo $msg;?></td>
     </tr>
     <?php } ?>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <div class="container" style="margin-top:-30%;border: 1px solid rgb(175, 175, 175);padding: 70px 20px 50px 20px;background-color: white;">
             <center style="font-weight:200;font-size:2rem;color:#0061c9;">Login</center>
           <label for="tour_package">User id</label>
