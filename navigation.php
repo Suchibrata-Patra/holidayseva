@@ -82,7 +82,7 @@
 
                 <li class="nav-link" data-page="https://www.gangasagar-tourism.com/timora/inquiry.php">
                     <a href="https://www.gangasagar-tourism.com/timora/inquiry.php">
-                        <i class='bx bx-heart icon'></i>
+                        <i class='bx bx-cloud-upload icon'></i>
                         <span class="text nav-text">backup</span>
                     </a>
                 </li>
