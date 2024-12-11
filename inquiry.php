@@ -61,7 +61,7 @@ $records = $conn->query("SELECT * FROM invoice_data WHERE booking_status NOT IN 
 
 // Function to generate the invoice as PDF
 function generate_invoice($invoice) {
-    $html = file_get_contents('invoice.html');
+    $html = file_get_contents('template.html');
     $html = str_replace('{{customer_name}}', $invoice['customer_name'], $html);
     $html = str_replace('{{mobile_no}}', $invoice['mobile_no'], $html);
     $html = str_replace('{{pickup_address}}', $invoice['pickup_address'], $html);
