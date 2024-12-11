@@ -1,0 +1,14 @@
+{
+    "roboto": {
+        "italic": "\/storage\/ssd5\/624\/21749624\/public_html\/dompdf\/vendor\/dompdf\/dompdf\/lib\/fonts\/roboto_italic_d5c10dd70a66238a4d11751aca1ac2f6",
+        "normal": "\/storage\/ssd5\/624\/21749624\/public_html\/dompdf\/vendor\/dompdf\/dompdf\/lib\/fonts\/roboto_normal_9fa47a070a8b30b595086d70bb7ac78c",
+        "bold": "roboto_bold_3d0ad20d45ace845335f9e6c390a09d9"
+    },
+    "poppins": {
+        "300": "\/storage\/ssd5\/624\/21749624\/public_html\/dompdf\/vendor\/dompdf\/dompdf\/lib\/fonts\/poppins_300_4a08cccbc2911e3077321a0298f4e093",
+        "normal": "\/storage\/ssd5\/624\/21749624\/public_html\/dompdf\/vendor\/dompdf\/dompdf\/lib\/fonts\/poppins_normal_442dffd12abdf0df26c14405d3f49bfa",
+        "500": "\/storage\/ssd5\/624\/21749624\/public_html\/dompdf\/vendor\/dompdf\/dompdf\/lib\/fonts\/poppins_500_6a6f5e017da7e062546fd806ab3b249c",
+        "600": "\/storage\/ssd5\/624\/21749624\/public_html\/dompdf\/vendor\/dompdf\/dompdf\/lib\/fonts\/poppins_600_272b14b77a21dc5827f4570eff556c8f",
+        "bold": "poppins_bold_2d1c4b360c3ac297e98fc2cfd808a2cc"
+    }
+}
