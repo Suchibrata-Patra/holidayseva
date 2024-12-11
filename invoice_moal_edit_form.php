@@ -87,19 +87,19 @@ color: rgb(211, 211, 211);">
 
       <div class="form-group"> 
         <label class="form-label">Customer Name:
-          <input type="text" id="customer_name" name="customer_name" class="form-input"  >
+          <input type="text" id="customer_name" name="customer_name" class="form-input" disabled>
         </label>
         <label class="form-label">Mobile No:
-          <input type="text" id="mobile_no" name="mobile_no" class="form-input"  >
+          <input type="text" id="mobile_no" name="mobile_no" class="form-input" disabled>
         </label>
       </div>
 
       <div class="form-group">
         <label class="form-label">Pickup Address:
-          <input type="text" id="pickup_address" name="pickup_address" class="form-input" >
+          <input type="text" id="pickup_address" name="pickup_address" class="form-input" disabled>
         </label>
         <label class="form-label">Drop Address:
-          <input type="text" id="drop_address" name="drop_address" class="form-input" >
+          <input type="text" id="drop_address" name="drop_address" class="form-input" disabled style="cursor:not-allowed">
         </label>
       </div>
 
