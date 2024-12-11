@@ -35,7 +35,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <div class="container" style="margin-top:-30%;border: 1px solid rgb(175, 175, 175);padding: 70px 20px 50px 20px;background-color: white;">
             <!-- <center style="font-weight:200;font-size:2rem;color:#0061c9;">Login</center> -->
-            <center style="font-weight:200;font-size:2rem;color:#0061c9;"><img src="https://holidayseva.com/wp-content/uploads/2024/06/cropped-holidayseva.com_favicon-1.png" alt="" style="height:50px;width: 50px;"></center>
+            <center style="font-weight:200;font-size:2rem;color:#379df0;"><img src="https://holidayseva.com/wp-content/uploads/2024/06/cropped-holidayseva.com_favicon-1.png" alt="" style="height:50px;width: 50px;"></center>
           <label for="tour_package">User id</label>
           <input name="Username" type="text" class="Input" style="padding: 10px 100px 10px 10px;border: 1px solid rgb(165, 165, 165);border-radius: 0px;" placeholder="Enter User ID">
           <br>
