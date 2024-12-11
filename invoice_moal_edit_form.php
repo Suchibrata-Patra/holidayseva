@@ -82,7 +82,7 @@ color: rgb(211, 211, 211);">
       
       <div style="display: flex; align-items: center;background:rgb(240, 240, 240);padding-left: 10px;">
         <label class="form-label" style="margin-right: 0px;">ID</label>
-        <input type="text" id="user_id" name="user_id" class="form-input" disabled style="border-radius: 0px;border:none;">
+        <input type="text" id="user_id" name="user_id" class="form-input"  style="border-radius: 0px;border:none;">
       </div>
 
       <div class="form-group"> 
@@ -117,19 +117,19 @@ color: rgb(211, 211, 211);">
       </label>
       <div class="form-group">
         <label class="form-label">Date of Journey:
-          <input type="date" id="date_of_journey" name="date_of_journey" class="form-input"  disabled>
+          <input type="date" id="date_of_journey" name="date_of_journey" class="form-input"  >
         </label>
         <label class="form-label">No of Adults:
-          <input type="number" id="no_of_adults" name="no_of_adults" class="form-input"  disabled>
+          <input type="number" id="no_of_adults" name="no_of_adults" class="form-input"  >
         </label>
       </div>
 
       <div class="form-group">
         <label class="form-label">Cars Provided:
-          <input type="text" id="cars_provided" name="cars_provided" class="form-input" disabled  disabled>
+          <input type="text" id="cars_provided" name="cars_provided" class="form-input"   >
         </label>
         <label class="form-label">Number of Cars:
-          <input type="number" id="no_of_cars" name="no_of_cars" class="form-input"  disabled>
+          <input type="number" id="no_of_cars" name="no_of_cars" class="form-input"  >
         </label>
       </div>
 
