@@ -141,7 +141,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      min-height: 90vh;
       background-color: #f1f1f1;
     }
     
