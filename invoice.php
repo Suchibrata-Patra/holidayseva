@@ -35,13 +35,14 @@ if (isset($_POST['update_invoice_id'])) {
     $drop_address = $_POST['drop_address'];
     $tour_package = $_POST['tour_package'];
     $pricing = $_POST['pricing'];
+    $token_paid = $_POST['token_paid'];
     $special_requirements = $_POST['special_requirements'];
     $date_of_journey = $_POST['date_of_journey'];
     $no_of_adults = $_POST['no_of_adults'];
     $food_included = isset($_POST['food_included']) ? 1 : 0;
 
     $sql = "UPDATE invoice_data SET customer_name = '$customer_name', mobile_no = '$mobile_no', pickup_address = '$pickup_address',drop_address = '$drop_address', 
-            tour_package = '$tour_package', pricing = '$pricing', special_requirements = '$special_requirements', 
+            tour_package = '$tour_package', pricing = '$pricing',token_paid = '$token_paid', special_requirements = '$special_requirements', 
             date_of_journey = '$date_of_journey', no_of_adults = '$no_of_adults', food_included = $food_included WHERE id = $id";
 
     $conn->query($sql);
