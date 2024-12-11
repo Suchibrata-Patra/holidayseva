@@ -183,7 +183,7 @@ $conn->close();
 
                                     <li style='padding: 10px 20px;'><a class='dropdown-item' href='inquiry.php?delete_booking_id=" . $row['id'] . "' style='text-decoration: none; color: #333;'>Delete</a></li>
 
-                                    <li style='padding: 10px 20px;'><a class='dropdown-item' href='invoice.php?download_invoice_id=" . $row['id'] . "' style='text-decoration: none; color: #333;'> Download Itinery</a></li>
+                                    <li style='padding: 10px 20px;'><a class='dropdown-item' href='invoice.php?download_invoice_id=" . $row['id'] . "' style='text-decoration: none; color: #333;'> Download Invoice</a></li>
 
                                 </ul>
                             </div>

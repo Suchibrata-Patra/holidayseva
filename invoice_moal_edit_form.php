@@ -87,10 +87,10 @@ color: rgb(211, 211, 211);">
 
       <div class="form-group"> 
         <label class="form-label">Customer Name:
-          <input type="text" id="customer_name" name="customer_name" class="form-input" value="">
+          <input type="text" id="customer_name" name="customer_name" class="form-input" value="" disabled>
         </label>
         <label class="form-label">Mobile No:
-          <input type="text" id="mobile_no" name="mobile_no" class="form-input" value="">
+          <input type="text" id="mobile_no" name="mobile_no" class="form-input" value="" disabled>
         </label>
       </div>
 
@@ -105,7 +105,7 @@ color: rgb(211, 211, 211);">
 
       <div class="form-group">
         <label class="form-label">Pricing:
-          <input type="text" id="pricing" name="pricing" class="form-input" value="">
+          <input type="text" id="pricing" name="pricing" class="form-input" value="" disabled>
         </label>
         <label class="form-label" style="background-color: rgb(221, 237, 255);color: black;padding:5px;">Token Amount:
           <input type="text" id="token_paid" name="token_paid" class="form-input" value="">
@@ -117,19 +117,19 @@ color: rgb(211, 211, 211);">
       </label>
       <div class="form-group">
         <label class="form-label">Date of Journey:
-          <input type="date" id="date_of_journey" name="date_of_journey" class="form-input" value="">
+          <input type="date" id="date_of_journey" name="date_of_journey" class="form-input" value="" disabled>
         </label>
         <label class="form-label">No of Adults:
-          <input type="number" id="no_of_adults" name="no_of_adults" class="form-input" value="">
+          <input type="number" id="no_of_adults" name="no_of_adults" class="form-input" value="" disabled>
         </label>
       </div>
 
       <div class="form-group">
         <label class="form-label">Cars Provided:
-          <input type="text" id="cars_provided" name="cars_provided" class="form-input" disabled value="">
+          <input type="text" id="cars_provided" name="cars_provided" class="form-input" disabled value="" disabled>
         </label>
         <label class="form-label">Number of Cars:
-          <input type="number" id="no_of_cars" name="no_of_cars" class="form-input" value="">
+          <input type="number" id="no_of_cars" name="no_of_cars" class="form-input" value="" disabled>
         </label>
       </div>
 
