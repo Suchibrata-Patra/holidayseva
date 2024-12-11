@@ -8,23 +8,6 @@
 
     <title>HolidaySeva</title> 
     <style>
-        .grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 30px);
-  gap: auto;
-  justify-content: center;
-}
-
-.card {
-  display: inline-block;
-}
-
-.card-img {
-  width: 100px;
-  height: 30px;
-  object-fit: contain;
-  display: block;
-}
     </style>
 </head>
 
@@ -34,7 +17,7 @@
         <br>
 
         <div class="container" style="margin-left:10%;">
-           
+<!-- Add Google Play Like Apps Sc -->
         </div>
     </section>
 
