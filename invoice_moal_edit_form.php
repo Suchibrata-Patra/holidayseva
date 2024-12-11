@@ -78,12 +78,10 @@ color: rgb(211, 211, 211);">
     <!-- <button onclick="closeEditModal()" style="position: fixed;right: 20px;top:20px;font-size: 1.5rem;background:rgb(234, 234, 234);border-radius: 50px;padding: 5px 13px;border:none;font-weight: 200;"> X </button> -->
     <form method="POST" action="" class="form-container">
       <input type="hidden" id="update_invoice_id" name="update_invoice_id">
-      <h3 class="form-title">Edit Booking</h3>
-      <span onclick="closeEditModal()">X</span>
-      
+      <h3 class="form-title">Edit Booking</h3>      
       <div style="display: flex; align-items: center;background:rgb(240, 240, 240);padding-left: 10px;">
-        <label class="form-label" style="margin-right: 0px;">ID</label>
-        <input type="text" id="user_id" name="user_id" class="form-input"  style="border-radius: 0px;border:none;">
+        <span style="color: rgb(2, 57, 135); font-weight: 400;font-size: 1.5rem;padding-right: 5px;">Customer ID : </span>
+        <input type="text" id="user_id" name="user_id" disabled style="cursor: not-allowed;font-size: 1.2rem;border: none;font-weight: 400;color:rgb(2, 57, 135);font-size: 1.5rem;">
       </div>
 
       <div class="form-group"> 
