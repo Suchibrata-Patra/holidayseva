@@ -174,7 +174,7 @@ $conn->close();
                         // echo "<td style='padding: 12px;font-weight: 300;'>{$row['pricing']}</td>";
                         
                         echo "
-                        <td style='padding: 12px;font-weight: 300;'>
+                        <td style='padding: 12px;font-weight: 300;font-size:0.8rem !important;'>
                           <span style='display: inline-block; text-align: center; color: " . 
                           (($row['token_paid'] == $row['pricing']) ? 'green' : 'red') . ";'>
                             <span style='display: block; font-weight: 500;'>{$row['token_paid']}</span>
