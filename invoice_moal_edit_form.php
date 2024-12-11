@@ -81,24 +81,24 @@ color: rgb(211, 211, 211);">
       <h3 class="form-title">Edit Booking</h3>      
       <div style="display: flex; align-items: center;background:rgb(240, 240, 240);padding-left: 10px;">
         <span style="color: rgb(2, 57, 135); font-weight: 400;font-size: 1.5rem;padding-right: 5px;">Customer ID : </span>
-        <input type="text" id="user_id" name="user_id" disabled style="cursor: not-allowed;font-size: 1.2rem;border: none;font-weight: 400;color:rgb(2, 57, 135);font-size: 1.5rem;">
+        <input type="text" id="user_id" name="user_id"  style="cursor: not-allowed;font-size: 1.2rem;border: none;font-weight: 400;color:rgb(2, 57, 135);font-size: 1.5rem;">
       </div>
 
       <div class="form-group"> 
         <label class="form-label">Customer Name:
-          <input type="text" id="customer_name" name="customer_name" class="form-input" disabled style="cursor:not-allowed";>
+          <input type="text" id="customer_name" name="customer_name" class="form-input"  style="cursor:not-allowed";>
         </label>
         <label class="form-label">Mobile No:
-          <input type="text" id="mobile_no" name="mobile_no" class="form-input" disabled style="cursor:not-allowed";>
+          <input type="text" id="mobile_no" name="mobile_no" class="form-input"  style="cursor:not-allowed";>
         </label>
       </div>
 
       <div class="form-group">
         <label class="form-label">Pickup Address:
-          <input type="text" id="pickup_address" name="pickup_address" class="form-input" disabled style="cursor:not-allowed";>
+          <input type="text" id="pickup_address" name="pickup_address" class="form-input"  style="cursor:not-allowed";>
         </label>
         <label class="form-label">Drop Address:
-          <input type="text" id="drop_address" name="drop_address" class="form-input" disabled style="cursor:not-allowed";>
+          <input type="text" id="drop_address" name="drop_address" class="form-input"  style="cursor:not-allowed";>
         </label>
       </div>
 
@@ -112,23 +112,23 @@ color: rgb(211, 211, 211);">
       </div>
 
       <label class="form-label">Tour Package:
-        <input type="text" id="tour_package" name="tour_package" class="form-input" disabled style="cursor:not-allowed";>
+        <input type="text" id="tour_package" name="tour_package" class="form-input"  style="cursor:not-allowed";>
       </label>
       <div class="form-group">
         <label class="form-label">Date of Journey:
-          <input type="date" id="date_of_journey" name="date_of_journey" class="form-input" disabled style="cursor:not-allowed";>
+          <input type="date" id="date_of_journey" name="date_of_journey" class="form-input"  style="cursor:not-allowed";>
         </label>
         <label class="form-label">No of Adults:
-          <input type="number" id="no_of_adults" name="no_of_adults" class="form-input" disabled style="cursor:not-allowed";>
+          <input type="number" id="no_of_adults" name="no_of_adults" class="form-input"  style="cursor:not-allowed";>
         </label>
       </div>
 
       <div class="form-group">
         <label class="form-label">Cars Provided:
-          <input type="text" id="cars_provided" name="cars_provided" class="form-input" disabled style="cursor:not-allowed";>
+          <input type="text" id="cars_provided" name="cars_provided" class="form-input"  style="cursor:not-allowed";>
         </label>
         <label class="form-label">Number of Cars:
-          <input type="number" id="no_of_cars" name="no_of_cars" class="form-input" disabled style="cursor:not-allowed";>
+          <input type="number" id="no_of_cars" name="no_of_cars" class="form-input"  style="cursor:not-allowed";>
         </label>
       </div>
 
