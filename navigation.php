@@ -38,7 +38,7 @@
 
 
             <ul class="menu-links">
-                <li class="nav-link" data-page="index.php">
+                <li class="nav-link" data-page="">
                     <a href="index.php">
                         <i class='bx bxs-user-plus icon'></i>
                         <span class="text nav-text">Register</span>
