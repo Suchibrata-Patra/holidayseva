@@ -44,7 +44,7 @@
             </div>
 
             <!-- Charts -->
-            <div class="chart-container" id="revenue_chart_div" style="border-radius:10px;"></div>
+            <div class="chart-container" id="revenue_chart_div" style="border-radius:50px !important;"></div>
             <div class="chart-container" id="tour_chart_div"></div>
 
             <?php
@@ -125,7 +125,7 @@
                 hAxis: { title: 'Month' },
                 vAxis: { title: 'Revenue' },
                 legend: 'none',
-                colors: ['#4285F4']
+                colors: ['#4285F4'],
             };
 
             // Draw the revenue chart
