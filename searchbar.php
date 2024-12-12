@@ -110,7 +110,7 @@ $conn->close();
                                         <p><strong style="font-weight:400 !important;color:#0d5d9f;">Pickup : </strong> <?php echo $result['pickup_address']; ?></p>
                                         <p><strong style="font-weight:400 !important;color:#0d5d9f;">Drop : </strong> <?php echo $result['drop_address']; ?></p>
                                     </div>
-                                    <div style="flex: 1; padding-right: 20px;">
+                                    <div style="flex: 1; padding-left: 20px; border-left: 1px solid #ddd;">
                                         <h3 style="font-size: 18px; color: #0d5d9f;"></h3>
                                         <p><strong style="font-weight:400 !important;color:#0d5d9f;">Tour Package:</strong> <?php echo $result['tour_package']; ?></p>
                                         <p><strong style="font-weight:400 !important;color:#0d5d9f;">Pricing:</strong> <?php echo $result['pricing']; ?></p>
