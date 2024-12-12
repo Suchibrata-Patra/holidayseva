@@ -97,6 +97,7 @@ $conn->close();
                             <?php foreach ($search_results as $result): ?>
                                 <div style="border: 1px solid #ddd; border-radius: 10px; display: flex; width:90%; padding: 20px; background-color: #ffffff;">
                                     <div style="flex: 1; padding-right: 20px;">
+                                        <!-- <h3 style="font-size: 18px; color: #0d5d9f;font-weight:500;"><?php echo $result['customer_name']; ?></h3> -->
                                         <h3 style="font-size: 18px; color: #0d5d9f; font-weight: 500;">
                                                  <?php echo $result['customer_name']; 
                                                             if ($result['booking_status'] === 'Confirmed') { 
