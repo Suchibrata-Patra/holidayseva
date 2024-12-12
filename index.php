@@ -65,7 +65,9 @@ $stmt->bind_param(
     // $stmt->bind_param("ssssdsisisi", $customer_name, $mobile_no, $pickup_address, $tour_package, $pricing, $special_requirements, $date_of_journey, $no_of_adults, $cars_provided, $no_of_cars, $food_included);
     if ($stmt->execute()) {
         // After successful insert, redirect to prevent resubmission
-        header("Location: " . $_SERVER['PHP_SELF']);
+        // header("Location: " . $_SERVER['PHP_SELF']);
+        header("Location: inquiry.php");
+        
         exit;  // Ensure no further code is executed after the redirect
     } else {
         echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";
