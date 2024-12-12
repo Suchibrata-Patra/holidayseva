@@ -66,15 +66,15 @@
                     </a>
                 </li>
 
-                <li class="nav-link" data-page="analytics.php">
-                    <a href="#">
+                <li class="nav-link" data-page="market_research.php">
+                    <a href="market_research.php">
                         <i class='bx bx-pie-chart-alt icon'></i>
-                        <span class="text nav-text">Analytics</span>
+                        <span class="text nav-text">Analytics √</span>
                     </a>
                 </li>
 
-                <li class="nav-link" data-page="market_research.php">
-                    <a href="market_research.php">
+                <li class="nav-link" data-page="#">
+                    <a href="#">
                         <i class='bx bx-check-shield icon'></i>
                         <span class="text nav-text">Competitors</span>
                     </a>
