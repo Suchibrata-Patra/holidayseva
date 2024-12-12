@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['search'])) {
     $search_query = $conn->real_escape_string($_POST['search']);
     
     // Search the database based on customer_name or mobile_no
-    $sql = "SELECT * FROM invoice_data WHERE customer_name LIKE '%$search_query%' OR mobile_no LIKE '%$search_query%'";
+    $sql = "SELECT * FROM invoice_data WHERE customer_name LIKE '%$search_query%' OR mobile_no LIKE '%$search_query%' OR id LIKE '%$search_query%' OR id LIKE '%$search_query%'";
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
