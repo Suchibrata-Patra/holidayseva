@@ -97,16 +97,13 @@ $conn->close();
                             <?php foreach ($search_results as $result): ?>
                                 <div style="border: 1px solid #ddd; border-radius: 10px; display: flex; width:90%; padding: 20px; background-color: #ffffff;">
                                     <div style="flex: 1; padding-right: 20px;">
-                                        <!-- <h3 style="font-size: 18px; color: #0d5d9f;font-weight:500;"><?php echo $result['customer_name']; ?></h3> -->
                                         <h3 style="font-size: 18px; color: #0d5d9f; font-weight: 500;">
-    <?php 
-    echo $result['customer_name']; 
-    if ($result['booking_status'] === 'Confirmed') { 
-        echo ' <span style="font-family: \'Material Icons\'; font-size: 18px; color: #4caf50;">check_circle</span>'; 
-    } 
-    ?>
-</h3>
-
+                                                 <?php echo $result['customer_name']; 
+                                                            if ($result['booking_status'] === 'Confirmed') { 
+                                                    echo ' <span style="font-family: \'Material Icons\'; font-size: 18px; color: #0d5d9f;">check_circle</span>'; 
+                                                                 } 
+                                                 ?></h3>
+ 
                                         <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Customer ID : </strong> <?php echo $result['id']; ?></p>
                                         <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Mobile : </strong> <?php echo $result['mobile_no']; ?></p>
                                         <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Pickup : </strong> <?php echo $result['pickup_address']; ?></p>
