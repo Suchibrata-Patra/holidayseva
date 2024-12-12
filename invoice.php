@@ -277,6 +277,8 @@ $conn->close();
         document.getElementById('editModal').style.display = 'none';
     }
     </script>
+        <script src="script.js"></script>
+
 </body>
 
 </html>

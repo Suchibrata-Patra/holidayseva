@@ -135,6 +135,7 @@ $conn->close();
                 
                 
             </div>
+            <script src="script.js"></script>
 
         </body>
 
