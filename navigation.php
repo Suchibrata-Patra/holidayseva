@@ -29,8 +29,8 @@
                     style="position: relative; display: inline-block; width: 90%; margin-bottom: 20px;">
                     <i class='bx bx-search-alt-2'
                         style="position: absolute; top: 50%; left: 15px; transform: translateY(-50%); font-size: 16px; color: #0d5d9f;"></i>
-                    <input type="text" name="search" placeholder="Search..." required
-                        style="padding: 10px 20px 10px 40px; font-size: 14px; border: 1.5px solid #0d5d9f; border-radius: 50px; width: 100%;"
+                    <input type="text" name="search" placeholder="Search" required
+                        style="padding: 10px 15px 10px 40px; font-size: 14px; border: 1.5px solid #0d5d9f; border-radius: 50px; width: 100%;"
                         <?php if (!empty($search_query)) echo "value='" . htmlspecialchars($search_query) . "'" ; ?>>
 
                 </form>
