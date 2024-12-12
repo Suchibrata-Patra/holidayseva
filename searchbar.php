@@ -97,10 +97,10 @@ $conn->close();
                                 <div style="border: 1px solid #ddd; border-radius: 10px; display: flex; width:90%; padding: 20px; background-color: #ffffff;">
                                     <div style="flex: 1; padding-right: 20px;">
                                         <h3 style="font-size: 18px; color: #0d5d9f;font-weight:500;"><?php echo $result['customer_name']; ?></h3>
-                                        <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">ID:</strong> <?php echo $result['id']; ?></p>
-                                        <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Mobile Number:</strong> <?php echo $result['mobile_no']; ?></p>
-                                        <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Pickup Address:</strong> <?php echo $result['pickup_address']; ?></p>
-                                        <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Drop Address:</strong> <?php echo $result['drop_address']; ?></p>
+                                        <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Customer ID : </strong> <?php echo $result['id']; ?></p>
+                                        <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Mobile : </strong> <?php echo $result['mobile_no']; ?></p>
+                                        <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Pickup : </strong> <?php echo $result['pickup_address']; ?></p>
+                                        <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Drop : </strong> <?php echo $result['drop_address']; ?></p>
                                     </div>
                                     <div style="flex: 1; padding-right: 20px;">
                                         <h3 style="font-size: 18px; color: #0d5d9f;"></h3>
@@ -109,9 +109,9 @@ $conn->close();
                                         <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Token Paid:</strong> <?php echo $result['token_paid']; ?></p>
                                         <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Date of Journey:</strong> <?php echo $result['date_of_journey']; ?></p>
                                         <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Meal Plan:</strong> <?php echo $result['meal_plan']; ?></p>
-                                        <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Cars Provided:</strong> <?php echo $result['cars_provided']; ?></p>
                                     </div>
                                     <div style="flex: 1; padding-left: 20px; border-left: 1px solid #ddd;">
+                                        <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Cars Provided:</strong> <?php echo $result['cars_provided']; ?></p>
                                         <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">No of Cars:</strong> <?php echo $result['no_of_cars']; ?></p>
                                         <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Food Included:</strong> <?php echo $result['food_included']; ?></p>
                                         <p><strong style="font-weight:500 !important;color:rgba(80, 80, 80, 0.8);">Booking Status:</strong> <?php echo $result['booking_status']; ?></p>
