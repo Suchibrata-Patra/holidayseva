@@ -105,24 +105,24 @@ $conn->close();
                                                                  } 
                                                  ?></h3>
  
-                                        <p><strong style="font-weight:400 !important;color:#379df0;">Customer ID : </strong> <?php echo $result['id']; ?></p>
-                                        <p><strong style="font-weight:400 !important;color:#379df0;">Mobile : </strong> <?php echo $result['mobile_no']; ?></p>
-                                        <p><strong style="font-weight:400 !important;color:#379df0;">Pickup : </strong> <?php echo $result['pickup_address']; ?></p>
-                                        <p><strong style="font-weight:400 !important;color:#379df0;">Drop : </strong> <?php echo $result['drop_address']; ?></p>
+                                        <p><strong style="font-weight:400 !important;color:#0d5d9f;">Customer ID : </strong> <?php echo $result['id']; ?></p>
+                                        <p><strong style="font-weight:400 !important;color:#0d5d9f;">Mobile : </strong> <?php echo $result['mobile_no']; ?></p>
+                                        <p><strong style="font-weight:400 !important;color:#0d5d9f;">Pickup : </strong> <?php echo $result['pickup_address']; ?></p>
+                                        <p><strong style="font-weight:400 !important;color:#0d5d9f;">Drop : </strong> <?php echo $result['drop_address']; ?></p>
                                     </div>
                                     <div style="flex: 1; padding-right: 20px;">
                                         <h3 style="font-size: 18px; color: #0d5d9f;"></h3>
-                                        <p><strong style="font-weight:400 !important;color:#379df0;">Tour Package:</strong> <?php echo $result['tour_package']; ?></p>
-                                        <p><strong style="font-weight:400 !important;color:#379df0;">Pricing:</strong> <?php echo $result['pricing']; ?></p>
-                                        <p><strong style="font-weight:400 !important;color:#379df0;">Token Paid:</strong> <?php echo $result['token_paid']; ?></p>
-                                        <p><strong style="font-weight:400 !important;color:#379df0;">Date of Journey:</strong> <?php echo $result['date_of_journey']; ?></p>
-                                        <p><strong style="font-weight:400 !important;color:#379df0;">Meal Plan:</strong> <?php echo $result['meal_plan']; ?></p>
+                                        <p><strong style="font-weight:400 !important;color:#0d5d9f;">Tour Package:</strong> <?php echo $result['tour_package']; ?></p>
+                                        <p><strong style="font-weight:400 !important;color:#0d5d9f;">Pricing:</strong> <?php echo $result['pricing']; ?></p>
+                                        <p><strong style="font-weight:400 !important;color:#0d5d9f;">Token Paid:</strong> <?php echo $result['token_paid']; ?></p>
+                                        <p><strong style="font-weight:400 !important;color:#0d5d9f;">Date of Journey:</strong> <?php echo $result['date_of_journey']; ?></p>
+                                        <p><strong style="font-weight:400 !important;color:#0d5d9f;">Meal Plan:</strong> <?php echo $result['meal_plan']; ?></p>
                                     </div>
                                     <div style="flex: 1; padding-left: 20px; border-left: 1px solid #ddd;">
-                                        <p><strong style="font-weight:400 !important;color:#379df0;">Cars Provided:</strong> <?php echo $result['cars_provided']; ?></p>
-                                        <p><strong style="font-weight:400 !important;color:#379df0;">No of Cars:</strong> <?php echo $result['no_of_cars']; ?></p>
-                                        <p><strong style="font-weight:400 !important;color:#379df0;">Food Included:</strong> <?php echo $result['food_included']; ?></p>
-                                        <p><strong style="font-weight:400 !important;color:#379df0;">Booking Status:</strong> <?php echo $result['booking_status']; ?></p>
+                                        <p><strong style="font-weight:400 !important;color:#0d5d9f;">Cars Provided:</strong> <?php echo $result['cars_provided']; ?></p>
+                                        <p><strong style="font-weight:400 !important;color:#0d5d9f;">No of Cars:</strong> <?php echo $result['no_of_cars']; ?></p>
+                                        <p><strong style="font-weight:400 !important;color:#0d5d9f;">Food Included:</strong> <?php echo $result['food_included']; ?></p>
+                                        <p><strong style="font-weight:400 !important;color:#0d5d9f;">Booking Status:</strong> <?php echo $result['booking_status']; ?></p>
                                     </div>
                                     
                                 </div>
