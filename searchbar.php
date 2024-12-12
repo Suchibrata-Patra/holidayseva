@@ -101,7 +101,7 @@ $conn->close();
                                         <h3 style="font-size: 18px; color: #0d5d9f; font-weight: 500;">
                                                  <?php echo $result['customer_name']; 
                                                             if ($result['booking_status'] === 'Confirmed') { 
-                                                    echo ' <span style="font-family: \'Material Icons\'; font-size: 18px; color: #379df0;paddgin-top:1px;">verified</span>'; 
+                                                    echo ' <span style="font-family: \'Material Icons\'; font-size: 28px; color: #379df0;paddgin-top:1px;">verified</span>'; 
                                                                  } 
                                                  ?></h3>
  
