@@ -44,7 +44,7 @@
             </div>
 
             <!-- Charts -->
-            <div class="chart-container" id="revenue_chart_div"></div>
+            <div class="chart-container" id="revenue_chart_div" style="border-radius:10px;"></div>
             <div class="chart-container" id="tour_chart_div"></div>
 
             <?php
