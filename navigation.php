@@ -81,7 +81,7 @@
                 </li>
 
                 <li class="nav-link" data-page="https://www.gangasagar-tourism.com/backup.php/">
-                    <a href="https://www.gangasagar-tourism.com/timora-backup/">
+                    <a href="https://www.gangasagar-tourism.com/backup.php/">
                         <i class='bx bx-cloud-upload icon'></i>
                         <span class="text nav-text">backup</span>
                     </a>
