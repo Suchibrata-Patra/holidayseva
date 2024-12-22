@@ -90,7 +90,7 @@ function generate_invoice($invoice) {
 
     $price = isset($invoice['pricing']) ? (float)$invoice['pricing'] : 0;
     $token_paid = isset($invoice['token_paid']) ? (float)$invoice['token_paid'] : 0;
-    $pending_amount = $price - $token_paid;
+    $pending_amount = $price*0.5;
 
     $html = str_replace('{{pending_amount}}', $pending_amount, $html);
     $html = str_replace('{{special_requirements}}', $invoice['special_requirements'], $html);
