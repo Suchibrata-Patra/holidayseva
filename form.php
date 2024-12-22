@@ -200,7 +200,7 @@
     <div class="form-row">
     <div>
   <label for="tour_package">Tour Package</label>
-  <select id="tour_package" name="tour_package" required style="font-size:0.7rem;padding: 5px 0px 5px 5px;">
+  <select id="tour_package" name="tour_package" required style="font-size:0.7rem;padding: 5px 0px 5px 0px;">
     <option value="GangaSagar Tour Package 1 Night 2 Days">GangaSagar Tour Package 1 Night 2 Days</option>
     <option value="GangaSagar Tour Package Same Day">GangaSagar Tour Package Same Day</option>
     <option value="Gangasagar 1 Night 2 Days with Kolkata City Tour">Gangasagar 1 Night 2 Days with Kolkata City Tour</option>
