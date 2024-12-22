@@ -54,24 +54,43 @@ if (isset($_GET['delete_booking_id'])) {
     header("Location: inquiry.php");
 }
 
-// Fetch all records from the database
-$records = $conn->query("SELECT * FROM invoice_data WHERE booking_status NOT IN ('Declined') ORDER BY registration_date DESC");
-
-// Close the database connection
-
-// Function to generate the invoice as PDF
+// Fetch all confirmed records
+$records = $conn->query("SELECT * FROM invoice_data WHERE booking_status = 'Confirmed'");
 function generate_invoice($invoice) {
     $html = file_get_contents('generate.html');
     $html = str_replace('{{customer_name}}', $invoice['customer_name'], $html);
     $html = str_replace('{{mobile_no}}', $invoice['mobile_no'], $html);
+    $html = str_replace('{{customer_email_id}}', $invoice['customer_email_id'], $html);
     $html = str_replace('{{pickup_address}}', $invoice['pickup_address'], $html);
+    $html = str_replace('{{drop_address}}', $invoice['drop_address'], $html);
     $html = str_replace('{{tour_package}}', $invoice['tour_package'], $html);
     $html = str_replace('{{pricing}}', $invoice['pricing'], $html);
+    $html = str_replace('{{token_paid}}', $invoice['token_paid'], $html);
+
+    $price = isset($invoice['pricing']) ? (float)$invoice['pricing'] : 0;
+    $token_paid = isset($invoice['token_paid']) ? (float)$invoice['token_paid'] : 0;
+    $pending_amount = $price - $token_paid;
+
+    $html = str_replace('{{pending_amount}}', $pending_amount, $html);
     $html = str_replace('{{special_requirements}}', $invoice['special_requirements'], $html);
     $html = str_replace('{{date_of_journey}}', $invoice['date_of_journey'], $html);
+    $html = str_replace('{{date_of_return}}', $invoice['date_of_return'], $html);
     $html = str_replace('{{no_of_adults}}', $invoice['no_of_adults'], $html);
+    $html = str_replace('{{no_of_children}}', $invoice['no_of_children'], $html);
     $html = str_replace('{{cars_provided}}', $invoice['cars_provided'], $html);
     $html = str_replace('{{no_of_cars}}', $invoice['no_of_cars'], $html);
+    $html = str_replace('{{meal_plan}}', $invoice['meal_plan'], $html);
+    $html = str_replace('{{hotel_used}}', $invoice['hotel_used'], $html);
+    $html = str_replace('{{hotel_room_details}}', $invoice['hotel_room_details'], $html);
+
+
+    // Get the registration_date value
+    $registration_date = $invoice['registration_date'];
+    $cleaned_registration_date = preg_replace('/[^A-Za-z0-9]/', '', $registration_date);
+    $reversed_registration_date = strrev($cleaned_registration_date);
+    $html = str_replace('{{signature_id}}', $reversed_registration_date, $html);
+
+
     $html = str_replace('{{food_included}}', $invoice['food_included'] ? 'Yes' : 'No', $html);
 
     $options = new Options();
@@ -92,7 +111,15 @@ function generate_invoice($invoice) {
     $dompdf->render();
 
     // Output the generated PDF (force download)
-    $dompdf->stream('invoice.pdf', array('Attachment' => 0));
+    // $dompdf->stream('invoice.pdf', array('Attachment' => 0));
+
+    $fullName = $invoice['customer_name'];
+    $firstName = strtok($fullName, ' ');
+    $firstName = preg_replace('/[^a-zA-Z0-9]/', '', $firstName);
+    $filename = 'Let the Adventure begin ' . $firstName . '.pdf';
+    $dompdf->stream($filename, array('Attachment' => 0));
+
+
 }
 
 // Check if the download button was clicked
