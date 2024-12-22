@@ -54,6 +54,7 @@ if (isset($_POST['update_invoice_id'])) {
 $records = $conn->query("SELECT * FROM invoice_data WHERE booking_status = 'Confirmed'");
 function generate_invoice($invoice) {
     // Check if the tour package is "Same Day Ganga Sagar Tour"
+    $html = file_get_contents('invoice.html');
 
     if ($invoice['tour_package'] == "123") {
         $new_html = '<div style="font-size:1.3rem;font-weight: 400;">Tour Details</div>
@@ -76,7 +77,6 @@ function generate_invoice($invoice) {
 
 
     
-    $html = file_get_contents('invoice.html');
     $html = str_replace('{{customer_name}}', $invoice['customer_name'], $html);
     $html = str_replace('{{mobile_no}}', $invoice['mobile_no'], $html);
     $html = str_replace('{{customer_email_id}}', $invoice['customer_email_id'], $html);
