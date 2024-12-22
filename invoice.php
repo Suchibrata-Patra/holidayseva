@@ -53,24 +53,26 @@ if (isset($_POST['update_invoice_id'])) {
 // Fetch all confirmed records
 $records = $conn->query("SELECT * FROM invoice_data WHERE booking_status = 'Confirmed'");
 function generate_invoice($invoice) {
-    if($tour_package == "Same Day Ganga Sagar Tour"){
-        $new_html = '<div style="font-size:1.3rem;font-weight: 400;">Tour Details</div>
-        <div class="important">
-            <div class="text">
-                <strong>Ganga Sagar Tour Package: 01 Night / 02 Days</strong>
-                <br>
-                <strong> Day 01:</strong> Kolkata to Ganga Sagar Yatra - Meet & Welcome at Airport/Station/Hotel and
-                start your journey to Ganga Sagar. Visit Kapil Muni Ashram. Overnight stay at Ganga Sagar.
-                <br>
-                <br>
-                <strong>Day 02:</strong> Ganga Sagar to Kolkata - Complete your puja and take a holy bath. After
-                checkout, return to Kolkata.
-                <br>
-                <strong>Note:</strong> Exclusive AC Vehicle Service from Kolkata to Ferry Ghat:
-                <br>
-            </div>';
-        $html = str_replace('{{tour_details}}', $new_html, $html);
-    }
+    // Check if the tour package is "Same Day Ganga Sagar Tour"
+if ($invoice['tour_package'] == "Same Day Ganga Sagar Tour") {
+    $new_html = '<div style="font-size:1.3rem;font-weight: 400;">Tour Details</div>
+    <div class="important">
+        <div class="text">
+            <strong>Ganga Sagar Tour Package: 01 Night / 02 Days</strong>
+            <br>
+            <strong> Day 01:</strong> Kolkata to Ganga Sagar Yatra - Meet & Welcome at Airport/Station/Hotel and
+            start your journey to Ganga Sagar. Visit Kapil Muni Ashram. Overnight stay at Ganga Sagar.
+            <br>
+            <br>
+            <strong>Day 02:</strong> Ganga Sagar to Kolkata - Complete your puja and take a holy bath. After
+            checkout, return to Kolkata.
+            <br>
+            <strong>Note:</strong> Exclusive AC Vehicle Service from Kolkata to Ferry Ghat:
+            <br>
+        </div>';
+    $html = str_replace('{{tour_details}}', $new_html, $html);
+}
+
     
     $html = file_get_contents('invoice.html');
     $html = str_replace('{{customer_name}}', $invoice['customer_name'], $html);
