@@ -76,6 +76,7 @@ function generate_invoice($invoice) {
             </div>';
         $html = str_replace('{{tour_details}}', $new_html, $html);
     }
+    
     $html = str_replace('{{customer_name}}', $invoice['customer_name'], $html);
     $html = str_replace('{{mobile_no}}', $invoice['mobile_no'], $html);
     $html = str_replace('{{customer_email_id}}', $invoice['customer_email_id'], $html);
