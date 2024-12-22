@@ -263,19 +263,24 @@ $conn->close();
             document.getElementById('token_paid').value = data.token_paid;
             document.getElementById('special_requirements').value = data.special_requirements;
             document.getElementById('date_of_journey').value = data.date_of_journey;
+            document.getElementById('date_of_return').value = data.date_of_return;
             document.getElementById('no_of_adults').value = data.no_of_adults;
+            document.getElementById('no_of_children').value = data.no_of_children;
             document.getElementById('cars_provided').value = data.cars_provided;
             document.getElementById('no_of_cars').value = data.no_of_cars;
             document.getElementById('food_included').checked = data.food_included === "1";
             document.getElementById('meal_type').value = data.meal_plan;
+            document.getElementById('hotel_used').value = data.hotel_used;
+            document.getElementById('hotel_room_details').value = data.hotel_room_details;
         })
         .catch(error => console.error('Error fetching data:', error));
 }
 
 
-    function closeEditModal() {
-        document.getElementById('editModal').style.display = 'none';
-    }
+function closeEditModal() {
+    document.getElementById('editModal').style.display = 'none';
+    document.getElementById('modalOverlay').style.display = 'none';
+  }
     </script>
         <script src="script.js"></script>
 
