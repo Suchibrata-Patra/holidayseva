@@ -56,6 +56,7 @@ function generate_invoice($invoice) {
     $html = file_get_contents('invoice.html');
     $html = str_replace('{{customer_name}}', $invoice['customer_name'], $html);
     $html = str_replace('{{mobile_no}}', $invoice['mobile_no'], $html);
+    $html = str_replace('{{customer_email_id}}', $invoice['customer_email_id'], $html);
     $html = str_replace('{{pickup_address}}', $invoice['pickup_address'], $html);
     $html = str_replace('{{drop_address}}', $invoice['drop_address'], $html);
     $html = str_replace('{{tour_package}}', $invoice['tour_package'], $html);
