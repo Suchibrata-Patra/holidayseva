@@ -59,7 +59,7 @@ $records = $conn->query("SELECT * FROM invoice_data WHERE booking_status = 'Conf
 function generate_invoice($invoice) {
     $html = file_get_contents('generate.html');
     if ($invoice['tour_package'] == 'GangaSagar Tour Package 1 Night 2 Days') {
-        $new_html = '<div class="important">
+        $tour_details_html = '<div class="important">
       <div class="text">
         <strong>Ganga Sagar Tour Package: Same Day</strong>
         <br />
@@ -76,9 +76,9 @@ function generate_invoice($invoice) {
         <br />
       </div>
     </div>';
-        $html = str_replace('{{tour_details}}', $new_html, $html);
-    }
-
+}
+    
+    $html = str_replace('{{tour_details}}', $tour_details_html, $html);
     $html = str_replace('{{customer_name}}', $invoice['customer_name'], $html);
     $html = str_replace('{{mobile_no}}', $invoice['mobile_no'], $html);
     $html = str_replace('{{customer_email_id}}', $invoice['customer_email_id'], $html);
