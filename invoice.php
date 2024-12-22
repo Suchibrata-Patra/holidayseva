@@ -75,6 +75,8 @@ function generate_invoice($invoice) {
     $html = str_replace('{{cars_provided}}', $invoice['cars_provided'], $html);
     $html = str_replace('{{no_of_cars}}', $invoice['no_of_cars'], $html);
     $html = str_replace('{{meal_plan}}', $invoice['meal_plan'], $html);
+    $html = str_replace('{{hotel_used}}', $invoice['hotel_used'], $html);
+    $html = str_replace('{{hotel_room_details}}', $invoice['hotel_room_details'], $html);
 
 
     // Get the registration_date value
