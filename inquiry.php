@@ -58,7 +58,7 @@ if (isset($_GET['delete_booking_id'])) {
 $records = $conn->query("SELECT * FROM invoice_data WHERE booking_status = 'Confirmed'");
 function generate_invoice($invoice) {
     $html = file_get_contents('generate.html');
-    if ($invoice['tour_package'] == '123') {
+    if ($invoice['tour_package'] == 'GangaSagar Tour Package 1 Night 2 Days') {
         $new_html = '<div class="important">
       <div class="text">
         <strong>Ganga Sagar Tour Package: Same Day</strong>
