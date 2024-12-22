@@ -69,7 +69,9 @@ function generate_invoice($invoice) {
     $html = str_replace('{{pending_amount}}', $pending_amount, $html);
     $html = str_replace('{{special_requirements}}', $invoice['special_requirements'], $html);
     $html = str_replace('{{date_of_journey}}', $invoice['date_of_journey'], $html);
+    $html = str_replace('{{date_of_return}}', $invoice['date_of_return'], $html);
     $html = str_replace('{{no_of_adults}}', $invoice['no_of_adults'], $html);
+    $html = str_replace('{{no_of_children}}', $invoice['no_of_children'], $html);
     $html = str_replace('{{cars_provided}}', $invoice['cars_provided'], $html);
     $html = str_replace('{{no_of_cars}}', $invoice['no_of_cars'], $html);
     $html = str_replace('{{meal_plan}}', $invoice['meal_plan'], $html);
