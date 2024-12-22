@@ -201,10 +201,9 @@
     <div>
   <label for="tour_package">Tour Package</label>
   <select id="tour_package" name="tour_package" required>
-    <option value="gangasagar_1_day">Gangasagar 1 Day</option>
-    <option value="gangasagar_2_days">Gangasagar 2 Days</option>
-    <option value="gangasagar_same_day_trip">Gangasagar Same Day Trip</option>
-    <!-- Add more options as needed -->
+    <option value="GangaSagar Tour Package 1 Night 2 Days">GangaSagar Tour Package 1 Night 2 Days</option>
+    <option value="GangaSagar Tour Package Same Day">GangaSagar Tour Package Same Day</option>
+    <option value="Gangasagar 1 Night 2 Days with Kolkata City Tour">Gangasagar 1 Night 2 Days with Kolkata City Tour</option>
   </select>
 </div>
       <div>
