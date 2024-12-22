@@ -55,46 +55,6 @@ $records = $conn->query("SELECT * FROM invoice_data WHERE booking_status = 'Conf
 function generate_invoice($invoice) {
     // Check if the tour package is "Same Day Ganga Sagar Tour"
     $html = file_get_contents('invoice.html');
-
-// Define a mapping of tour packages to their respective details
-$tour_details_map = [
-    '123' => '<div style="font-size:1.3rem;font-weight: 400;">Tour Details</div>
-    <div class="important">
-        <div class="text">
-            <strong>Ganga Sagar Tour Package: 01 Night / 02 Days</strong>
-            <br>
-            <strong> Day 01:</strong> Kolkata to Ganga Sagar Yatra - Meet & Welcome at Airport/Station/Hotel and
-            start your journey to Ganga Sagar. Visit Kapil Muni Ashram. Overnight stay at Ganga Sagar.
-            <br>
-            <br>
-            <strong>Day 02:</strong> Ganga Sagar to Kolkata - Complete your puja and take a holy bath. After
-            checkout, return to Kolkata.
-            <br>
-            <strong>Note:</strong> Exclusive AC Vehicle Service from Kolkata to Ferry Ghat:
-            <br>
-        </div>',
-    // You can add more packages here
-    '456' => '<div style="font-size:1.3rem;font-weight: 400;">Tour Details</div>
-    <div class="important">
-        <div class="text">
-            <strong>Another Tour Package: 02 Nights / 03 Days</strong>
-            <br>
-            <strong>Day 01:</strong> Journey from Kolkata to Destination.
-            <br>
-            <strong>Day 02:</strong> Explore the sights of Destination.
-            <br>
-            <strong>Day 03:</strong> Return to Kolkata.
-        </div>',
-];
-
-// Check if the tour package exists in the map
-if (isset($tour_details_map[$invoice['tour_package']])) {
-    $new_html = $tour_details_map[$invoice['tour_package']];
-    $html = str_replace('{{tour_details}}', $new_html, $html);
-}
-
-
-
     
     $html = str_replace('{{customer_name}}', $invoice['customer_name'], $html);
     $html = str_replace('{{mobile_no}}', $invoice['mobile_no'], $html);
