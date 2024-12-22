@@ -56,7 +56,7 @@ function generate_invoice($invoice) {
     // Check if the tour package is "Same Day Ganga Sagar Tour"
     $html = file_get_contents('invoice.html');
 
-    if ($invoice['tour_package'] == "123") {
+    if ($invoice['tour_package'] == '123') {
         $new_html = '<div style="font-size:1.3rem;font-weight: 400;">Tour Details</div>
         <div class="important">
             <div class="text">
