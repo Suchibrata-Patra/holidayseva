@@ -61,7 +61,7 @@ function generate_invoice($invoice) {
     if ($invoice['tour_package'] == 'GangaSagar Tour Package 1 Night 2 Days') {
         $tour_details_html = '<div class="important">
       <div class="text">
-        <strong>Ganga Sagar Tour Package: Same Day</strong>
+        <strong>GangaSagar Tour Package 1 Night 2 Days</strong>
         <br />
         <br />
         <strong> Day 01: Kolkata to Ganga Sagar Yatra package(130Kms/5:00 Hrs) : </strong><br>Meet and greet upon arrival at the airport, station, city, or hotel, followed by the start of the journey to Ganga Sagar. Ganga Sagar is an island at the confluence of the Ganges River and the Bay of Bengal, renowned for the Kapil Muni Ashram, which holds immense religious significance. Spend the entire day exploring Ganga Sagar, followed by an overnight stay at a Ganga Sagar accommodation.
