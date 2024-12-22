@@ -198,10 +198,15 @@
       </div>
     </div>
     <div class="form-row">
-      <div>
-        <label for="tour_package">Tour Package</label>
-        <input type="text" id="tour_package" name="tour_package" placeholder="Enter tour package name" required />
-      </div>
+    <div>
+  <label for="tour_package">Tour Package</label>
+  <select id="tour_package" name="tour_package" required>
+    <option value="gangasagar_1_day">Gangasagar 1 Day</option>
+    <option value="gangasagar_2_days">Gangasagar 2 Days</option>
+    <option value="gangasagar_same_day_trip">Gangasagar Same Day Trip</option>
+    <!-- Add more options as needed -->
+  </select>
+</div>
       <div>
         <label for="pricing">Pricing</label>
         <input type="number" id="pricing" name="pricing" placeholder="Enter Total Cost" required />
