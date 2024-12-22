@@ -64,10 +64,10 @@ function generate_invoice($invoice) {
         <strong>Ganga Sagar Tour Package: Same Day</strong>
         <br />
         <br />
-        <strong> Day 01:</strong><br>Meet and greet upon arrival at the airport, station, city, or hotel, followed by the start of the journey to Ganga Sagar. Ganga Sagar is an island at the confluence of the Ganges River and the Bay of Bengal, renowned for the Kapil Muni Ashram, which holds immense religious significance. Spend the entire day exploring Ganga Sagar, followed by an overnight stay at a Ganga Sagar accommodation.
+        <strong> Day 01: Kolkata to Ganga Sagar Yatra package(130Kms/5:00 Hrs) : </strong><br>Meet and greet upon arrival at the airport, station, city, or hotel, followed by the start of the journey to Ganga Sagar. Ganga Sagar is an island at the confluence of the Ganges River and the Bay of Bengal, renowned for the Kapil Muni Ashram, which holds immense religious significance. Spend the entire day exploring Ganga Sagar, followed by an overnight stay at a Ganga Sagar accommodation.
         <br />
         <br />
-        <strong> Day 02:</strong><br>In the morning, visit Ganga Sagar for darshan, complete your puja and rituals, and take a holy bath. Return to the accommodation, collect your luggage, and check out. Proceed for a transfer to Kolkata, carrying sweet memories of your time at Ganga Sagar.
+        <strong> Day 02: Ganga Sagar to Kolkata Drop : </strong><br>In the morning, visit Ganga Sagar for darshan, complete your puja and rituals, and take a holy bath. Return to the accommodation, collect your luggage, and check out. Proceed for a transfer to Kolkata, carrying sweet memories of your time at Ganga Sagar.
               <!-- <strong>Day 02:</strong> Ganga Sagar to Kolkata - Complete your puja
         and take a holy bath. After checkout, return to Kolkata.
         <br />
