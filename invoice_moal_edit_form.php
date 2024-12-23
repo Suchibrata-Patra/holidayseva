@@ -103,7 +103,6 @@ scrol
         <label class="form-label">Mobile No:
           <input type="text" id="mobile_no" name="mobile_no" class="form-input" style="cursor:pointer";>
         </label>
-        <?php echo $result[id]?>
         
       </div>
 
