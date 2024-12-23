@@ -117,10 +117,10 @@ scrol
 
       <div class="form-group">
         <label class="form-label">Pricing:
-          <input type="text" id="pricing" name="pricing" class="form-input" readonly>
+          <input type="text" id="pricing" name="pricing" class="form-input">
         </label>
         <label class="form-label" style="background-color: rgb(221, 237, 255);color: black;padding:5px;">Token Amount:
-          <input type="text" id="token_paid" name="token_paid" class="form-input" readonly>
+          <input type="text" id="token_paid" name="token_paid" class="form-input">
         </label>
       </div>
 
