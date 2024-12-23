@@ -94,24 +94,23 @@ scrol
       <h3 class="form-title">Edit Booking</h3>      
       <div style="display: flex; align-items: center;background:rgb(255, 255, 255);padding-left: 0px;">
         <span style="color: rgb(2, 57, 135); font-weight: 400;font-size: 1rem;padding-right: 5px;">Customer ID : </span>
-        <input type="text" id="user_id" name="user_id"  style="cursor: not-allowed;font-size: 1rem;border: none;font-weight: 400;color:rgb(0, 0, 0);font-size: 1rem;background-color:none;" disabled>
+        <input type="text" id="user_id" name="user_id"  style="cursor: pointer;font-size: 1rem;border: none;font-weight: 400;color:rgb(0, 0, 0);font-size: 1rem;background-color:none;" >
       </div>
-
       <div class="form-group"> 
         <label class="form-label">Customer Name:
-          <input type="text" id="customer_name" name="customer_name" class="form-input"  style="cursor:not-allowed"; disabled>
+          <input type="text" id="customer_name" name="customer_name" class="form-input"  style="cursor:pointer"; >
         </label>
         <label class="form-label">Mobile No:
-          <input type="text" id="mobile_no" name="mobile_no" class="form-input"  style="cursor:not-allowed"; disabled>
+          <input type="text" id="mobile_no" name="mobile_no" class="form-input"  style="cursor:pointer"; >
         </label>
       </div>
 
       <div class="form-group">
         <label class="form-label">Pickup Address:
-          <input type="text" id="pickup_address" name="pickup_address" class="form-input"  style="cursor:not-allowed"; disabled>
+          <input type="text" id="pickup_address" name="pickup_address" class="form-input"  style="cursor:pointer"; >
         </label>
         <label class="form-label">Drop Address:
-          <input type="text" id="drop_address" name="drop_address" class="form-input"  style="cursor:not-allowed"; disabled>
+          <input type="text" id="drop_address" name="drop_address" class="form-input"  style="cursor:pointer"; >
         </label>
       </div>
 
@@ -125,30 +124,30 @@ scrol
       </div>
 
       <label class="form-label">Tour Package:
-        <input type="text" id="tour_package" name="tour_package" class="form-input"  style="cursor:not-allowed"; disabled>
+        <input type="text" id="tour_package" name="tour_package" class="form-input"  style="cursor:pointer"; >
       </label>
       <div class="form-group">
         <label class="form-label">Journey:
-          <input type="date" id="date_of_journey" name="date_of_journey" class="form-input"  style="cursor:not-allowed"; disabled>
+          <input type="date" id="date_of_journey" name="date_of_journey" class="form-input"  style="cursor:pointer"; >
         </label>
         <label class="form-label">Return:
-          <input type="date" id="date_of_return" name="date_of_return" class="form-input"  style="cursor:not-allowed"; disabled>
+          <input type="date" id="date_of_return" name="date_of_return" class="form-input"  style="cursor:pointer"; >
         </label>
         
       </div>
 
       <div class="form-group">
       <label class="form-label">No of Adults:
-          <input type="number" id="no_of_adults" name="no_of_adults" class="form-input"  style="cursor:not-allowed";>
+          <input type="number" id="no_of_adults" name="no_of_adults" class="form-input"  style="cursor:pointer";>
         </label>
       <label class="form-label">No of child:
-          <input type="number" id="no_of_children" name="no_of_children" class="form-input"  style="cursor:not-allowed";>
+          <input type="number" id="no_of_children" name="no_of_children" class="form-input"  style="cursor:pointer";>
         </label>
         <label class="form-label">Cars Provided:
-          <input type="text" id="cars_provided" name="cars_provided" class="form-input"  style="cursor:not-allowed"; disabled>
+          <input type="text" id="cars_provided" name="cars_provided" class="form-input"  style="cursor:pointer"; >
         </label>
         <label class="form-label">Number of Cars:
-          <input type="number" id="no_of_cars" name="no_of_cars" class="form-input"  style="cursor:not-allowed"; disabled>
+          <input type="number" id="no_of_cars" name="no_of_cars" class="form-input"  style="cursor:pointer"; >
         </label>
       </div>
 
@@ -157,10 +156,10 @@ scrol
       </label>
       <div class="form-group">
         <label class="form-label">Hotel Used:
-          <input type="text" id="hotel_used" name="hotel_used" class="form-input"  style="cursor:not-allowed"; disabled>
+          <input type="text" id="hotel_used" name="hotel_used" class="form-input"  style="cursor:pointer"; >
         </label>
         <label class="form-label">Room Details:
-          <input type="text" id="hotel_room_details" name="hotel_room_details" class="form-input"  style="cursor:not-allowed"; disabled>
+          <input type="text" id="hotel_room_details" name="hotel_room_details" class="form-input"  style="cursor:pointer"; >
         </label>
         
       </div>
