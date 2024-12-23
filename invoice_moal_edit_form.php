@@ -98,29 +98,29 @@ scrol
       </div>
       <div class="form-group"> 
         <label class="form-label">Customer Name:
-          <input type="text" id="customer_name" name="customer_name" class="form-input"  style="cursor:pointer"; >
+          <input type="text" id="customer_name" name="customer_name" class="form-input"  style="cursor:pointer"; readonly>
         </label>
         <label class="form-label">Mobile No:
-          <input type="text" id="mobile_no" name="mobile_no" class="form-input" style="cursor:pointer";>
+          <input type="text" id="mobile_no" name="mobile_no" class="form-input" style="cursor:pointer"; readonly>
         </label>
         
       </div>
 
       <div class="form-group">
         <label class="form-label">Pickup Address:
-          <input type="text" id="pickup_address" name="pickup_address" class="form-input"  style="cursor:pointer"; >
+          <input type="text" id="pickup_address" name="pickup_address" class="form-input"  style="cursor:pointer"; readonly>
         </label>
         <label class="form-label">Drop Address:
-          <input type="text" id="drop_address" name="drop_address" class="form-input"  style="cursor:pointer"; >
+          <input type="text" id="drop_address" name="drop_address" class="form-input"  style="cursor:pointer"; readonly>
         </label>
       </div>
 
       <div class="form-group">
         <label class="form-label">Pricing:
-          <input type="text" id="pricing" name="pricing" class="form-input">
+          <input type="text" id="pricing" name="pricing" class="form-input" readonly>
         </label>
         <label class="form-label" style="background-color: rgb(221, 237, 255);color: black;padding:5px;">Token Amount:
-          <input type="text" id="token_paid" name="token_paid" class="form-input" >
+          <input type="text" id="token_paid" name="token_paid" class="form-input" readonly>
         </label>
       </div>
 
@@ -129,38 +129,38 @@ scrol
       </label>
       <div class="form-group">
         <label class="form-label">Journey:
-          <input type="date" id="date_of_journey" name="date_of_journey" class="form-input"  style="cursor:pointer"; >
+          <input type="date" id="date_of_journey" name="date_of_journey" class="form-input"  style="cursor:pointer"; readonly>
         </label>
         <label class="form-label">Return:
-          <input type="date" id="date_of_return" name="date_of_return" class="form-input"  style="cursor:pointer"; >
+          <input type="date" id="date_of_return" name="date_of_return" class="form-input"  style="cursor:pointer"; readonly>
         </label>
         
       </div>
 
       <div class="form-group">
       <label class="form-label">No of Adults:
-          <input type="number" id="no_of_adults" name="no_of_adults" class="form-input"  style="cursor:pointer";>
+          <input type="number" id="no_of_adults" name="no_of_adults" class="form-input"  style="cursor:pointer"; readonly>
         </label>
       <label class="form-label">No of child:
-          <input type="number" id="no_of_children" name="no_of_children" class="form-input"  style="cursor:pointer";>
+          <input type="number" id="no_of_children" name="no_of_children" class="form-input"  style="cursor:pointer"; readonly>
         </label>
         <label class="form-label">Cars Provided:
-          <input type="text" id="cars_provided" name="cars_provided" class="form-input"  style="cursor:pointer"; >
+          <input type="text" id="cars_provided" name="cars_provided" class="form-input"  style="cursor:pointer"; readonly>
         </label>
         <label class="form-label">Number of Cars:
-          <input type="number" id="no_of_cars" name="no_of_cars" class="form-input"  style="cursor:pointer"; >
+          <input type="number" id="no_of_cars" name="no_of_cars" class="form-input"  style="cursor:pointer"; readonly>
         </label>
       </div>
 
       <label class="form-label">Special Requirements:
-        <textarea id="special_requirements" name="special_requirements" class="form-textarea"></textarea>
+        <textarea id="special_requirements" name="special_requirements" class="form-textarea" readonly></textarea>
       </label>
       <div class="form-group">
         <label class="form-label">Hotel Used:
-          <input type="text" id="hotel_used" name="hotel_used" class="form-input"  style="cursor:pointer"; >
+          <input type="text" id="hotel_used" name="hotel_used" class="form-input"  style="cursor:pointer"; readonly>
         </label>
         <label class="form-label">Room Details:
-          <input type="text" id="hotel_room_details" name="hotel_room_details" class="form-input"  style="cursor:pointer"; >
+          <input type="text" id="hotel_room_details" name="hotel_room_details" class="form-input"  style="cursor:pointer"; readonly>
         </label>
         
       </div>
