@@ -103,9 +103,7 @@ scrol
         <label class="form-label">Mobile No:
           <input type="text" id="mobile_no" name="mobile_no" class="form-input"  style="cursor:pointer"; >
         </label>
-        <label class="form-label" for="mobile_no">Mobile No:</label>
-<input type="text" id="mobile_no" name="mobile_no" class="form-input" style="cursor: pointer;">
-
+        
       </div>
 
       <div class="form-group">
