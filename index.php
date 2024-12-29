@@ -1,12 +1,3 @@
-<?php session_start(); /* Starts the session */
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-if(!isset($_SESSION['UserData']['Username'])){
-        header("location:login.php");
-        exit;
-}
-?>
 <?php require 'vendor/autoload.php';  // Load DOMPDF library
 require 'database.php';
 
@@ -19,7 +10,7 @@ use Dompdf\Options;
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
- 
+
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $customer_name = $_POST['customer_name'];
@@ -28,15 +19,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $drop_address = $_POST['drop_address'];
     $tour_package = $_POST['tour_package'];
     $pricing = $_POST['pricing'];
+    $special_requirements = $_POST['special_requirements'];
     $date_of_journey = $_POST['date_of_journey'];
-    $date_of_return = $_POST['date_of_return'];
     $no_of_adults = $_POST['no_of_adults'];
-    $no_of_children = $_POST['no_of_children'];
     $cars_provided = $_POST['cars_provided'];
     $no_of_cars = $_POST['no_of_cars'];
-    $hotel_used = $_POST['hotel_used'];
-    $hotel_room_details = $_POST['hotel_room_details'];
-    $special_requirements = $_POST['special_requirements'];
     $meal_plan = $_POST['meal_plan'];
     $food_included = isset($_POST['food_included']) ? 1 : 0; // True or False
 
@@ -44,40 +31,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $conn->prepare("
     INSERT INTO invoice_data (
         customer_name, mobile_no, pickup_address,drop_address,
-        tour_package, pricing, date_of_journey, date_of_return,no_of_adults,no_of_children,
-        cars_provided, no_of_cars,hotel_used, hotel_room_details,special_requirements,
-        meal_plan,food_included
+        tour_package, pricing, special_requirements, 
+        date_of_journey, no_of_adults, cars_provided, 
+        no_of_cars, meal_plan,food_included
     ) 
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)
 ");
 
 // Bind the parameters to the query
 $stmt->bind_param(
-    "sssssissiisisssss", 
+    "sssssissisiss", 
     $customer_name, 
     $mobile_no, 
     $pickup_address, 
     $drop_address, 
     $tour_package, 
     $pricing, 
-    $date_of_journey,
-    $date_of_return,
-    $no_of_adults,
-    $no_of_children,
-    $cars_provided, 
-    $no_of_cars,
-    $hotel_used,
-    $hotel_room_details,
     $special_requirements, 
+    $date_of_journey, 
+    $no_of_adults, 
+    $cars_provided, 
+    $no_of_cars, 
     $meal_plan,
     $food_included
 );
     // $stmt->bind_param("ssssdsisisi", $customer_name, $mobile_no, $pickup_address, $tour_package, $pricing, $special_requirements, $date_of_journey, $no_of_adults, $cars_provided, $no_of_cars, $food_included);
     if ($stmt->execute()) {
         // After successful insert, redirect to prevent resubmission
-        // header("Location: " . $_SERVER['PHP_SELF']);
-        header("Location: inquiry.php");
-        
+        header("Location: " . $_SERVER['PHP_SELF']);
         exit;  // Ensure no further code is executed after the redirect
     } else {
         echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";
