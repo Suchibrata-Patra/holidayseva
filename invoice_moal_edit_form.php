@@ -172,7 +172,7 @@ scrol
           <span class="toggle-slider"></span>
         </label>
         <label class="form-label">Meal Type:
-          <input type="text" id="meal_type" name="meal_type" class="form-input">
+          <input type="text" id="meal_type" name="meal_type" class="form-input" readonly>
         </label>
       </div>
 
