@@ -78,7 +78,7 @@ After completing the visit, transfer back to Kolkata with cherished memories.
     <strong>Exclusive Vehicles</strong><br>
 Dedicated vehicles for round-trip transfers and sightseeing as per the itinerary, ensuring comfort and convenience throughout the journey.</li>
 <li>
-</strong>Alll On the Go Expenses</strong><br>
+<strong>All On the Go Expenses</strong><br>
 All necessary permit fees, parking charges, driver allowances, and fuel costs are included to ensure a hassle-free travel experience.
 </li>
 <li>
