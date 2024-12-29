@@ -172,10 +172,52 @@
         <label for="customer_name">Customer Name</label>
         <input type="text" id="customer_name" name="customer_name" placeholder="Enter customer name" required/>
       </div>
-      <div>
+      <!-- <div>
         <label for="mobile_no">Mobile No</label>
         <input type="text" id="mobile_no" name="mobile_no" placeholder="Enter mobile number" required />
-      </div>
+      </div> -->
+      <div style="display: flex; align-items: center; gap: 10px;">
+    <label for="mobile_no">Mobile No</label>
+    <select id="country_code" name="country_code" required style="font-size: 0.9rem; padding: 5px;">
+        <option value="+91">+91 (India)</option>
+        <option value="+1">+1 (USA)</option>
+        <option value="+44">+44 (UK)</option>
+        <option value="+61">+61 (Australia)</option>
+        <option value="+81">+81 (Japan)</option>
+        <option value="+86">+86 (China)</option>
+        <option value="+49">+49 (Germany)</option>
+        <option value="+33">+33 (France)</option>
+        <!-- Add more country codes as needed -->
+    </select>
+    <input 
+        type="text" 
+        id="mobile_number" 
+        placeholder="Enter mobile number" 
+        required 
+        style="flex: 1; font-size: 0.9rem; padding: 5px;" 
+    />
+    <!-- Hidden input field to store the combined value -->
+    <input 
+        type="hidden" 
+        id="mobile_no" 
+        name="mobile_no" 
+    />
+</div>
+
+<script>
+    const countryCode = document.getElementById("country_code");
+    const mobileNumber = document.getElementById("mobile_number");
+    const mobileNo = document.getElementById("mobile_no");
+
+    // Update the hidden field whenever the country code or mobile number changes
+    const updateMobileNo = () => {
+        mobileNo.value = `${countryCode.value}${mobileNumber.value}`;
+    };
+
+    countryCode.addEventListener("change", updateMobileNo);
+    mobileNumber.addEventListener("input", updateMobileNo);
+</script>
+
     </div>
     <div>
       <label for="pickup_address">Pickup Address</label>
