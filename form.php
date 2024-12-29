@@ -201,9 +201,16 @@
     <div>
   <label for="tour_package">Tour Package</label>
   <select id="tour_package" name="tour_package" required style="font-size:0.7rem;padding: 5px 0px 5px 0px;">
-    <option value="GangaSagar Tour Package Same Day">GangaSagar Tour Package Same Day</option>
-    <option value="GangaSagar Tour Package 1 Night 2 Days">GangaSagar Tour Package 1 Night 2 Days</option>
-    <option value="Gangasagar 1 Night 2 Days with Kolkata City Tour">Gangasagar 1 Night 2 Days with Kolkata City Tour</option>
+    <option value="Kolkata to Gangasagar One-Day Round Trip">Kolkata to Gangasagar One-Day Round Trip</option>
+    <option value="Kolkata City Tour with Ganga Yatra Package">Kolkata City Tour with Ganga Yatra Package</option>
+    <option value="Ganga Yatra Package with Kolkata City Tour">Ganga Yatra Package with Kolkata City Tour</option>
+    <option value="1N/2D Complete Gangasagar Yatra Package">1N/2D Complete Gangasagar Yatra Package</option>
+    <option value="2 Nights, 3 Days Ganga Yatra Package">2 Nights, 3 Days Ganga Yatra Package</option>
+    <option value="One-Day Kolkata City Tour">One-Day Kolkata City Tour</option>
+    <option value="Sundarbans Same-Day Gangasagar Yatra">Sundarbans Same-Day Gangasagar Yatra</option>
+    <option value="Mayapur with Gangasagar Yatra Package">Mayapur with Gangasagar Yatra Package</option>
+    <option value="Sundarbans 2 Nights, 3 Days Yatra Package">Sundarbans 2 Nights, 3 Days Yatra Package</option>
+    <option value="Gangasagar Mela 1 Night, 2 Days Mela Package">Gangasagar Mela 1 Night, 2 Days Mela Package</option>
   </select>
 </div>
       <div>
