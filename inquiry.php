@@ -60,32 +60,71 @@ function generate_invoice($invoice) {
     $html = file_get_contents('generate.html');
     
     if ($invoice['tour_package'] == 'Kolkata to Gangasagar One-Day Round Trip') {
-        $tour_details_html = '<div class="important">
-      <div class="text">
-        <strong> Day 1 :  Kolkata to Gangasagar One-Day Round Trip (120 km / 5:00 Hrs)</strong>
-        <br />
-        <strong>Meet & Greet</strong> Arrival at Station/Airport/Hotel and transfer to Gangasagar, an island at the confluence of the Ganga River and the Bay of Bengal, known for the revered Kapil Muni Ashram.
-<br>
-<strong>Gangasagar Visit </strong>
-Spend the day performing puja, taking a holy dip, and exploring the spiritual essence of Gangasagar.
-<br>
-<strong>Return to Kolkata </strong>
-After completing the visit, transfer back to Kolkata with cherished memories.
-        <br />
-      </div>
+    $tour_details_html = '<div class="important">
+        <div class="text">
+            <strong> Day 1 : Kolkata to Gangasagar One-Day Round Trip (120 km / 5:00 Hrs)</strong>
+            <br />
+            <strong>Meet & Greet</strong> Arrival at Station/Airport/Hotel and transfer to Gangasagar, an island at the
+            confluence of the Ganga River and the Bay of Bengal, known for the revered Kapil Muni Ashram.
+            <br>
+            <strong>Gangasagar Visit </strong>
+            Spend the day performing puja, taking a holy dip, and exploring the spiritual essence of Gangasagar.
+            <br>
+            <strong>Return to Kolkata </strong>
+            After completing the visit, transfer back to Kolkata with cherished memories.
+            <br />
+        </div>
     </div>';
     $Cost_Includes_html='<li>
-    <strong>Exclusive Vehicles</strong><br>
-Dedicated vehicles for round-trip transfers and sightseeing as per the itinerary, ensuring comfort and convenience throughout the journey.</li><br>
-<li>
-<strong>All On the Go Expenses</strong><br>
-All necessary permit fees, parking charges, driver allowances, and fuel costs are included to ensure a hassle-free travel experience.
-</li><br>
-<li>
-<strong>Ferry Tickets</strong><br>
-The cost of round-trip ferry tickets is included for both sides of the journey.</li><br>
-<span style="font-size:0.8rem;">* Rates are applicable for Indian nationals only.</span>';
-    } 
+        <strong>Exclusive Vehicles</strong><br>
+        Dedicated vehicles for round-trip transfers and sightseeing as per the itinerary, ensuring comfort and convenience
+        throughout the journey.
+    </li><br>
+    <li>
+        <strong>All On the Go Expenses</strong><br>
+        All necessary permit fees, parking charges, driver allowances, and fuel costs are included to ensure a hassle-free
+        travel experience.
+    </li><br>
+    <li>
+        <strong>Ferry Tickets</strong><br>
+        The cost of round-trip ferry tickets is included for both sides of the journey.
+    </li><br>
+    <span style="font-size:0.8rem;">* Rates are applicable for Indian nationals only.</span>';
+    }
+
+    ## Fomat for the documentatin of 
+    if ($invoice['tour_package'] == '1N/2D Complete Gangasagar Yatra Package') {
+    $tour_details_html = '<div class="important">
+        <div class="text">
+            <strong> Day 1 :Kolkata to Ganga Sagar Yatra package(130Kms/5:00 Hrs):</strong>
+            <br/>
+            <strong>Meet & Greet</strong>
+Upon arrival at the Airport/Station/Hotel/City, you will be warmly welcomed and driven to Gangasagar, an island at the confluence of the Ganga River and the Bay of Bengal, renowned for the spiritually significant Kapil Muni Ashram.
+<br>
+<strong>Gangasagar Sightseeing</strong>
+Enjoy a full day of sightseeing in Gangasagar, exploring its sacred sites.
+<br>
+<strong>Overnight Stay</strong>
+Stay overnight at your accommodation in Gangasagar, soaking in the serene and devout atmosphere.
+            <br>
+        </div>
+    </div>';
+    $Cost_Includes_html='<li>
+        <strong>Exclusive Vehicles</strong><br>
+        Dedicated vehicles for round-trip transfers and sightseeing as per the itinerary, ensuring comfort and convenience
+        throughout the journey.
+    </li><br>
+    <li>
+        <strong>All On the Go Expenses</strong><br>
+        All necessary permit fees, parking charges, driver allowances, and fuel costs are included to ensure a hassle-free
+        travel experience.
+    </li><br>
+    <li>
+        <strong>Ferry Tickets</strong><br>
+        The cost of round-trip ferry tickets is included for both sides of the journey.
+    </li><br>
+    <span style="font-size:0.8rem;">* Rates are applicable for Indian nationals only.</span>';
+    }
 
 
     $html = str_replace('{{Cost_Includes}}', $Cost_Includes_html, $html);
