@@ -168,7 +168,6 @@ scrol
         <label class="form-label toggle-label">
           Food Included:
           <input type="checkbox" id="food_included" name="food_included" class="toggle-checkbox">
-          <input type="checkbox" id="food_included" name="food_included" class="toggle-checkbox">
           <span class="toggle-slider"></span>
         </label>
         <label class="form-label">Meal Type:
