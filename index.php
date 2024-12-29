@@ -181,7 +181,7 @@ if (isset($_GET['download_invoice_id'])) {
   
 
        <div class="container" style="margin-left:10%;">
-        <?php include('invoice_moal_edit_form.php') ?>
+        <?php include('form.php') ?>
        </div>
     </section>
 
