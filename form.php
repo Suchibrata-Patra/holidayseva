@@ -216,7 +216,7 @@
     <optgroup label="Gangasagar Yatra Packages">
       <option value="" disabled selected>Select The Package</option>
         <option value="Kolkata to Gangasagar One-Day Round Trip">Kolkata to Gangasagar One-Day Round Trip</option>
-        <option value="1N/2D Complete Gangasagar Yatra Package">1N/2D Complete Gangasagar Yatra Package</option>
+        <option value="1N/2D Complete GangaSagar Yatra Package">1N/2D Complete GangaSagar Yatra Package</option>
         <option value="Gangasagar Mela 1 Night, 2 Days Mela Package">Gangasagar Mela 1 Night, 2 Days Mela Package</option>
     </optgroup>
     <optgroup label="Kolkata City Tours">
