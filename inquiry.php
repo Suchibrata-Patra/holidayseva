@@ -97,15 +97,17 @@ function generate_invoice($invoice) {
     $tour_details_html = '<div class="important">
         <div class="text">
             <strong> Day 1 :Kolkata to Ganga Sagar Yatra package(130Kms/5:00 Hrs):</strong>
-            <br/>
+            <br />
             <strong>Meet & Greet</strong>
-Upon arrival at the Airport/Station/Hotel/City, you will be warmly welcomed and driven to Gangasagar, an island at the confluence of the Ganga River and the Bay of Bengal, renowned for the spiritually significant Kapil Muni Ashram.
-<br>
-<strong>Gangasagar Sightseeing</strong>
-Enjoy a full day of sightseeing in Gangasagar, exploring its sacred sites.
-<br>
-<strong>Overnight Stay</strong>
-Stay overnight at your accommodation in Gangasagar, soaking in the serene and devout atmosphere.
+            Upon arrival at the Airport/Station/Hotel/City, you will be warmly welcomed and driven to Gangasagar, an island
+            at the confluence of the Ganga River and the Bay of Bengal, renowned for the spiritually significant Kapil Muni
+            Ashram.
+            <br>
+            <strong>Gangasagar Sightseeing</strong>
+            Enjoy a full day of sightseeing in Gangasagar, exploring its sacred sites.
+            <br>
+            <strong>Overnight Stay</strong>
+            Stay overnight at your accommodation in Gangasagar, soaking in the serene and devout atmosphere.
             <br>
         </div>
     </div>';
@@ -217,14 +219,15 @@ $conn->close();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <title>HolidaySeva</title> 
+    <title>HolidaySeva</title>
 </head>
 
 <body>
     <!-- <?php include('navigation.php') ?> -->
     <section class="home">
 
-        <table style="width: 90%; margin-left:5%; margin-top:40px ;border-collapse: collapse; font-size: 14px; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 0px; overflow: hidden;">
+        <table
+            style="width: 90%; margin-left:5%; margin-top:40px ;border-collapse: collapse; font-size: 14px; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 0px; overflow: hidden;">
             <thead>
                 <tr style="background-color:#0648a5; color: white;">
                     <th style="padding: 12px; text-align: left;font-weight:300;">Name</th>
@@ -281,24 +284,24 @@ $conn->close();
         </table>
 
 
-        
-    </div>
 
-    <script>
-        function toggleDropdown(id) {
-            const dropdown = document.getElementById('dropdown' + id);
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        }
-        document.addEventListener('click', function (e) {
-            const dropdowns = document.querySelectorAll("ul[id^='dropdown']");
-            dropdowns.forEach(dropdown => {
-                if (!dropdown.contains(e.target) && dropdown.previousElementSibling !== e.target) {
-                    dropdown.style.display = 'none';
-                }
+        </div>
+
+        <script>
+            function toggleDropdown(id) {
+                const dropdown = document.getElementById('dropdown' + id);
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            }
+            document.addEventListener('click', function (e) {
+                const dropdowns = document.querySelectorAll("ul[id^='dropdown']");
+                dropdowns.forEach(dropdown => {
+                    if (!dropdown.contains(e.target) && dropdown.previousElementSibling !== e.target) {
+                        dropdown.style.display = 'none';
+                    }
+                });
             });
-        });
-    </script>
-</div>
+        </script>
+        </div>
 
     </section>
 
