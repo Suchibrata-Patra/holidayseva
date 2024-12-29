@@ -93,7 +93,7 @@ function generate_invoice($invoice) {
     }
 
     ## Fomat for the documentatin of 
-    if ($invoice['tour_package'] == '1N/2D Complete Gangasagar Yatra Package') {
+    if ($invoice['tour_package'] == '1N/2D Complete GangaSagar Yatra Package') {
     $tour_details_html = '<div class="important">
         <div class="text">
             <strong> Day 1 :Kolkata to Ganga Sagar Yatra package(130Kms/5:00 Hrs):</strong>
