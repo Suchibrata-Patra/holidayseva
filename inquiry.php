@@ -111,7 +111,6 @@ function generate_invoice($invoice) {
             <br><br><br>
             <strong>Day 02 (' . date('Y-m-d', strtotime($invoice['date_of_journey'] . ' +1 day')) . '): Ganga Sagar to Kolkata Drop</strong>
             <br />
-        <strong>Morning Activities</strong><br>
 Begin your day with a visit to Gangasagar for a sacred darshan, followed by completing your puja rituals and taking a holy dip.
 <br>
 <strong>Check-out & Return</strong><br>
