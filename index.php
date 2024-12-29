@@ -1,111 +1,109 @@
-<?php session_start(); /* Starts the session */
+<?php 
+session_start(); // Starts the session
 
-if(!isset($_SESSION['UserData']['Username'])){
-        header("location:login.php");
-        exit;
+// Ensure the user is logged in
+if (!isset($_SESSION['UserData']['Username'])) {
+    header("Location: login.php");
+    exit;
 }
-?>
-<?php require 'vendor/autoload.php';  // Load DOMPDF library
-require 'database.php';
+
+require 'vendor/autoload.php';  // Load DOMPDF library
+require 'database.php';         // Assuming database.php handles DB connection
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
-// Database connection
-// $conn = new mysqli('localhost', 'root', 'root', 'Invoice');
-
+// Database connection check
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $customer_name = $_POST['customer_name'];
-    $mobile_no = $_POST['mobile_no'];
-    $pickup_address = $_POST['pickup_address'];
-    $drop_address = $_POST['drop_address'];
-    $tour_package = $_POST['tour_package'];
-    $pricing = $_POST['pricing'];
-    $date_of_journey = $_POST['date_of_journey'];
-    $date_of_return = $_POST['date_of_return'];
-    $no_of_adults = $_POST['no_of_adults'];
-    $no_of_children = $_POST['no_of_children'];
-    $cars_provided = $_POST['cars_provided'];
-    $no_of_cars = $_POST['no_of_cars'];
-    $hotel_used = $_POST['hotel_used'];
-    $hotel_room_details = $_POST['hotel_room_details'];
-    $special_requirements = $_POST['special_requirements'];
-    $meal_plan = $_POST['meal_plan'];
-    $food_included = isset($_POST['food_included']) ? 1 : 0; // True or False
-
-    // Insert data into database
+    // Sanitize input data to avoid SQL injection and XSS
+    $customer_name = mysqli_real_escape_string($conn, $_POST['customer_name']);
+    $mobile_no = mysqli_real_escape_string($conn, $_POST['mobile_no']);
+    $pickup_address = mysqli_real_escape_string($conn, $_POST['pickup_address']);
+    $drop_address = mysqli_real_escape_string($conn, $_POST['drop_address']);
+    $tour_package = mysqli_real_escape_string($conn, $_POST['tour_package']);
+    $pricing = mysqli_real_escape_string($conn, $_POST['pricing']);
+    $date_of_journey = mysqli_real_escape_string($conn, $_POST['date_of_journey']);
+    $date_of_return = mysqli_real_escape_string($conn, $_POST['date_of_return']);
+    $no_of_adults = intval($_POST['no_of_adults']);
+    $no_of_children = intval($_POST['no_of_children']);
+    $cars_provided = mysqli_real_escape_string($conn, $_POST['cars_provided']);
+    $no_of_cars = intval($_POST['no_of_cars']);
+    $hotel_used = mysqli_real_escape_string($conn, $_POST['hotel_used']);
+    $hotel_room_details = mysqli_real_escape_string($conn, $_POST['hotel_room_details']);
+    $special_requirements = mysqli_real_escape_string($conn, $_POST['special_requirements']);
+    $meal_plan = mysqli_real_escape_string($conn, $_POST['meal_plan']);
+    $food_included = isset($_POST['food_included']) ? 1 : 0;  // True or False
+    
+    // Insert data into database with error checking
     $stmt = $conn->prepare("
-    INSERT INTO invoice_data (
-        customer_name, mobile_no, pickup_address,drop_address,
-        tour_package, pricing, date_of_journey, date_of_return,no_of_adults,no_of_children,
-        cars_provided, no_of_cars,hotel_used, hotel_room_details,special_requirements,
-        meal_plan,food_included
-    ) 
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?)
-");
+        INSERT INTO invoice_data (
+            customer_name, mobile_no, pickup_address, drop_address,
+            tour_package, pricing, date_of_journey, date_of_return,
+            no_of_adults, no_of_children, cars_provided, no_of_cars,
+            hotel_used, hotel_room_details, special_requirements,
+            meal_plan, food_included
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ");
 
-// Bind the parameters to the query
-$stmt->bind_param(
-    "sssssissiisisssss", 
-    $customer_name, 
-    $mobile_no, 
-    $pickup_address, 
-    $drop_address, 
-    $tour_package, 
-    $pricing, 
-    $date_of_journey,
-    $date_of_return,
-    $no_of_adults,
-    $no_of_children,
-    $cars_provided, 
-    $no_of_cars,
-    $hotel_used,
-    $hotel_room_details,
-    $special_requirements, 
-    $meal_plan,
-    $food_included
-);
-    // $stmt->bind_param("ssssdsisisi", $customer_name, $mobile_no, $pickup_address, $tour_package, $pricing, $special_requirements, $date_of_journey, $no_of_adults, $cars_provided, $no_of_cars, $food_included);
+    // Check if the prepare statement is successful
+    if ($stmt === false) {
+        die("Error preparing statement: " . $conn->error);
+    }
+
+    // Bind parameters for prepared statement
+    $stmt->bind_param(
+        "sssssissiisisssss", 
+        $customer_name, $mobile_no, $pickup_address, $drop_address, $tour_package, 
+        $pricing, $date_of_journey, $date_of_return, $no_of_adults, $no_of_children, 
+        $cars_provided, $no_of_cars, $hotel_used, $hotel_room_details, $special_requirements, 
+        $meal_plan, $food_included
+    );
+    
+    // Execute the query
     if ($stmt->execute()) {
-        // After successful insert, redirect to prevent resubmission
-        // header("Location: " . $_SERVER['PHP_SELF']);
         header("Location: inquiry.php");
-        
-        exit;  // Ensure no further code is executed after the redirect
+        exit;  // Prevent further code execution after redirect
     } else {
         echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";
     }
+
     $stmt->close();
 }
 
 // Handle Confirm Booking
 if (isset($_GET['confirm_booking_id'])) {
-    $invoice_id = $_GET['confirm_booking_id'];
+    $invoice_id = intval($_GET['confirm_booking_id']);
     $conn->query("UPDATE invoice_data SET booking_status = 'Confirmed' WHERE id = $invoice_id");
     header("Location: index.php");
+    exit;
 }
 
 // Handle Delete Booking
 if (isset($_GET['delete_booking_id'])) {
-    $invoice_id = $_GET['delete_booking_id'];
+    $invoice_id = intval($_GET['delete_booking_id']);
     $conn->query("UPDATE invoice_data SET booking_status = 'Declined' WHERE id = $invoice_id");
-    // $conn->query("DELETE FROM invoice_data WHERE id = $invoice_id");
     header("Location: index.php");
+    exit;
 }
 
-// Fetch all records from the database
+// Fetch records excluding declined bookings
 $records = $conn->query("SELECT * FROM invoice_data WHERE booking_status NOT IN ('Declined')");
-
-// Close the database connection
-// $conn->close();
+if (!$records) {
+    die("Error fetching records: " . $conn->error);
+}
 
 // Function to generate the invoice as PDF
 function generate_invoice($invoice) {
+    // Check if the invoice.html file exists
+    if (!file_exists('invoice.html')) {
+        die("Error: invoice.html file is missing.");
+    }
+    
     $html = file_get_contents('invoice.html');
     $html = str_replace('{{customer_name}}', $invoice['customer_name'], $html);
     $html = str_replace('{{mobile_no}}', $invoice['mobile_no'], $html);
@@ -120,17 +118,16 @@ function generate_invoice($invoice) {
     $html = str_replace('{{food_included}}', $invoice['food_included'] ? 'Yes' : 'No', $html);
 
     $options = new Options();
-    $options->set('fontDir', './fonts');  // Set your font directory path here
+    $options->set('fontDir', './fonts');  // Ensure the font directory exists
     $options->set('isHtml5ParserEnabled', true);
     $options->set('isPhpEnabled', true);
-    $options->set('isRemoteEnabled', true); // Enable remote file access
+    $options->set('isRemoteEnabled', true);
     $dompdf = new Dompdf($options);
-    
 
     // Load HTML content
     $dompdf->loadHtml($html);
 
-    // Set paper size
+    // Set paper size and orientation
     $dompdf->setPaper('A4', 'portrait');
 
     // Render PDF (first pass)
@@ -142,18 +139,21 @@ function generate_invoice($invoice) {
 
 // Check if the download button was clicked
 if (isset($_GET['download_invoice_id'])) {
-    $invoice_id = $_GET['download_invoice_id'];
+    $invoice_id = intval($_GET['download_invoice_id']);
 
     // Fetch the invoice data based on the ID
-    // $conn = new mysqli('localhost', 'root', 'root', 'Invoice');
     $result = $conn->query("SELECT * FROM invoice_data WHERE id = $invoice_id");
+    if (!$result) {
+        die("Error fetching invoice: " . $conn->error);
+    }
+    
     $invoice = $result->fetch_assoc();
-    // $conn->close();
 
     // Generate and download the invoice PDF
     generate_invoice($invoice);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -163,27 +163,14 @@ if (isset($_GET['download_invoice_id'])) {
     <title>HolidaySeva</title> 
 </head>
 <body>
-    <?php include('navigation.php') ?>
+    <?php include('navigation.php'); ?>
     <section class="home">
-  <br>
-  <!-- <center>
-  <form action="/search" method="get" style="display: flex; align-items: center; width: 70%;margin-top:5px;margin-bottom:5px;">
-    <input type="text" name="query" id="search-box" placeholder="Search..." required 
-        style="flex: 1; padding: 6px 10px; border: 1px solid #000000; border-radius: 4px 0 0 4px; font-size: 14px; outline: none;">
-    <button type="submit" 
-        style="padding: 6px 12px; border: none; background-color: #007BFF; color: white; border-radius: 0 4px 4px 0; cursor: pointer; font-size: 14px; margin-left:-17px">
-        Search
-    </button>
-</form>
-  </center> -->
-  
-
-       <div class="container" style="margin-left:10%;">
-        <?php include('form.php') ?>
-       </div>
+        <br>
+        <div class="container" style="margin-left:10%;">
+            <?php include('form.php'); ?>
+        </div>
     </section>
 
     <script src="script.js"></script>
-
 </body>
 </html>

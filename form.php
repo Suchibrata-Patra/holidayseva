@@ -166,20 +166,20 @@
 
 <div class="form-container">
   <h1>Register Enquiry</h1>
-  <form method="POST">
+  <form method="POST" action="">
     <div class="form-row">
       <div>
         <label for="customer_name">Customer Name</label>
-        <input type="text" id="customer_name" name="customer_name" placeholder="Enter customer name" required />
+        <input type="text" id="customer_name" name="customer_name" placeholder="Enter customer name" required value="Test Buddy" />
       </div>
       <div>
         <label for="mobile_no">Mobile No</label>
-        <input type="text" id="mobile_no" name="mobile_no" placeholder="Enter mobile number" required />
+        <input type="text" id="mobile_no" name="mobile_no" placeholder="Enter mobile number" required value="94757558479"/>
       </div>
     </div>
     <div>
       <label for="pickup_address">Pickup Address</label>
-      <textarea id="pickup_address" name="pickup_address" placeholder="Enter pickup address" required></textarea>
+      <textarea id="pickup_address" name="pickup_address" placeholder="Enter pickup address"></textarea>
     </div>
     <div>
       <div>
@@ -208,35 +208,35 @@
 </div>
       <div>
         <label for="pricing">Pricing</label>
-        <input type="number" id="pricing" name="pricing" placeholder="Enter Total Cost" required />
+        <input type="number" id="pricing" name="pricing" placeholder="Enter Total Cost" required value="9800"/>
       </div>
     </div>
     <div class="form-row">
       <div>
         <label for="date_of_journey">Date of Journey</label>
-        <input type="date" id="date_of_journey" name="date_of_journey" required />
+        <input type="date" id="date_of_journey" name="date_of_journey" required value='2024-01-01'/>
       </div>
       <div>
         <label for="date_of_return">Date of Return</label>
-        <input type="date" id="date_of_return" name="date_of_return" required />
+        <input type="date" id="date_of_return" name="date_of_return" required value='2024-06-01'/>
       </div>
       <div>
         <label for="no_of_adults">Number of Adults</label>
-        <input type="number" id="no_of_adults" name="no_of_adults" placeholder="Enter number of adults" required />
+        <input type="number" id="no_of_adults" name="no_of_adults" placeholder="Enter number of adults" required value="3"/>
       </div>
       <div>
         <label for="no_of_children">Number of Children</label>
-        <input type="number" id="no_of_children" name="no_of_children" placeholder="Enter number of Children" required />
+        <input type="number" id="no_of_children" name="no_of_children" placeholder="Enter number of Children" required value='0'/>
       </div>
     </div>
     <div class="form-row">
       <div>
         <label for="cars_provided">Cars Provided</label>
-        <input type="text" id="cars_provided" name="cars_provided" placeholder="Enter cars provided" required />
+        <input type="text" id="cars_provided" name="cars_provided" placeholder="Enter cars provided" required value='Swift Desire'/>
       </div>
       <div>
         <label for="no_of_cars">Number of Cars</label>
-        <input type="number" id="no_of_cars" name="no_of_cars" placeholder="Enter number of cars" required />
+        <input type="number" id="no_of_cars" name="no_of_cars" placeholder="Enter number of cars" required value='2'/>
       </div>
       <div>
         <label for="hotel_used">Hotel Required</label>
