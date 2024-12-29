@@ -231,3 +231,60 @@ scrol
     }
   </style>
   
+  <script>
+  function toggleAddress(toggleId, fieldId, inputId) {
+const toggleSwitch = document.getElementById(toggleId);
+const field = document.getElementById(fieldId);
+const input = document.getElementById(inputId);
+const pickupAddress = document.getElementById("pickup_address").value;
+const defaultAddress = document.getElementById("drop_address").value; // New field for default value
+
+if (toggleSwitch.checked) {
+  field.style.display = "none";
+  input.value = pickupAddress; // Use pickup address when toggle is on
+} else {
+  field.style.display = "block";
+  input.value = defaultAddress; // Use default value when toggle is off
+}
+}
+
+
+
+
+function toggleMealPlan() {
+  const toggleSwitch = document.getElementById("food_included");
+  const mealPlanField = document.getElementById("meal_plan_field");
+  const mealPlanInput = document.getElementById("meal_plan");
+
+  if (toggleSwitch.checked) {
+    mealPlanField.style.display = "block"; // Show the dropdown
+    mealPlanInput.required = true; // Mark as required when visible
+  } else {
+    mealPlanField.style.display = "none"; // Hide the dropdown
+    mealPlanInput.value = ""; // Clear the selection
+    mealPlanInput.required = false; // Remove required attribute
+  }
+}
+function toggleRoomDetails() {
+    const hotelUsedDropdown = document.getElementById('hotel_used');
+    const roomDetailsField = document.getElementById('hotel_room_details');
+
+    if (hotelUsedDropdown.value === 'no') {
+      roomDetailsField.disabled = true;
+      roomDetailsField.value = ''; // Clear the field value when disabling
+    } else {
+      roomDetailsField.disabled = false;
+    }
+  }
+
+  // Initialize the field state on page load
+  document.addEventListener('DOMContentLoaded', toggleRoomDetails);
+
+window.onload = function () {
+  const dropToggle = document.getElementById("drop_address_toggle");
+  dropToggle.checked = true;
+  toggleAddress('drop_address_toggle', 'drop_address_field', 'drop_address');
+  toggleMealPlan(); // Apply the initial state for the food toggle
+};
+
+</script>
