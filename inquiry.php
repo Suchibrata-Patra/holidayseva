@@ -103,7 +103,7 @@ function generate_invoice($invoice) {
             at the confluence of the Ganga River and the Bay of Bengal, renowned for the spiritually significant Kapil Muni
             Ashram.
             <br>
-            <strong>Gangasagar Sightseeing</strong> - 
+            <strong>Sightseeing</strong> - 
             Enjoy a full day of sightseeing in Gangasagar, exploring its sacred sites.
             <br>
             <strong>Overnight Stay</strong> - 
