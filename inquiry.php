@@ -90,10 +90,7 @@ function generate_invoice($invoice) {
         The cost of round-trip ferry tickets is included for both sides of the journey.
     </li><br>
     <span style="font-size:0.8rem;">* Rates are applicable for Indian nationals only.</span>';
-    }
-
-    ## Fomat for the documentatin of 
-    if ($invoice['tour_package'] == '1N/2D Complete GangaSagar Yatra Package') {
+    }elseif ($invoice['tour_package'] == '1N/2D Complete GangaSagar Yatra Package') {
     $tour_details_html = '<div class="important">
         <div class="text">
             <strong> Day 1 :Kolkata to Ganga Sagar Yatra package(130Kms/5:00 Hrs):</strong>
