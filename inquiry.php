@@ -76,16 +76,16 @@ After completing the visit, transfer back to Kolkata with cherished memories.
     </div>';
     $Cost_Includes_html='<li>
     <strong>Exclusive Vehicles</strong><br>
-Dedicated vehicles for round-trip transfers and sightseeing as per the itinerary, ensuring comfort and convenience throughout the journey.</li>
+Dedicated vehicles for round-trip transfers and sightseeing as per the itinerary, ensuring comfort and convenience throughout the journey.</li><br>
 <li>
 <strong>All On the Go Expenses</strong><br>
 All necessary permit fees, parking charges, driver allowances, and fuel costs are included to ensure a hassle-free travel experience.
-</li>
+</li><br>
 <li>
 <strong>Ferry Tickets</strong><br>
-The cost of round-trip ferry tickets is included for both sides of the journey.</li>
+The cost of round-trip ferry tickets is included for both sides of the journey.</li><br>
 <br>
-<li>Rates are applicable for Indian nationals only.</li>';
+<li> * Rates are applicable for Indian nationals only.</li>';
     } 
 
 
