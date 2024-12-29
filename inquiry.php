@@ -98,22 +98,22 @@ function generate_invoice($invoice) {
         <div class="text">
             <strong> Day 1 :Kolkata to Ganga Sagar Yatra package(130Kms/5:00 Hrs):</strong><br>
             <br />
-            <strong>Meet & Greet</strong>
+            <strong>Meet & Greet</strong> -
             Upon arrival at the Airport/Station/Hotel/City, you will be warmly welcomed and driven to Gangasagar, an island
             at the confluence of the Ganga River and the Bay of Bengal, renowned for the spiritually significant Kapil Muni
             Ashram.
             <br>
-            <strong>Gangasagar Sightseeing</strong>
+            <strong>Gangasagar Sightseeing</strong> - 
             Enjoy a full day of sightseeing in Gangasagar, exploring its sacred sites.
             <br>
-            <strong>Overnight Stay</strong>
+            <strong>Overnight Stay</strong> - 
             Stay overnight at your accommodation in Gangasagar, soaking in the serene and devout atmosphere.
-            <br><br><br>
-            <strong>Day 02 (' . date('Y-m-d', strtotime($invoice['date_of_journey'] . ' +1 day')) . '): Ganga Sagar to Kolkata Drop</strong>
+            <br>
+            <strong>Day 02 (' . date('Y-m-d', strtotime($invoice['date_of_journey'] . ' +1 day')) . ') - <br>Ganga Sagar to Kolkata Drop</strong>
             <br />
 Begin your day with a visit to Gangasagar for a sacred darshan, followed by completing your puja rituals and taking a holy dip.
 <br>
-<strong>Check-out & Return</strong><br>
+<strong>Check-out & Return</strong> - 
 Return to your accommodation, collect your luggage, and check out. Then, transfer back to Kolkata, carrying with you cherished memories of Gangasagar.
         </div>
     </div>';
