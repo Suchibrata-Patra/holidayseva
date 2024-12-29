@@ -74,8 +74,15 @@ After completing the visit, transfer back to Kolkata with cherished memories.
         <br />
       </div>
     </div>';
+    $Cost_Includes_html='<li>Vehicle for transfers and sightseeing as per the itinerary.</li>
+<li>All permit fees, parking charges, driver allowances, and fuel costs.</li>
+<li>Round-trip ship tickets.</li>
+<li>One-night accommodation at Ganga Sagar, inclusive of dinner and breakfast.</li>
+<li>Rates are applicable for Indian nationals only.</li>';
     } 
 
+
+    $html = str_replace('{{Cost_Includes}}', $Cost_Includes_html, $html);
 
     $html = str_replace('{{tour_details}}', $tour_details_html, $html);
     $html = str_replace('{{customer_name}}', $invoice['customer_name'], $html);
