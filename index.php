@@ -1,4 +1,7 @@
 <?php session_start(); /* Starts the session */
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 if(!isset($_SESSION['UserData']['Username'])){
         header("location:login.php");
         exit;
@@ -6,9 +9,6 @@ if(!isset($_SESSION['UserData']['Username'])){
 ?>
 <?php require 'vendor/autoload.php';  // Load DOMPDF library
 require 'database.php';
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
