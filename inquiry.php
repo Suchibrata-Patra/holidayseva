@@ -84,8 +84,7 @@ All necessary permit fees, parking charges, driver allowances, and fuel costs ar
 <li>
 <strong>Ferry Tickets</strong><br>
 The cost of round-trip ferry tickets is included for both sides of the journey.</li><br>
-<br>
-<li> * Rates are applicable for Indian nationals only.</li>';
+<span style="font-size:0.6rem;">* Rates are applicable for Indian nationals only.</span>';
     } 
 
 
