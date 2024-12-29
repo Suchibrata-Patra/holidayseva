@@ -1,339 +1,233 @@
-<?php 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-?>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
-  
-  body {
-    font-family: "Inter", sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f9fafb;
-  }
-  
+  /* General Styles */
   .form-container {
-    max-width: 600px;
-    width: 90%;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 0px;
-    border: 0.5px solid #bababa;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
-  
-  .form-container h1 {
-    font-size: 2rem;
-    margin: 0 0 20px;
-    color: #333;
+
+  .form-title {
+    margin: 0;
     text-align: center;
+    font-size: 2rem;
     font-weight: 400;
+    color: black;
   }
-  
-  form {
-    display: grid;
-    gap: 16px;
+
+  .form-group {
+    display: flex;
+    gap: 10px;
   }
-  
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+
+  .form-label {
+    flex: 1;
+    color: #0a4082;
   }
-  
-  label {
-    display: block;
-    font-size: 1.1rem;
-    margin-bottom: 0px;
-    color: #014283;
-    font-weight: 500;
-  }
-  
-  input,
-  textarea {
+
+  .form-input,
+  .form-textarea,
+  .form-button {
     width: 100%;
-    padding: 10px 14px;
-    font-size: 0.95rem;
-    border: 1px solid #dcdcdc;
+    padding: 6px;
+    /* Increased padding for better look */
+    border: 0.4px solid rgb(211, 211, 211);
     border-radius: 0px;
-    background-color: #ffffff;
-    transition: border-color 0.2s;
-  }
-  
-  input:focus,
-  textarea:focus {
-    border-color: #007aff;
-    outline: none;
-    background-color: #fff;
-  }
-  
-  textarea {
-    resize: none;
-    height: 80px;
-  }
-  
-  button {
-    padding: 12px;
-    background-color: #007aff;
-    color: white;
+    box-sizing: border-box;
+    color:rgb(0, 0, 0);
     font-size: 1rem;
-    font-weight: 600;
+    /* Ensures consistent width and padding */
+  }
+
+  .form-textarea {
+    height: 60px;
+  }
+
+  .form-button {
+    background: #007aff;
+    color: #ffffff;
     border: none;
-    border-radius: 2px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    text-align: center;
   }
-  
-  button:hover {
-    background-color: #005bb5;
-  }
-  
-  .toggle-container {
+
+  .button-group {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
   }
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 34px;
-    height: 20px;
+  #editModal::-webkit-scrollbar {
+    display: none;
   }
   
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 20px;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 14px;
-    width: 14px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
-  }
-  
-  input:checked + .slider {
-    background-color: #007aff;
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(14px);
-  }
-  
-  .checkbox-container {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .food-toggle-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  #meal_plan_field {
-    display: flex;
-    align-items: center;
-  }
-  
-  #meal_plan {
-    margin-left: 10px;
-  }
-  input:disabled {
-    cursor: not-allowed; /* Changes the cursor to the disabled style */
-    background-color: #f0f0f0; /* Optional: Add a gray background to indicate disabled state */
-  }
 </style>
 
-<div class="form-container">
-  <h1>Register Enquiry</h1>
-  <form method="POST" action="">
-    <div class="form-row">
-      <div>
-        <label for="customer_name">Customer Name</label>
-        <input type="text" id="customer_name" name="customer_name" placeholder="Enter customer name" required />
+<div id="editModal" style="
+display: none; 
+position: fixed; 
+top: 50%; 
+left: 50%; 
+transform: translate(-50%, -50%); 
+width: 40%; 
+background: #fff; 
+border: 0.4px solid rgb(211, 211, 211); 
+border-radius: 0px; 
+padding: 30px; 
+font-family: Arial, sans-serif; 
+font-size: 14px; 
+color: rgb(211, 211, 211);
+max-height:95vh;
+overflow-y:auto;
+scrol
+">
+
+
+<div method="POST" action="" style="display: flex; flex-direction: column; gap: 10px;">
+    <!-- <button onclick="closeEditModal()" style="position: fixed;right: 20px;top:20px;font-size: 1.5rem;background:rgb(234, 234, 234);border-radius: 50px;padding: 5px 13px;border:none;font-weight: 200;"> X </button> -->
+    <button onclick="closeEditModal()" style="position: fixed; right: 20px; top: 20px; font-size: 1rem;color:black;background-color:none ;border-radius: 50px; padding: 5px 5px 0 5px; border: none; font-weight: 200;">
+    <!-- Material Icon for close -->
+    <span class="material-icons">close</span>
+  </button>
+    <form method="POST" action="" class="form-container">
+      <input type="hidden" id="update_invoice_id" name="update_invoice_id">
+      <h3 class="form-title">Edit Booking</h3>      
+      <div style="display: flex; align-items: center;background:rgb(255, 255, 255);padding-left: 0px;">
+        <span style="color: rgb(2, 57, 135); font-weight: 400;font-size: 1rem;padding-right: 5px;">Customer ID : </span>
+        <input type="text" id="user_id" name="user_id"  style="cursor: pointer;font-size: 1rem;border: none;font-weight: 400;color:rgb(0, 0, 0);font-size: 1rem;background-color:none;" >
       </div>
-      <div>
-        <label for="mobile_no">Mobile No</label>
-        <input type="text" id="mobile_no" name="mobile_no" placeholder="Enter mobile number" required />
-      </div>
-    </div>
-    <div>
-      <label for="pickup_address">Pickup Address</label>
-      <textarea id="pickup_address" name="pickup_address" placeholder="Enter pickup address" required></textarea>
-    </div>
-    <div>
-      <div>
-        <label>Drop Address</label>
-        <div class="toggle-container">
-          <label class="switch">
-            <input type="checkbox" id="drop_address_toggle" checked onchange="toggleAddress('drop_address_toggle', 'drop_address_field', 'drop_address')"/>
-            <span class="slider round"></span>
-          </label>
-          Same as Pickup Address
-        </div>
-        <div id="drop_address_field" style="display: none">
-          <!-- <label for="drop_address">Drop Address</label> -->
-          <textarea id="drop_address" name="drop_address" placeholder="Enter drop address"></textarea>
-        </div>
-      </div>
-    </div>
-    <div class="form-row">
-    <div>
-  <label for="tour_package">Tour Package</label>
-  <select id="tour_package" name="tour_package" required style="font-size:0.7rem;padding: 5px 0px 5px 0px;">
-    <option value="GangaSagar Tour Package Same Day">GangaSagar Tour Package Same Day</option>
-    <option value="GangaSagar Tour Package 1 Night 2 Days">GangaSagar Tour Package 1 Night 2 Days</option>
-    <option value="Gangasagar 1 Night 2 Days with Kolkata City Tour">Gangasagar 1 Night 2 Days with Kolkata City Tour</option>
-  </select>
-</div>
-      <div>
-        <label for="pricing">Pricing</label>
-        <input type="number" id="pricing" name="pricing" placeholder="Enter Total Cost" required />
-      </div>
-    </div>
-    <div class="form-row">
-      <div>
-        <label for="date_of_journey">Date of Journey</label>
-        <input type="date" id="date_of_journey" name="date_of_journey" required />
-      </div>
-      <div>
-        <label for="date_of_return">Date of Return</label>
-        <input type="date" id="date_of_return" name="date_of_return" required />
-      </div>
-      <div>
-        <label for="no_of_adults">Number of Adults</label>
-        <input type="number" id="no_of_adults" name="no_of_adults" placeholder="Enter number of adults" required />
-      </div>
-      <div>
-        <label for="no_of_children">Number of Children</label>
-        <input type="number" id="no_of_children" name="no_of_children" placeholder="Enter number of Children" required />
-      </div>
-    </div>
-    <div class="form-row">
-      <div>
-        <label for="cars_provided">Cars Provided</label>
-        <input type="text" id="cars_provided" name="cars_provided" placeholder="Enter cars provided" required />
-      </div>
-      <div>
-        <label for="no_of_cars">Number of Cars</label>
-        <input type="number" id="no_of_cars" name="no_of_cars" placeholder="Enter number of cars" required />
-      </div>
-      <div>
-        <label for="hotel_used">Hotel Required</label>
-        <select id="hotel_used" name="hotel_used" required onchange="toggleRoomDetails()" style="padding: 5px 200px 5px 5px;">
-          <option value="yes">Yes</option>
-          <option value="no" selected>No</option>
-        </select>
-      </div>
-      
-      <div>
-        <label for="hotel_room_details">Type of Rooms</label>
-        <input type="text" id="hotel_room_details" name="hotel_room_details" placeholder="Not Required" required disabled />
-      </div>
-    </div>
-    <div>
-      <label for="special_requirements">Special Requirements</label>
-      <textarea id="special_requirements" name="special_requirements" placeholder="Enter special requirements (If any)"></textarea>
-    </div>
-    <div class="food-toggle-wrapper">
-      <div class="checkbox-container">
-        <label class="switch">
-          <input type="checkbox" id="food_included" name="food_included" onchange="toggleMealPlan()"/>
-          <span class="slider round"></span>
+      <div class="form-group"> 
+        <label class="form-label">Customer Name:
+          <input type="text" id="customer_name" name="customer_name" class="form-input"  style="cursor:pointer"; readonly>
         </label>
-        Food Included ?
+        <label class="form-label">Mobile No:
+          <input type="text" id="mobile_no" name="mobile_no" class="form-input" style="cursor:pointer"; readonly>
+        </label>
+        
       </div>
-      <div id="meal_plan_field" style="display: none">
-        <select id="meal_plan" name="meal_plan" required>
-          <option value="" disabled selected>Select a meal plan</option>
-          <option value="breakfast_only">Breakfast Only</option>
-          <option value="half_board">Half Board (Breakfast + Dinner)</option>
-          <option value="full_board">Full Board (All Meals)</option>
-        </select>
+
+      <div class="form-group">
+        <label class="form-label">Pickup Address:
+          <input type="text" id="pickup_address" name="pickup_address" class="form-input"  style="cursor:pointer"; readonly>
+        </label>
+        <label class="form-label">Drop Address:
+          <input type="text" id="drop_address" name="drop_address" class="form-input"  style="cursor:pointer"; readonly>
+        </label>
       </div>
-    </div>
-    <button type="submit">Save</button>
-  </form>
-</div>
 
-<script>
-  function toggleAddress(toggleId, fieldId, inputId) {
-const toggleSwitch = document.getElementById(toggleId);
-const field = document.getElementById(fieldId);
-const input = document.getElementById(inputId);
-const pickupAddress = document.getElementById("pickup_address").value;
-const defaultAddress = document.getElementById("drop_address").value; // New field for default value
+      <div class="form-group">
+        <label class="form-label">Pricing:
+          <input type="text" id="pricing" name="pricing" class="form-input">
+        </label>
+        <label class="form-label" style="background-color: rgb(221, 237, 255);color: black;padding:5px;">Token Amount:
+          <input type="text" id="token_paid" name="token_paid" class="form-input">
+        </label>
+      </div>
 
-if (toggleSwitch.checked) {
-  field.style.display = "none";
-  input.value = pickupAddress; // Use pickup address when toggle is on
-} else {
-  field.style.display = "block";
-  input.value = defaultAddress; // Use default value when toggle is off
-}
-}
+      <label class="form-label">Tour Package:
+        <input type="text" id="tour_package" name="tour_package" class="form-input"  style="cursor:pointer"; >
+      </label>
+      <div class="form-group">
+        <label class="form-label">Journey:
+          <input type="date" id="date_of_journey" name="date_of_journey" class="form-input"  style="cursor:pointer"; readonly>
+        </label>
+        <label class="form-label">Return:
+          <input type="date" id="date_of_return" name="date_of_return" class="form-input"  style="cursor:pointer"; readonly>
+        </label>
+        
+      </div>
 
+      <div class="form-group">
+      <label class="form-label">No of Adults:
+          <input type="number" id="no_of_adults" name="no_of_adults" class="form-input"  style="cursor:pointer"; readonly>
+        </label>
+      <label class="form-label">No of child:
+          <input type="number" id="no_of_children" name="no_of_children" class="form-input"  style="cursor:pointer"; readonly>
+        </label>
+        <label class="form-label">Cars Provided:
+          <input type="text" id="cars_provided" name="cars_provided" class="form-input"  style="cursor:pointer"; readonly>
+        </label>
+        <label class="form-label">Number of Cars:
+          <input type="number" id="no_of_cars" name="no_of_cars" class="form-input"  style="cursor:pointer"; readonly>
+        </label>
+      </div>
 
+      <label class="form-label">Special Requirements:
+        <textarea id="special_requirements" name="special_requirements" class="form-textarea" readonly></textarea>
+      </label>
+      <div class="form-group">
+        <label class="form-label">Hotel Used:
+          <input type="text" id="hotel_used" name="hotel_used" class="form-input"  style="cursor:pointer"; readonly>
+        </label>
+        <label class="form-label">Room Details:
+          <input type="text" id="hotel_room_details" name="hotel_room_details" class="form-input"  style="cursor:pointer"; readonly>
+        </label>
+        
+      </div>
+      <div class="form-group">
+        <label class="form-label toggle-label">
+          Food Included:
+          <input type="checkbox" id="food_included" name="food_included" class="toggle-checkbox">
+          <input type="checkbox" id="food_included" name="food_included" class="toggle-checkbox">
+          <span class="toggle-slider"></span>
+        </label>
+        <label class="form-label">Meal Type:
+          <input type="text" id="meal_type" name="meal_type" class="form-input">
+        </label>
+      </div>
 
+      <div class="button-group">
+        <button type="submit" class="form-button">Save</button>
+        <button type="button" onclick="closeEditModal()" class="form-button">Cancel</button>
+      </div>
+    </form>
+  </div>
 
-function toggleMealPlan() {
-  const toggleSwitch = document.getElementById("food_included");
-  const mealPlanField = document.getElementById("meal_plan_field");
-  const mealPlanInput = document.getElementById("meal_plan");
-
-  if (toggleSwitch.checked) {
-    mealPlanField.style.display = "block"; // Show the dropdown
-    mealPlanInput.required = true; // Mark as required when visible
-  } else {
-    mealPlanField.style.display = "none"; // Hide the dropdown
-    mealPlanInput.value = ""; // Clear the selection
-    mealPlanInput.required = false; // Remove required attribute
-  }
-}
-function toggleRoomDetails() {
-    const hotelUsedDropdown = document.getElementById('hotel_used');
-    const roomDetailsField = document.getElementById('hotel_room_details');
-
-    if (hotelUsedDropdown.value === 'no') {
-      roomDetailsField.disabled = true;
-      roomDetailsField.value = ''; // Clear the field value when disabling
-    } else {
-      roomDetailsField.disabled = false;
+  <style>
+    /* Container for the toggle */
+    .toggle-label {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
     }
-  }
-
-  // Initialize the field state on page load
-  document.addEventListener('DOMContentLoaded', toggleRoomDetails);
-
-window.onload = function () {
-  const dropToggle = document.getElementById("drop_address_toggle");
-  dropToggle.checked = true;
-  toggleAddress('drop_address_toggle', 'drop_address_field', 'drop_address');
-  toggleMealPlan(); // Apply the initial state for the food toggle
-};
-
-</script>
+  
+    /* Hide the default checkbox */
+    .toggle-checkbox {
+      display: none;
+    }
+  
+    /* Toggle slider container */
+    .toggle-slider {
+      margin-left: 10px;
+      position: relative;
+      width: 50px;
+      height: 25px;
+      background-color: #ccc;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+  
+    /* Slider circle */
+    .toggle-slider::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 19px;
+      height: 19px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+  
+    /* Checked state */
+    .toggle-checkbox:checked + .toggle-slider {
+      background-color: #389dea;
+    }
+  
+    .toggle-checkbox:checked + .toggle-slider::before {
+      transform: translateX(25px);
+    }
+  </style>
+  
