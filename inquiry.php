@@ -96,7 +96,7 @@ function generate_invoice($invoice) {
     if ($invoice['tour_package'] == '1N/2D Complete GangaSagar Yatra Package') {
     $tour_details_html = '<div class="important">
         <div class="text">
-            <strong> Day 1 :Kolkata to Ganga Sagar Yatra package(130Kms/5:00 Hrs):</strong>
+            <strong> Day 1 :Kolkata to Ganga Sagar Yatra package(130Kms/5:00 Hrs):</strong><br>
             <br />
             <strong>Meet & Greet</strong>
             Upon arrival at the Airport/Station/Hotel/City, you will be warmly welcomed and driven to Gangasagar, an island
@@ -109,7 +109,7 @@ function generate_invoice($invoice) {
             <strong>Overnight Stay</strong>
             Stay overnight at your accommodation in Gangasagar, soaking in the serene and devout atmosphere.
             <br>
-            <strong>Day 02 (21/01/25: Ganga Sagar to Kolkata Drop</strong>
+            <strong>Day 02 (21/01/25: Ganga Sagar to Kolkata Drop</strong><br>
             <br />
         <strong>Morning Activities</strong><br>
 Begin your day with a visit to Gangasagar for a sacred darshan, followed by completing your puja rituals and taking a holy dip.
