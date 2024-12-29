@@ -170,7 +170,7 @@ error_reporting(E_ALL);
 
 <div class="form-container">
   <h1>Register Enquiry</h1>
-  <form method="POST">
+  <form method="POST" action="">
     <div class="form-row">
       <div>
         <label for="customer_name">Customer Name</label>
