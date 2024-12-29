@@ -1,4 +1,21 @@
-<style>
+
+$customer_name = $_POST['customer_name'];
+    $mobile_no = $_POST['mobile_no'];
+    $pickup_address = $_POST['pickup_address'];
+    $drop_address = $_POST['drop_address'];
+    $tour_package = $_POST['tour_package'];
+    $pricing = $_POST['pricing'];
+    $date_of_journey = $_POST['date_of_journey'];
+    $date_of_return = $_POST['date_of_return'];
+    $no_of_adults = $_POST['no_of_adults'];
+    $no_of_children = $_POST['no_of_children'];
+    $cars_provided = $_POST['cars_provided'];
+    $no_of_cars = $_POST['no_of_cars'];
+    $hotel_used = $_POST['hotel_used'];
+    $hotel_room_details = $_POST['hotel_room_details'];
+    $special_requirements = $_POST['special_requirements'];
+    $meal_plan = $_POST['meal_plan'];
+    $food_included = isset($_POST['food_included']) ? 1 : 0; // True or False<style>
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
   
   body {
