@@ -180,7 +180,7 @@
     <label for="mobile_no" style="margin-right: 10px;">Mobile</label>
     <div style="display: flex; align-items: center; border: 1px solid #ccc; border-radius: 5px; overflow: hidden;">
         <select id="country_code" name="country_code" required 
-                style="border: none; background: #f9f9f9; padding: 0px; font-size: 0.5rem;">
+                style="border: none; background:none; padding: 0px; font-size: 0.5rem;">
             <option value="+91">+91</option>
             <option value="+1">+1</option>
             <option value="+44">+44</option>
