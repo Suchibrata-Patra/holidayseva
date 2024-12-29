@@ -4,9 +4,6 @@ require 'vendor/autoload.php';  // Load DOMPDF library
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
-// Database connection
-$conn = new mysqli('localhost', 'root', 'root', 'Invoice');
-
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
