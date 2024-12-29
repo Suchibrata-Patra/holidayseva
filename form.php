@@ -176,32 +176,34 @@
         <label for="mobile_no">Mobile No</label>
         <input type="text" id="mobile_no" name="mobile_no" placeholder="Enter mobile number" required />
       </div> -->
-      <div style="display: flex; align-items: center; gap: 10px;">
-    <label for="mobile_no">Mobile No</label>
-    <select id="country_code" name="country_code" required style="font-size: 0.9rem; padding: 5px;">
-        <option value="+91">+91 (India)</option>
-        <option value="+1">+1 (USA)</option>
-        <option value="+44">+44 (UK)</option>
-        <option value="+61">+61 (Australia)</option>
-        <option value="+81">+81 (Japan)</option>
-        <option value="+86">+86 (China)</option>
-        <option value="+49">+49 (Germany)</option>
-        <option value="+33">+33 (France)</option>
-        <!-- Add more country codes as needed -->
-    </select>
-    <input 
-        type="text" 
-        id="mobile_number" 
-        placeholder="Enter mobile number" 
-        required 
-        style="flex: 1; font-size: 0.9rem; padding: 5px;" 
-    />
-    <!-- Hidden input field to store the combined value -->
-    <input 
-        type="hidden" 
-        id="mobile_no" 
-        name="mobile_no" 
-    />
+      <div style="display: flex; align-items: center;">
+    <label for="mobile_no" style="margin-right: 10px;">Mobile No</label>
+    <div style="display: flex; align-items: center; border: 1px solid #ccc; border-radius: 5px; overflow: hidden;">
+        <select id="country_code" name="country_code" required 
+                style="border: none; background: #f9f9f9; padding: 5px; font-size: 0.9rem;">
+            <option value="+91">+91</option>
+            <option value="+1">+1</option>
+            <option value="+44">+44</option>
+            <option value="+61">+61</option>
+            <option value="+81">+81</option>
+            <option value="+86">+86</option>
+            <option value="+49">+49</option>
+            <option value="+33">+33</option>
+        </select>
+        <input 
+            type="text" 
+            id="mobile_number" 
+            placeholder="Enter mobile number" 
+            required 
+            style="border: none; padding: 5px; flex: 1; font-size: 0.9rem;" 
+        />
+        <!-- Hidden input to store the combined value -->
+        <input 
+            type="hidden" 
+            id="mobile_no" 
+            name="mobile_no" 
+        />
+    </div>
 </div>
 
 <script>
