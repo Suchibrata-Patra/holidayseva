@@ -58,10 +58,11 @@ if (isset($_GET['delete_booking_id'])) {
 $records = $conn->query("SELECT * FROM invoice_data");
 function generate_invoice($invoice) {
     $html = file_get_contents('generate.html');
-    if ($invoice['tour_package'] == 'GangaSagar Tour Package 1 Night 2 Days') {
+    
+    if ($invoice['tour_package'] == 'Kolkata to Gangasagar One-Day Round Trip') {
         $tour_details_html = '<div class="important">
       <div class="text">
-        <strong>GangaSagar Tour Package 1 Night 2 Days</strong>
+        <strong>Kolkata to Gangasagar One-Day Round Trip1</strong>
         <br />
         <br />
         <strong> Day 01: Kolkata to Ganga Sagar Yatra package(130Kms/5:00 Hrs) : </strong><br>Meet and greet upon arrival at the airport, station, city, or hotel, followed by the start of the journey to Ganga Sagar. Ganga Sagar is an island at the confluence of the Ganges River and the Bay of Bengal, renowned for the Kapil Muni Ashram, which holds immense religious significance. Spend the entire day exploring Ganga Sagar, followed by an overnight stay at a Ganga Sagar accommodation.
@@ -76,8 +77,29 @@ function generate_invoice($invoice) {
         <br />
       </div>
     </div>';
-}
-    
+    } 
+
+    if ($invoice['tour_package'] == '1N/2D Complete Gangasagar Yatra Package') {
+        $tour_details_html = '<div class="important">
+      <div class="text">
+        <strong>Kolkata to Gangasagar One-Day Round Trip1</strong>
+        <br />
+        <br />
+        <strong> Day 01: Kolkata to Ganga Sagar Yatra package(130Kms/5:00 Hrs) : </strong><br>Meet and greet upon arrival at the airport, station, city, or hotel, followed by the start of the journey to Ganga Sagar. Ganga Sagar is an island at the confluence of the Ganges River and the Bay of Bengal, renowned for the Kapil Muni Ashram, which holds immense religious significance. Spend the entire day exploring Ganga Sagar, followed by an overnight stay at a Ganga Sagar accommodation.
+        <br />
+        <br />
+        <strong> Day 02: Ganga Sagar to Kolkata Drop : </strong><br>In the morning, visit Ganga Sagar for darshan, complete your puja and rituals, and take a holy bath. Return to the accommodation, collect your luggage, and check out. Proceed for a transfer to Kolkata, carrying sweet memories of your time at Ganga Sagar.
+              <!-- <strong>Day 02:</strong> Ganga Sagar to Kolkata - Complete your puja
+        and take a holy bath. After checkout, return to Kolkata.
+        <br />
+        <strong>Note:</strong> Exclusive AC Vehicle Service from Kolkata to
+        Ferry Ghat. -->
+        <br />
+      </div>
+    </div>';
+    }
+
+
     $html = str_replace('{{tour_details}}', $tour_details_html, $html);
     $html = str_replace('{{customer_name}}', $invoice['customer_name'], $html);
     $html = str_replace('{{mobile_no}}', $invoice['mobile_no'], $html);
