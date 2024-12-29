@@ -171,7 +171,7 @@ scrol
           <span class="toggle-slider"></span>
         </label>
         <label class="form-label">Meal Type:
-          <input type="text" id="meal_type" name="meal_type" class="form-input" readonly>
+          <input type="text" id="meal_type" name="meal_type" class="form-input">
         </label>
       </div>
 
@@ -264,6 +264,8 @@ function toggleMealPlan() {
     mealPlanInput.required = false; // Remove required attribute
   }
 }
+
+
 function toggleRoomDetails() {
     const hotelUsedDropdown = document.getElementById('hotel_used');
     const roomDetailsField = document.getElementById('hotel_room_details');
