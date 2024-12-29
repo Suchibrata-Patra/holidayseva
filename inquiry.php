@@ -109,6 +109,13 @@ function generate_invoice($invoice) {
             <strong>Overnight Stay</strong>
             Stay overnight at your accommodation in Gangasagar, soaking in the serene and devout atmosphere.
             <br>
+            <strong>Day 02 (21/01/25: Ganga Sagar to Kolkata Drop</strong>
+            <br />
+        <strong>Morning Activities</strong><br>
+Begin your day with a visit to Gangasagar for a sacred darshan, followed by completing your puja rituals and taking a holy dip.
+<br>
+<strong>Check-out & Return</strong><br>
+Return to your accommodation, collect your luggage, and check out. Then, transfer back to Kolkata, carrying with you cherished memories of Gangasagar.
         </div>
     </div>';
     $Cost_Includes_html='<li>
