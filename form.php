@@ -181,7 +181,7 @@
     <div style="display: flex; align-items: center; border: 1px solid #ccc; border-radius: 5px; overflow: hidden;">
         <select id="country_code" name="country_code" required 
                 style="border: none; background:none; padding: 0px; font-size: 0.9rem;">
-            <option value="+91">+91</option>
+            <option value="+91">+91(IND)</option>
             <option value="+1">+1</option>
             <option value="+44">+44</option>
             <option value="+61">+61</option>
