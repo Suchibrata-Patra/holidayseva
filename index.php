@@ -41,14 +41,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // Insert data into database with error checking
     $stmt = $conn->prepare("
-        INSERT INTO invoice_data (
-            customer_name, mobile_no, pickup_address, drop_address,
-            tour_package, pricing, date_of_journey, date_of_return,
-            no_of_adults, no_of_children, cars_provided, no_of_cars,
-            hotel_used, hotel_room_details, special_requirements,
-            meal_plan, food_included
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    ");
+    INSERT INTO invoice_data (
+        customer_name, mobile_no, pickup_address, drop_address,
+        tour_package, pricing, date_of_journey, date_of_return,
+        no_of_adults, no_of_children, cars_provided, no_of_cars,
+        hotel_used, hotel_room_details, special_requirements,
+        meal_plan, food_included
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+");
 
     // Check if the prepare statement is successful
     if ($stmt === false) {
@@ -56,13 +56,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Bind parameters for prepared statement
-    $stmt->bind_param(
-        "sssssissiisisssss", 
-        $customer_name, $mobile_no, $pickup_address, $drop_address, $tour_package, 
-        $pricing, $date_of_journey, $date_of_return, $no_of_adults, $no_of_children, 
-        $cars_provided, $no_of_cars, $hotel_used, $hotel_room_details, $special_requirements, 
-        $meal_plan, $food_included
-    );
+   // Bind parameters to the query (correct the number of placeholders)
+$stmt->bind_param(
+    "sssssissiisisssssi", 
+    $customer_name, 
+    $mobile_no, 
+    $pickup_address, 
+    $drop_address, 
+    $tour_package, 
+    $pricing, 
+    $date_of_journey,
+    $date_of_return,
+    $no_of_adults,
+    $no_of_children,
+    $cars_provided, 
+    $no_of_cars,
+    $hotel_used,
+    $hotel_room_details,
+    $special_requirements, 
+    $meal_plan,
+    $food_included
+);
+
     
     // Execute the query
     if ($stmt->execute()) {
