@@ -193,7 +193,7 @@
         <input 
             type="text" 
             id="mobile_number" 
-            placeholder="Enter mobile number" 
+            placeholder="Enter Mobile No." 
             required 
             style="border: none; padding: 5px; flex: 1; font-size: 0.9rem;" 
         />
