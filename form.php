@@ -170,11 +170,11 @@
     <div class="form-row">
       <div>
         <label for="customer_name">Customer Name</label>
-        <input type="text" id="customer_name" name="customer_name" placeholder="Enter customer name" required value="Test Buddy" />
+        <input type="text" id="customer_name" name="customer_name" placeholder="Enter customer name" required/>
       </div>
       <div>
         <label for="mobile_no">Mobile No</label>
-        <input type="text" id="mobile_no" name="mobile_no" placeholder="Enter mobile number" required value="94757558479"/>
+        <input type="text" id="mobile_no" name="mobile_no" placeholder="Enter mobile number" required />
       </div>
     </div>
     <div>
@@ -208,35 +208,35 @@
 </div>
       <div>
         <label for="pricing">Pricing</label>
-        <input type="number" id="pricing" name="pricing" placeholder="Enter Total Cost" required value="9800"/>
+        <input type="number" id="pricing" name="pricing" placeholder="Enter Total Cost" required />
       </div>
     </div>
     <div class="form-row">
       <div>
         <label for="date_of_journey">Date of Journey</label>
-        <input type="date" id="date_of_journey" name="date_of_journey" required value='2024-01-01'/>
+        <input type="date" id="date_of_journey" name="date_of_journey" required />
       </div>
       <div>
         <label for="date_of_return">Date of Return</label>
-        <input type="date" id="date_of_return" name="date_of_return" required value='2024-06-01'/>
+        <input type="date" id="date_of_return" name="date_of_return" required />
       </div>
       <div>
         <label for="no_of_adults">Number of Adults</label>
-        <input type="number" id="no_of_adults" name="no_of_adults" placeholder="Enter number of adults" required value="3"/>
+        <input type="number" id="no_of_adults" name="no_of_adults" placeholder="Enter number of adults" required />
       </div>
       <div>
         <label for="no_of_children">Number of Children</label>
-        <input type="number" id="no_of_children" name="no_of_children" placeholder="Enter number of Children" required value='0'/>
+        <input type="number" id="no_of_children" name="no_of_children" placeholder="Enter number of Children" required />
       </div>
     </div>
     <div class="form-row">
       <div>
         <label for="cars_provided">Cars Provided</label>
-        <input type="text" id="cars_provided" name="cars_provided" placeholder="Enter cars provided" required value='Swift Desire'/>
+        <input type="text" id="cars_provided" name="cars_provided" placeholder="Enter cars provided" required />
       </div>
       <div>
         <label for="no_of_cars">Number of Cars</label>
-        <input type="number" id="no_of_cars" name="no_of_cars" placeholder="Enter number of cars" required value='2'/>
+        <input type="number" id="no_of_cars" name="no_of_cars" placeholder="Enter number of cars" required />
       </div>
       <div>
         <label for="hotel_used">Hotel Required</label>
