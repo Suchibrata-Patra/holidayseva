@@ -62,7 +62,7 @@ function generate_invoice($invoice) {
     if ($invoice['tour_package'] == 'Kolkata to Gangasagar One-Day Round Trip') {
         $tour_details_html = '<div class="important">
       <div class="text">
-        <strong style="background-color:rgb(239, 239, 239);padding: 7px 10px; border-radius: 5px;"> Day 1 : </strong> Kolkata to Gangasagar One-Day Round Trip
+        <strong> Day 1 :  Kolkata to Gangasagar One-Day Round Trip </strong>
         <br />
         <strong>Meet & Greet</strong> Arrival at Station/Airport/Hotel and transfer to Gangasagar, an island at the confluence of the Ganga River and the Bay of Bengal, known for the revered Kapil Muni Ashram.
 <br>
