@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             no_of_adults, no_of_children, cars_provided, no_of_cars,
             hotel_used, hotel_room_details, special_requirements,
             meal_plan, food_included
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)
     ");
 
     // Check if the prepare statement is successful
@@ -60,8 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         "sssssissiisisssss", 
         $customer_name, $mobile_no, $pickup_address, $drop_address, $tour_package, 
         $pricing, $date_of_journey, $date_of_return, $no_of_adults, $no_of_children, 
-        $cars_provided, $no_of_cars, $hotel_used, $hotel_room_details, $special_requirements, 
-        $meal_plan, $food_included
+        $cars_provided, $no_of_cars, $hotel_used, $hotel_room_details, $special_requirements,$meal_plan, $food_included
     );
     
     // Execute the query

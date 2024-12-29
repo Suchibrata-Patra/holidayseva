@@ -55,7 +55,7 @@ if (isset($_GET['delete_booking_id'])) {
 }
 
 // Fetch all confirmed records
-$records = $conn->query("SELECT * FROM invoice_data WHERE booking_status = 'Confirmed'");
+$records = $conn->query("SELECT * FROM invoice_data");
 function generate_invoice($invoice) {
     $html = file_get_contents('generate.html');
     if ($invoice['tour_package'] == 'GangaSagar Tour Package 1 Night 2 Days') {
