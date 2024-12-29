@@ -74,10 +74,17 @@ After completing the visit, transfer back to Kolkata with cherished memories.
         <br />
       </div>
     </div>';
-    $Cost_Includes_html='<li>Vehicle for transfers and sightseeing as per the itinerary.</li>
-<li>All permit fees, parking charges, driver allowances, and fuel costs.</li>
-<li>Round-trip ship tickets.</li>
-<li>One-night accommodation at Ganga Sagar, inclusive of dinner and breakfast.</li>
+    $Cost_Includes_html='<li>
+    <strong>Exclusive Vehicles</strong><br>
+Dedicated vehicles for round-trip transfers and sightseeing as per the itinerary, ensuring comfort and convenience throughout the journey.</li>
+<li>
+</strong>Alll On the Go Expenses</strong><br>
+All necessary permit fees, parking charges, driver allowances, and fuel costs are included to ensure a hassle-free travel experience.
+</li>
+<li>
+<strong>Ferry Tickets</strong><br>
+The cost of round-trip ferry tickets is included for both sides of the journey.</li>
+<br>
 <li>Rates are applicable for Indian nationals only.</li>';
     } 
 
