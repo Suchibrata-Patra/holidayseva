@@ -200,7 +200,7 @@
     <div class="form-row">
     <div>
   <label for="tour_package">Tour Package</label>
-  <select id="tour_package" name="tour_package" required style="font-size:0.7rem;padding: 5px 0px 5px 0px;">
+  <!-- <select id="tour_package" name="tour_package" required style="font-size:0.7rem;padding: 5px 0px 5px 0px;">
     <option value="Kolkata to Gangasagar One-Day Round Trip">Kolkata to Gangasagar One-Day Round Trip</option>
     <option value="Kolkata City Tour with Ganga Yatra Package">Kolkata City Tour with Ganga Yatra Package</option>
     <option value="Ganga Yatra Package with Kolkata City Tour">Ganga Yatra Package with Kolkata City Tour</option>
@@ -211,7 +211,27 @@
     <option value="Mayapur with Gangasagar Yatra Package">Mayapur with Gangasagar Yatra Package</option>
     <option value="Sundarbans 2 Nights, 3 Days Yatra Package">Sundarbans 2 Nights, 3 Days Yatra Package</option>
     <option value="Gangasagar Mela 1 Night, 2 Days Mela Package">Gangasagar Mela 1 Night, 2 Days Mela Package</option>
-  </select>
+  </select> -->
+  <select id="tour_package" name="tour_package" required style="font-size:0.8rem; padding: 8px;">
+    <optgroup label="Gangasagar Yatra Packages">
+        <option value="Kolkata to Gangasagar One-Day Round Trip">Kolkata to Gangasagar One-Day Round Trip</option>
+        <option value="1N/2D Complete Gangasagar Yatra Package">1N/2D Complete Gangasagar Yatra Package</option>
+        <option value="Gangasagar Mela 1 Night, 2 Days Mela Package">Gangasagar Mela 1 Night, 2 Days Mela Package</option>
+    </optgroup>
+    <optgroup label="Kolkata City Tours">
+        <option value="Kolkata City Tour with Ganga Yatra Package">Kolkata City Tour with Ganga Yatra Package</option>
+        <option value="Ganga Yatra Package with Kolkata City Tour">Ganga Yatra Package with Kolkata City Tour</option>
+        <option value="One-Day Kolkata City Tour">One-Day Kolkata City Tour</option>
+    </optgroup>
+    <optgroup label="Sundarbans Packages">
+        <option value="Sundarbans Same-Day Gangasagar Yatra">Sundarbans Same-Day Gangasagar Yatra</option>
+        <option value="Sundarbans 2 Nights, 3 Days Yatra Package">Sundarbans 2 Nights, 3 Days Yatra Package</option>
+    </optgroup>
+    <optgroup label="Combined Tours">
+        <option value="Mayapur with Gangasagar Yatra Package">Mayapur with Gangasagar Yatra Package</option>
+    </optgroup>
+</select>
+
 </div>
       <div>
         <label for="pricing">Pricing</label>
