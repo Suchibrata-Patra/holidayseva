@@ -166,7 +166,7 @@
 
 <div class="form-container">
   <h1>Register Enquiry</h1>
-  <form method="POST" action="index.php">
+  <form method="POST">
     <div class="form-row">
       <div>
         <label for="customer_name">Customer Name</label>
