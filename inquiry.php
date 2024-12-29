@@ -78,7 +78,7 @@ After completing the visit, transfer back to Kolkata with cherished memories.
 <li>All permit fees, parking charges, driver allowances, and fuel costs.</li>
 <li>Round-trip ship tickets.</li>
 <li>One-night accommodation at Ganga Sagar, inclusive of dinner and breakfast.</li>
-<li>Rates are applicable for Indian nationals onlys.</li>';
+<li>Rates are applicable for Indian nationals only.</li>';
     } 
 
 
