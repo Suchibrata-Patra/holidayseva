@@ -108,7 +108,7 @@ function generate_invoice($invoice) {
             <br>
             <strong>Overnight Stay</strong>
             Stay overnight at your accommodation in Gangasagar, soaking in the serene and devout atmosphere.
-            <br><br>
+            <br><br><br>
             <strong>Day 02 (21/01/25: Ganga Sagar to Kolkata Drop</strong>
             <br />
         <strong>Morning Activities</strong><br>
