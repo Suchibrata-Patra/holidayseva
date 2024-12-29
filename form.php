@@ -214,7 +214,7 @@
   </select> -->
   <select id="tour_package" name="tour_package" required style="font-size:0.8rem; padding: 8px;">
     <optgroup label="Gangasagar Yatra Packages">
-      <option value="" disabled selected>Select</option>
+      <option value="" disabled selected>Select The Package</option>
         <option value="Kolkata to Gangasagar One-Day Round Trip">Kolkata to Gangasagar One-Day Round Trip</option>
         <option value="1N/2D Complete Gangasagar Yatra Package">1N/2D Complete Gangasagar Yatra Package</option>
         <option value="Gangasagar Mela 1 Night, 2 Days Mela Package">Gangasagar Mela 1 Night, 2 Days Mela Package</option>
