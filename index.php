@@ -17,7 +17,7 @@ use Dompdf\Options;
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
+ 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $customer_name = $_POST['customer_name'];
