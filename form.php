@@ -176,8 +176,8 @@
         <label for="mobile_no">Mobile No</label>
         <input type="text" id="mobile_no" name="mobile_no" placeholder="Enter mobile number" required />
       </div> -->
+      <label for="mobile_no" style="margin-right: 10px;">Mobile</label>
       <div style="display: flex; align-items: center;">
-    <label for="mobile_no" style="margin-right: 10px;">Mobile</label>
     <div style="display: flex; align-items: center; border: 1px solid #ccc; border-radius: 5px; overflow: hidden;">
         <select id="country_code" name="country_code" required 
                 style="border: none; background:none; padding: 0px; font-size: 0.9rem;">
