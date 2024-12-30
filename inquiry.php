@@ -120,7 +120,7 @@ function generate_invoice($invoice) {
             <div style="display: flex; align-items: left; gap: 10px;">
                 <span style="background-color:red; color:white; border-radius: 50%;text-align: left;padding:7px 6px 7px 10.5px;">2
                 </span>
-                <strong> Enroute to Kolkata</strong>
+                <strong>Enroute to Kolkata</strong>
             </div>
             <!-- <div style="display: flex; align-items: left; gap: 10px;">
                 <span style="background-color:red; color:white; border-radius: 50%;text-align: left;padding:7px 7px 7px 12px;">2
