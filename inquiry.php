@@ -97,9 +97,13 @@ function generate_invoice($invoice) {
     $tour_details_html = '<div class="important">
         <div class="text">
             <strong>
-            <div style="display:flex;">
-            <button style="background-color: red;color: white;border-radius: 50px;border:none;padding: 10px;">Day<br>01</button> Kolkata to Ganga Sagar Yatra Package (130 Km./5:00 Hrs):</strong>
-            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+    <button style="background-color: red; color: white; border-radius: 50px; border: none; padding: 10px; text-align: center; line-height: 1.2;">
+        Day<br>01
+    </button>
+    <span>Kolkata to Ganga Sagar Yatra Package (130 Km./5:00 Hrs):</span>
+</div>
+
             <br>
             <strong>Meet & Greet</strong> -
             Upon arrival at the Airport/Station/Hotel/City, you will be warmly welcomed and driven to Gangasagar, an island
