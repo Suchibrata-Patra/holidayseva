@@ -98,10 +98,12 @@ function generate_invoice($invoice) {
         <div class="text">
             <strong>
                 <div style="display: flex; align-items: center; gap: 10px;">
-                    <button style="background-color: red; color: white; border-radius: 50%; border: none; width: 80px; height: 80px; display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: Arial, sans-serif;">
-                        <span style="font-size: 12px; margin: 0;">Day</span>
-                        <span style="font-size: 20px; font-weight: bold;">01</span>
-                    </button>
+                    <div style="display: flex; align-items: center; justify-content: center; background-color: red; color: white; border-radius: 50%; width: 80px; height: 80px; font-family: Arial, sans-serif;">
+                        <div style="text-align: center;">
+                            <span style="font-size: 12px; display: block;">Day</span>
+                            <span style="font-size: 20px; font-weight: bold;">01</span>
+                        </div>
+                    </div>
                     <span>Kolkata to Ganga Sagar Yatra Package (130 Km./5:00 Hrs):</span>
                 </div>
                 
