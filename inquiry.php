@@ -105,8 +105,6 @@ function generate_invoice($invoice) {
                     Kolkata to Ganga Sagar Yatra
                 </strong>
             </div>
-            
-
             <br>
             <strong>Meet & Greet</strong> -
             Upon arrival at the Airport/Station/Hotel/City, you will be warmly welcomed and driven to Gangasagar, an island
