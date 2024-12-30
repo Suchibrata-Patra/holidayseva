@@ -103,6 +103,7 @@ function generate_invoice($invoice) {
     </button>
     <span>Kolkata to Ganga Sagar Yatra Package (130 Km./5:00 Hrs):</span>
 </div>
+</strong>
 
             <br>
             <strong>Meet & Greet</strong> -
