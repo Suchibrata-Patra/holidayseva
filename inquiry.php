@@ -97,7 +97,7 @@ function generate_invoice($invoice) {
     $tour_details_html = '<div class="important">
         <div class="text">
             
-            <div style="display: flex; align-items: center; gap: 1px; font-family: Arial, sans-serif;">
+            <div style="display: flex; align-items: center; gap: 10px;">
                 <span style="background-color: #fdeee9; color: #b30000; border-radius: 50%;text-align: center;padding: 20px;">
                     Day<br>1
                 </span>
