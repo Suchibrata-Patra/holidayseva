@@ -96,8 +96,8 @@ function generate_invoice($invoice) {
     if ($invoice['tour_package'] == '1N/2D Complete GangaSagar Yatra Package') {
     $tour_details_html = '<div class="important">
         <div class="text">
-            <div style="display: flex; align-items: center; gap:1px;">
-                <div style="align-items: center; justify-content: center; background-color: red; color: white; border-radius: 50%; width: 50px; height: 50px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="display: flex; align-items: center; justify-content: center; background-color: red; color: white; border-radius: 50%; width: 50px; height: 50px;">
                     <div style="text-align: center;">
                         <span style="font-size: 12px; display: block;">Day</span>
                         <span style="font-size: 20px; font-weight: bold;">01</span>
@@ -106,7 +106,8 @@ function generate_invoice($invoice) {
                 <strong>
                     <span>Kolkata to Ganga Sagar Yatra Package (130 Km./5:00 Hrs):</span> 
                 </strong>
-                </div>
+            </div>
+            
 
             <br>
             <strong>Meet & Greet</strong> -
