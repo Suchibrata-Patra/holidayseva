@@ -98,7 +98,7 @@ function generate_invoice($invoice) {
         <div class="text">
             
             <div style="display: flex; align-items: center; gap: 100px;">
-                <span style="background-color:red; color:white; border-radius: 50%;text-align: center;padding: 25px 10px;">
+                <span style="background-color:red; color:white; border-radius: 50%;text-align: center;padding: 20px 8px;">
                     Day 1
                 </span>
                     Kolkata to Ganga Sagar Yatra
