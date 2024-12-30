@@ -97,12 +97,11 @@ function generate_invoice($invoice) {
     $tour_details_html = '<div class="important">
         <div class="text">
             
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <span style="background-color: red; color: white; border-radius: 50%; text-align: center; padding: 14px; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 50px; height: 50px;">
-                    <span style="font-size: 0.8rem;">Day</span>
-                    <span style="font-size: 1.2rem;">1</span>
+            <div style="display: flex; align-items: left; gap: 10px;">
+                <span style="background-color:red; color:white; border-radius: 50%;text-align: left;padding: 14px;">
+                    <span style="font-size: 0.8rem;">Day</span><span style="font-size: 1.2rem;padding-right: 5px;">1</span>
                 </span>
-                <span>Kolkata to Ganga Sagar Yatra</span>
+                    Kolkata to Ganga Sagar Yatra
             </div>
             
 
