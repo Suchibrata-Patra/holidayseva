@@ -116,11 +116,17 @@ function generate_invoice($invoice) {
             <strong>Stayover</strong> - 
             Stay overnight at your accommodation in Gangasagar, soaking in the serene and devout atmosphere.
             <br><br>
+
             <div style="display: flex; align-items: left; gap: 10px;">
                 <span style="background-color:red; color:white; border-radius: 50%;text-align: left;padding:7px 7px 7px 12px;">2
                 </span>
-                <strong> (' . date('Y-m-d', strtotime($invoice['date_of_journey'] . ' +1 day')) . ') - Enroute to Kolkata</strong>
+                <strong> - Enroute to Kolkata</strong>
             </div>
+            <!-- <div style="display: flex; align-items: left; gap: 10px;">
+                <span style="background-color:red; color:white; border-radius: 50%;text-align: left;padding:7px 7px 7px 12px;">2
+                </span>
+                <strong> (' . date('Y-m-d', strtotime($invoice['date_of_journey'] . ' +1 day')) . ') - Enroute to Kolkata</strong>
+            </div> -->
             <br>
             
 Begin your day with a visit to Gangasagar for a sacred darshan, followed by completing your puja rituals and taking a holy dip.
