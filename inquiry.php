@@ -130,6 +130,9 @@ Return to your accommodation, collect your luggage, and check out. Then, transfe
         <strong>Ferry Tickets</strong><br>
         The cost of round-trip ferry tickets is included for both sides of the journey.
     </li><br>
+    <li>
+        <strong>Accomodation</strong><br>1 night accommodation at Gangasagar with dinner and breakfast included for a comfortable stay.
+    </li><br>
     <span style="font-size:0.8rem;">* Rates are applicable for Indian nationals only.</span>';
     }
 
