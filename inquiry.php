@@ -96,7 +96,7 @@ function generate_invoice($invoice) {
     if ($invoice['tour_package'] == '1N/2D Complete GangaSagar Yatra Package') {
     $tour_details_html = '<div class="important">
         <div class="text">
-            <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="display: flex !important; align-items: center; gap: 10px;">
                 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #fcece6; color: #b30000; border-radius: 50%; width: 50px; height: 50px;">
                     <span style="font-size: 12px;">Day</span>
                     <span style="font-size: 20px; font-weight: bold;">1</span>
