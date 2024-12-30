@@ -98,7 +98,7 @@ function generate_invoice($invoice) {
         <div class="text">
             <strong>
             <div style="display:flex;">
-            <button style="background-color: red;color: white;border-radius: 50px;border:none;padding: 10px;">Day 01</button> Kolkata to Ganga Sagar Yatra Package (130 Km./5:00 Hrs):</strong>
+            <button style="background-color: red;color: white;border-radius: 50px;border:none;padding: 10px;">Day<br>01</button> Kolkata to Ganga Sagar Yatra Package (130 Km./5:00 Hrs):</strong>
             </div>
             <br>
             <strong>Meet & Greet</strong> -
