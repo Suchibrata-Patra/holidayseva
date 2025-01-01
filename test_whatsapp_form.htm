@@ -1,0 +1,115 @@
+<!-- Include Google Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<div class="gangasagar-tour-content">
+    <strong class="itinerary-title">Tour Info</strong>
+</div>
+<div class="my_tour_info_accordion" style="font-family: poppins;color: black;">
+    <div class="my_tour_info_accordion-item">
+        <div class="my_tour_info_accordion_title">
+            <div style="display: flex;">
+                <button style="background-color: red;border: none;color:white;border-radius: 50px;padding: 5px 7px;margin-right: 10px;font-weight: 800;margin-bottom: 3px;">Day<br>1</button><span style="margin-top:10px;">Kolkata to gangaSagar Yatra</span>
+            </div>
+            <span class="material-icons arrow-icon" style="color:black;background-color: rgb(245, 245, 245);border-radius: 50px ;font-weight: 200;padding: 7px;">keyboard_arrow_down</span>
+        </div>
+        <div class="my_tour_info_accordion-content">
+            <p><strong>05:30 AM</strong>: Pickup from Kolkata and transfer to Harwood Point.</p>
+            <p><strong>08:30 AM</strong>: Ferry ride to Kachuberia and road transfer to Ganga Sagar.</p>
+            <p><strong>11:00 AM</strong>: Visit Kapil Muni Temple and take a holy dip in the Ganges.</p>
+            <p><strong>01:00 PM</strong>: Lunch at a local restaurant in Ganga Sagar.</p>
+            <p><strong>02:00 PM</strong>: Visit the Ganga Sagar Mela ground and explore local markets.</p>
+            <p><strong>04:00 PM</strong>: Return journey to Kolkata, via ferry and AC vehicle.</p>
+            <p><strong>07:30 PM</strong>: Drop-off in Kolkata.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .my_tour_info_accordion {
+        font-family: poppins;
+        width: 98%;
+        max-width: 600px;
+        margin: 0px 0px 0px 1px !important;
+    }
+
+    .my_tour_info_accordion-item {
+        font-family: poppins;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .my_tour_info_accordion_title {
+        font-family: poppins;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: none;
+        font-size: 16px;
+        font-weight: 500!important;
+        cursor: pointer;
+        text-align: left;
+        transition: background 0.1s;
+    }
+
+    .my_tour_info_accordion_title:hover {
+        background-color: rgb(252,252,252);
+        text-decoration: none;
+    }
+
+    .arrow-icon {
+        transition: transform 0.3s ease;
+    }
+
+    .my_tour_info_accordion-item.active .arrow-icon {
+        transform: rotate(-90deg);
+    }
+
+    .my_tour_info_accordion-content {
+        font-family: poppins;
+        display: block;
+        max-height: 0;
+        margin-top: 0px;
+        font-size: 14px;
+        color: #000000;
+        margin-left:50px;
+        overflow: hidden;
+        transition: max-height 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), padding 0.3s ease;
+    }
+
+    .my_tour_info_accordion-item.active .my_tour_info_accordion-content {
+        max-height: 700px;
+        padding: 0px 0;
+    }
+
+    .material-icons.arrow-icon:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<!-- Smooth JavaScript -->
+<script>
+    const items = document.querySelectorAll('.my_tour_info_accordion-item');
+
+    items.forEach(item => {
+        const title = item.querySelector('.my_tour_info_accordion_title');
+        const content = item.querySelector('.my_tour_info_accordion-content');
+
+        title.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            // Close all accordion items
+            document.querySelectorAll('.my_tour_info_accordion-item').forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.my_tour_info_accordion-content').style.maxHeight = null;
+            });
+
+            // Toggle the clicked item
+            if (!isActive) {
+                item.classList.add('active');
+                content.style.maxHeight = `${content.scrollHeight}px`; // Dynamically set max-height
+            }
+        });
+    });
+</script>
